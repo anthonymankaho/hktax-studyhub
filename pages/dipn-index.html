@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DIPN Index — HK Tax Study Hub</title>
+<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <div class="brand">HK Tax Study Hub<small>Internal reference — not for external distribution</small></div>
+    <nav class="site-nav">
+      <a href="../index.html">Hub</a>
+      <a href="transaction-checker.html">Transaction Checker</a>
+      <a href="dipn-index.html" class="active">DIPN Index</a>
+      <a href="profits-tax.html">Profits Tax</a>
+      <a href="property-tax.html">Property Tax</a>
+      <a href="salaries-tax.html">Salaries Tax</a>
+      <a href="stamp-duty.html">Stamp Duty</a>
+      <a href="depreciation-allowances.html">Depreciation &amp; Allowances</a>
+      <a href="ird-administration.html">IRD Administration</a>
+    </nav>
+    <button id="theme-toggle" title="Toggle light/dark" style="background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:6px;padding:6px 10px;cursor:pointer;font-size:12px">Theme</button>
+  </div>
+</header>
+
+<div class="shell" style="grid-template-columns:1fr">
+  <main class="content">
+    <div class="page-title">
+      <div>
+        <span class="badge badge-common">Complete archive</span>
+        <h1>DIPN Index</h1>
+        <p class="subtitle">Every currently-in-force IRD Departmental Interpretation &amp; Practice Note (DIPN), Stamp Office Interpretation &amp; Practice Note (SOIPN), and Estate Duty Office note (EDOIPN) — 73 documents total, all downloaded into <code>Data/DIPN/</code>. Items backing one of the five core study pages are marked accordingly; the rest are reference-only with a short summary.</p>
+      </div>
+    </div>
+
+    <div class="checker-controls">
+      <input type="search" id="q" placeholder="Search by number, title, or keyword&hellip;" autocomplete="off">
+      <select id="filter-group" aria-label="Filter by topic group"><option value="">All groups</option></select>
+      <select id="filter-status" aria-label="Filter by coverage status">
+        <option value="">All statuses</option>
+        <option value="core">Backs a core study page</option>
+        <option value="reference">Reference only</option>
+      </select>
+    </div>
+    <p class="checker-count" id="checker-count"></p>
+
+    <div class="checker-results">
+      <table>
+        <thead><tr><th style="width:80px">No.</th><th>Title</th><th style="width:130px">Group</th><th style="width:90px">Date</th><th>Summary</th><th style="width:130px">Status</th></tr></thead>
+        <tbody id="results-body"></tbody>
+      </table>
+      <div class="checker-empty" id="checker-empty" style="display:none">No matching document found.</div>
+    </div>
+
+    <div class="callout tip" style="margin-top:24px">
+      <span class="lbl">Scope note</span>
+      Per the agreed build scope: DIPNs tied to the five core taxes (Profits, Property, Salaries, Stamp Duty, Depreciation &amp; Allowances) are fully reflected in their topic pages, with worked illustrations. Everything else here — transfer pricing, aircraft/ship leasing, corporate treasury, offshore funds, cross-border DTAs, field audit, advance rulings, estate duty — is downloaded and briefly summarized for reference, but does not yet have a dedicated study page. Ask Claude to build one out if your team needs deeper coverage of a specific reference-only topic.
+    </div>
+
+    <div class="section-nav">
+      <a href="../index.html">&larr; Back to Hub</a>
+      <a href="transaction-checker.html">Transaction Checker &rarr;</a>
+    </div>
+  </main>
+</div>
+
+<footer class="site-footer">HK Tax Study Hub — internal working document. Source: IRD DIPN/SOIPN index (ird.gov.hk/eng/ppr/dip.htm).</footer>
+
+<script src="../assets/js/dipn-index-data.js"></script>
+<script src="../assets/js/dipn-index.js"></script>
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>

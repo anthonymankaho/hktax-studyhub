@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Depreciation &amp; Allowances — HK Tax Study Hub</title>
+<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <div class="brand">HK Tax Study Hub<small>Internal reference — not for external distribution</small></div>
+    <nav class="site-nav">
+      <a href="../index.html">Hub</a>
+      <a href="transaction-checker.html">Transaction Checker</a>
+      <a href="dipn-index.html">DIPN Index</a>
+      <a href="profits-tax.html">Profits Tax</a>
+      <a href="property-tax.html">Property Tax</a>
+      <a href="salaries-tax.html">Salaries Tax</a>
+      <a href="stamp-duty.html">Stamp Duty</a>
+      <a href="depreciation-allowances.html" class="active">Depreciation &amp; Allowances</a>
+      <a href="ird-administration.html">IRD Administration</a>
+    </nav>
+    <button id="theme-toggle" title="Toggle light/dark" style="background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:6px;padding:6px 10px;cursor:pointer;font-size:12px">Theme</button>
+  </div>
+</header>
+
+<div class="shell">
+  <aside class="toc">
+    <h4>On this page</h4>
+    <a href="#overview">Overview</a>
+    <a href="#buildings">Industrial &amp; Commercial Buildings</a>
+    <a href="#pm">Plant &amp; Machinery Pooling</a>
+    <a href="#writeoffs">100% / 5-Year Write-Off Regimes</a>
+    <a href="#ip">Patents, Know-How &amp; Specified IP</a>
+    <a href="#illustrations">Illustrations</a>
+    <a href="#computation">Computation Template</a>
+    <a href="#sources">Source Documents</a>
+  </aside>
+
+  <main class="content">
+    <div class="page-title">
+      <div>
+        <span class="badge badge-common">Common — Depreciation &amp; Allowances</span>
+        <h1>Depreciation &amp; Allowances</h1>
+        <p class="subtitle">Inland Revenue Ordinance (Cap. 112), Part 6 &amp; related provisions — capital allowances replace accounting depreciation for tax purposes; accounting depreciation itself is never deductible (IRO s.17(1)(c)).</p>
+      </div>
+    </div>
+
+    <div id="freshness-banner" class="freshness"></div>
+    <ul id="freshness-sources" class="src-list" style="display:none;margin-bottom:20px"></ul>
+
+    <section class="block" id="overview">
+      <h2>1. Overview</h2>
+      <p class="lede">Because capital expenditure and accounting depreciation are non-deductible under Profits Tax (s.17(1)(c)/(d)), Part 6 of the IRO substitutes a separate, statutory system of capital allowances for four categories of qualifying capital expenditure: (1) industrial buildings, (2) commercial buildings, (3) plant &amp; machinery, and (4) a growing list of 100%/5-year write-off regimes for specific asset types (ss.16C–16L) that sit alongside, and interact with, Part 6.</p>
+      <div class="callout law">
+        <span class="lbl">Key mechanic — add-back and allowance in the same computation</span>
+        In every profits tax computation: add back accounting depreciation (non-deductible), then deduct the correct statutory allowance instead. The two numbers are almost never equal — this is the single most common adjustment in a Hong Kong tax computation.
+      </div>
+    </section>
+
+    <section class="block" id="buildings">
+      <h2>2. Industrial &amp; Commercial Buildings <span class="sec-ref">IRO ss.33A, 34, 36, 37</span></h2>
+      <table>
+        <thead><tr><th>Building type</th><th class="num">Initial allowance</th><th class="num">Annual allowance</th><th>Balancing allowance/charge</th></tr></thead>
+        <tbody>
+          <tr><td>Industrial building or structure (mills, factories, docks, utility undertakings, qualifying storage/farming/R&amp;D buildings)</td><td class="num">20% (1/5) of cost, year of first use</td><td class="num">4% (1/25) straight-line on cost</td><td>On sale/lease termination/demolition — balancing charge capped at total allowances previously granted</td></tr>
+          <tr><td>Commercial building or structure (all other non-excluded buildings)</td><td class="num">None</td><td class="num">4% (1/25) straight-line on cost, from 1998/99</td><td>Same balancing mechanism as industrial buildings, from 1998/99</td></tr>
+        </tbody>
+      </table>
+      <p>"Industrial building or structure" is narrowly defined (DIPN 2) — it excludes dwellings, retail shops, showrooms, hotels, and offices. Where a building is used partly for a qualifying industrial purpose and partly not, a <strong>10% de-minimis rule</strong> applies: if the non-qualifying use is no more than 10% of the whole, the building is treated as wholly industrial. On a sale, the buyer's future annual allowance is recalculated as the residue of expenditure after sale, spread over the remaining years to the building's 25th year from first use.</p>
+      <div class="callout watch">
+        <span class="lbl">Historical note</span>
+        Before 1998/99, commercial buildings only qualified for a much smaller "rebuilding allowance" (0.75% pre-1990/91, then 2% from 1990/91–1997/98) rather than the modern 4% annual allowance — relevant only when tracing the residue of expenditure on a very old building still being written down today.
+      </div>
+    </section>
+
+    <section class="block" id="pm">
+      <h2>3. Plant &amp; Machinery — Pooling System <span class="sec-ref">IRO ss.39B–39E</span></h2>
+      <p>Since YA1980/81, plant and machinery of the same annual-allowance rate class is pooled together rather than tracked asset-by-asset (the old asset-by-asset method under ss.37–39 survives only for hire-purchase assets, mixed business/private-use assets, and a few other special cases).</p>
+      <table>
+        <tbody>
+          <tr><th style="width:40%">Initial allowance</th><td class="num">60% of cost, given once on acquisition</td></tr>
+          <tr><th>Annual allowance</th><td class="num">Reducing-balance on the pool's "reducing value," at 10%, 20% or 30% depending on asset class (Board of Inland Revenue rates)</td></tr>
+        </tbody>
+      </table>
+      <table>
+        <caption>Common annual allowance rate classes (Appendix A(i), DIPN 7)</caption>
+        <thead><tr><th class="num">Rate</th><th>Asset examples</th></tr></thead>
+        <tbody>
+          <tr><td class="num">10%</td><td>Air-conditioning plant, lifts, cables, ships</td></tr>
+          <tr><td class="num">20%</td><td>Furniture, fixtures, domestic/room air-conditioners — the general residual rate for unlisted items</td></tr>
+          <tr><td class="num">30%</td><td>Motor vehicles, computer/EDP equipment, textile/electronics manufacturing plant, tractors/bulldozers</td></tr>
+        </tbody>
+      </table>
+      <p><strong>Balancing allowances</strong> only arise when the trade/pool ceases altogether. <strong>Balancing charges</strong> can arise at any time disposal proceeds exceed the pool's reducing value, but are capped at the total allowances previously granted for that asset (you can never be charged more than you were originally allowed). Hire-purchase assets, and assets moved between private and business use, are excluded from pooling and calculated separately with notional allowance adjustments.</p>
+    </section>
+
+    <section class="block" id="writeoffs">
+      <h2>4. 100% / 5-Year Write-Off Regimes <span class="sec-ref">IRO ss.16C, 16F, 16G, 16H–16L</span></h2>
+      <table>
+        <thead><tr><th>Regime</th><th>Basis</th><th class="num">Treatment</th></tr></thead>
+        <tbody>
+          <tr><td>Technical education payments to approved institutions</td><td>s.16C</td><td class="num">Deductible when paid</td></tr>
+          <tr><td>Refurbishment/renovation of non-domestic buildings</td><td>s.16F</td><td class="num">5 equal annual instalments (20%/year)</td></tr>
+          <tr><td>Prescribed fixed assets — manufacturing plant, standalone computer hardware/software (excludes leased assets)</td><td>s.16G</td><td class="num">100% one-off in year of payment</td></tr>
+          <tr><td>Environmental protection machinery &amp; environment-friendly vehicles</td><td>ss.16H, 16I</td><td class="num">100% one-off (from 2018/19; previously 5-year spread)</td></tr>
+          <tr><td>Environmental protection installations (buildings)</td><td>ss.16J–16L</td><td class="num">100% one-off (from 2018/19; previously 5-year spread)</td></tr>
+        </tbody>
+      </table>
+      <p>A taxpayer with unallowed instalments from pre-2018/19 environmental expenditure could elect under s.16I(3A) to accelerate the remaining instalments to a single 100% deduction in 2018/19 (see the DIPN 5 illustration below).</p>
+    </section>
+
+    <section class="block" id="ip">
+      <h2>5. Patents, Know-How &amp; Specified IP Rights <span class="sec-ref">IRO ss.16E, 16EA–16EC</span></h2>
+      <table>
+        <thead><tr><th>Asset</th><th>Basis</th><th class="num">Treatment</th></tr></thead>
+        <tbody>
+          <tr><td>Patent rights / know-how</td><td>s.16E</td><td class="num">100% one-off, year of purchase — no spreading</td></tr>
+          <tr><td>Specified IP Rights (copyright, registered trade marks/designs, plant variety rights, layout-design/topography rights, performer's economic rights)</td><td>ss.16EA–16EC</td><td class="num">5 equal annual instalments (or shorter, to match remaining legal protection period)</td></tr>
+        </tbody>
+      </table>
+      <p>Expenditure deductible under s.16E/16EA/16G/16I is excluded from Part 6 depreciation allowances — the regimes are mutually exclusive per asset, not cumulative. Anti-avoidance carve-outs deny the deduction for sale-and-license-back arrangements, purchases from associates, and IP used exclusively outside Hong Kong by another person under a leveraged licensing structure.</p>
+    </section>
+
+    <section class="block" id="illustrations">
+      <h2>6. Illustrations</h2>
+      <p>6 worked illustrations back this page — DIPN-sourced (industrial building sale, plant &amp; machinery pooling, balancing charges, IP amortisation) plus a Module 9 textbook example spanning two years of pooling with disposals and additions.</p>
+
+      <div class="illustration">
+        <div class="lbl">Illustration — Industrial building sale: buyer/seller allowance split <span class="src">DIPN 2</span></div>
+        <p>A factory is built for $500,000 in February 1992. Initial allowance 20% = $100,000; annual allowance 4% = $20,000 in the first year, continuing for 3 more years, leaving a residue of expenditure of $320,000. The building is then sold for $420,000. The <strong>seller</strong> faces a balancing charge of $100,000 (sale price exceeds residue by $100,000, capped at allowances previously granted). The <strong>buyer's</strong> future annual allowance is recalculated as 1/21 (years remaining to the 25th year) × $420,000 = <strong>$20,000/year</strong>.</p>
+      </div>
+
+      <div class="callout tip" style="text-align:center">
+        <a href="depreciation-allowances-illustrations.html" style="font-weight:700">View all 6 worked illustrations (DIPN + Module 9 textbook) &rarr;</a>
+      </div>
+    </section>
+
+    <section class="block" id="computation">
+      <h2>7. Computation Template</h2>
+      <table>
+        <tbody>
+          <tr><th style="width:60%">Net profit per accounts</th><td class="num">X</td></tr>
+          <tr><td style="padding-left:24px">Add back: accounting depreciation (non-deductible, s.17(1)(c)/(d))</td><td class="num">X</td></tr>
+          <tr><td style="padding-left:24px">Less: industrial/commercial buildings allowance (initial + annual, §2)</td><td class="num">(X)</td></tr>
+          <tr><td style="padding-left:24px">Less: plant &amp; machinery pool allowance (initial + annual by rate class, §3)</td><td class="num">(X)</td></tr>
+          <tr><td style="padding-left:24px">Less: any 100%/5-year write-offs for qualifying assets (§4–5)</td><td class="num">(X)</td></tr>
+          <tr><td style="padding-left:24px">Add: any balancing charge on disposal (capped at prior allowances granted)</td><td class="num">X</td></tr>
+          <tr><td style="padding-left:24px">Less: any balancing allowance on cessation of a pool/trade</td><td class="num">(X)</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="block" id="sources">
+      <h2>8. Source Documents</h2>
+      <p>CAP112 sections referenced above: ss.33A, 34, 36, 37 (buildings); ss.39B–39E (plant &amp; machinery pooling); ss.16C, 16E, 16EA–16EC, 16F, 16G, 16H–16L (write-off regimes). Consolidated text: <code>Data/CAP112/</code>. Note: Part 6's body text was not fully machine-readable in the currently downloaded PDF extraction — the section numbers/rates above are cross-verified against DIPN 2/5/7/49 (which quote the Ordinance directly) rather than re-derived from a direct CAP112 grep; re-verify against a fresh Cap. 112 download if precision on a specific sub-clause is needed.</p>
+      <p>Core DIPNs for this page (download and save into <code>Data/DIPN/Depreciation-Allowances/</code> — already saved during this build):</p>
+      <ul class="src-list">
+        <li><span class="file">DIPN 2 — Industrial &amp; Commercial Buildings Allowances</span></li>
+        <li><span class="file">DIPN 5 — Technical Education, Refurbishment, Prescribed Fixed Assets, Environmental Protection</span></li>
+        <li><span class="file">DIPN 7 — Machinery &amp; Plant Depreciation Allowances</span></li>
+        <li><span class="file">DIPN 49 — Patent Rights, Know-How and Specified IP Deductions</span></li>
+      </ul>
+      <p style="font-size:13px;color:var(--text-muted)">Cross-reference: PwC Worldwide Tax Summaries — Hong Kong SAR, Corporate — Deductions page (saved copies in <code>Data/PwC/</code>).</p>
+    </section>
+
+    <div class="section-nav">
+      <a href="stamp-duty.html">&larr; Stamp Duty</a>
+      <a href="ird-administration.html">Next: IRD Administration &rarr;</a>
+    </div>
+  </main>
+</div>
+
+<footer class="site-footer">HK Tax Study Hub — internal working document. Verify against the Inland Revenue Ordinance (Cap. 112) and current IRD guidance before relying on any figure for a filing position.</footer>
+
+<script src="../assets/js/data-manifest.js"></script>
+<script>
+  window.PAGE_META = {
+    reviewed: "2026-07-27",
+    sources: ["CAP112", "PwC", "DIPN/Depreciation-Allowances"]
+  };
+</script>
+<script src="../assets/js/freshness.js"></script>
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>

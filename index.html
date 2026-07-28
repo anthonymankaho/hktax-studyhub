@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HK Tax Study Hub</title>
+<link rel="stylesheet" href="assets/css/main.css">
+<style>
+  .hero{max-width:1280px;margin:0 auto;padding:36px 20px 8px}
+  .hero h1{font-size:30px;margin:0 0 6px}
+  .hero p{color:var(--text-muted);max-width:760px;font-size:15px}
+  .hub-wrap{max-width:1280px;margin:0 auto;padding:0 20px 60px}
+  .group-label{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);margin:30px 0 4px}
+  .about-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px 20px;box-shadow:var(--shadow);font-size:13.5px;color:var(--text-muted);margin-top:30px}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <div class="brand">HK Tax Study Hub<small>Internal reference — not for external distribution</small></div>
+    <nav class="site-nav">
+      <a href="index.html" class="active">Hub</a>
+      <a href="pages/transaction-checker.html">Transaction Checker</a>
+      <a href="pages/dipn-index.html">DIPN Index</a>
+      <a href="pages/profits-tax.html">Profits Tax</a>
+      <a href="pages/property-tax.html">Property Tax</a>
+      <a href="pages/salaries-tax.html">Salaries Tax</a>
+      <a href="pages/stamp-duty.html">Stamp Duty</a>
+      <a href="pages/depreciation-allowances.html">Depreciation &amp; Allowances</a>
+      <a href="pages/ird-administration.html">IRD Administration</a>
+    </nav>
+    <button id="theme-toggle" title="Toggle light/dark" style="background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:6px;padding:6px 10px;cursor:pointer;font-size:12px">Theme</button>
+  </div>
+</header>
+
+<div class="hero">
+  <h1>Hong Kong Tax Study Hub</h1>
+  <p>Consolidated internal reference for HK profits/property/salaries tax, stamp duty, and depreciation allowances — built for (1) tax computation and taxable/deductible analysis on Hong Kong incorporated companies' financial statements, and (2) team study with worked illustrations drawn from IRD's Departmental Interpretation &amp; Practice Notes (DIPNs).</p>
+</div>
+
+<div class="hub-wrap">
+
+  <a class="hub-card" href="pages/transaction-checker.html" style="border-left:4px solid var(--brand);display:flex;align-items:center;gap:16px;margin-bottom:6px">
+    <div>
+      <span class="badge badge-common">Application tool</span>
+      <h3 style="margin-top:6px">Transaction Checker &rarr;</h3>
+      <p>Search any transaction by keyword to confirm Taxable / Non-taxable / Deductible / Non-deductible / Dutiable, with the exact section and a link to the full explanation — the working tool for tax computation analysis.</p>
+    </div>
+  </a>
+
+  <a class="hub-card" href="pages/dipn-index.html" style="border-left:4px solid var(--brand);display:flex;align-items:center;gap:16px;margin-bottom:6px">
+    <div>
+      <span class="badge badge-common">Complete archive</span>
+      <h3 style="margin-top:6px">DIPN Index &rarr;</h3>
+      <p>All 73 currently-in-force DIPN/SOIPN/EDOIPN documents, downloaded and catalogued — searchable by number, topic, or keyword, with a brief summary and worked-example flag for each.</p>
+    </div>
+  </a>
+
+  <div class="group-label">Business taxes</div>
+  <div class="hub-grid">
+    <a class="hub-card" href="pages/profits-tax.html">
+      <span class="badge badge-business">Business</span>
+      <h3>Profits Tax</h3>
+      <p>Territorial source principle, two-tiered rates, taxable/non-taxable receipts, deductible/non-deductible expenses, FSIE, Patent Box, computation template.</p>
+    </a>
+    <a class="hub-card" href="pages/property-tax.html">
+      <span class="badge badge-business">Business</span>
+      <h3>Property Tax</h3>
+      <p>Chargeable persons, net assessable value, 20% statutory repair allowance, interaction with profits tax (corporate set-off / exemption).</p>
+    </a>
+    <a class="hub-card" href="pages/stamp-duty.html">
+      <span class="badge badge-business">Business</span>
+      <h3>Stamp Duty</h3>
+      <p>Share transfers, property (AVD/BSD/SSD), leases, partnership admission — including the 2026 amendment ordinance rate changes.</p>
+    </a>
+  </div>
+
+  <div class="group-label">Individual taxes</div>
+  <div class="hub-grid">
+    <a class="hub-card" href="pages/salaries-tax.html">
+      <span class="badge badge-individual">Individual</span>
+      <h3>Salaries Tax</h3>
+      <p>Progressive rates vs. standard rate cap, personal allowances, deduction ceilings, territorial source &amp; 60-day rule, personal assessment election.</p>
+    </a>
+  </div>
+
+  <div class="group-label">Common to all taxes</div>
+  <div class="hub-grid">
+    <a class="hub-card" href="pages/depreciation-allowances.html">
+      <span class="badge badge-common">Common</span>
+      <h3>Depreciation &amp; Allowances</h3>
+      <p>Industrial/commercial buildings allowances, plant &amp; machinery pools, initial/annual/balancing allowances and charges.</p>
+    </a>
+    <a class="hub-card" href="pages/ird-administration.html">
+      <span class="badge badge-common">Common</span>
+      <h3>IRD Administration</h3>
+      <p>Returns &amp; filing, assessment/estimated assessment, objections &amp; appeals, penalties, holdover of provisional tax.</p>
+    </a>
+  </div>
+
+  <div class="about-card">
+    <strong>How this hub stays current:</strong> each page shows a freshness banner comparing its "content reviewed" date
+    against the files in <code>/Data</code>. To update: drop the new CAP112 / DIPN / PwC file into the matching
+    <code>/Data</code> subfolder, run <code>scripts\Refresh-Data-Manifest.bat</code>, reload the page, then ask Claude to
+    re-check the flagged page against the new source. See <code>Data/README.md</code> for the full folder map.
+    Sources referenced: <a href="https://www.ird.gov.hk/eng/ppr/dip.htm" target="_blank" rel="noopener">IRD DIPN index</a>,
+    <a href="https://taxsummaries.pwc.com/hong-kong-sar" target="_blank" rel="noopener">PwC Worldwide Tax Summaries — Hong Kong SAR</a>.
+  </div>
+
+</div>
+
+<footer class="site-footer">HK Tax Study Hub — internal working document. Verify against the Inland Revenue Ordinance (Cap. 112) and current IRD guidance before relying on any figure for a filing position.</footer>
+
+<script src="assets/js/theme.js"></script>
+</body>
+</html>

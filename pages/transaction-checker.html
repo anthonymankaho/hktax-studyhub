@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transaction Checker — HK Tax Study Hub</title>
+<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <div class="brand">HK Tax Study Hub<small>Internal reference — not for external distribution</small></div>
+    <nav class="site-nav">
+      <a href="../index.html">Hub</a>
+      <a href="transaction-checker.html" class="active">Transaction Checker</a>
+      <a href="dipn-index.html">DIPN Index</a>
+      <a href="profits-tax.html">Profits Tax</a>
+      <a href="property-tax.html">Property Tax</a>
+      <a href="salaries-tax.html">Salaries Tax</a>
+      <a href="stamp-duty.html">Stamp Duty</a>
+      <a href="depreciation-allowances.html">Depreciation &amp; Allowances</a>
+      <a href="ird-administration.html">IRD Administration</a>
+    </nav>
+    <button id="theme-toggle" title="Toggle light/dark" style="background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:6px;padding:6px 10px;cursor:pointer;font-size:12px">Theme</button>
+  </div>
+</header>
+
+<div class="shell" style="grid-template-columns:1fr">
+  <main class="content">
+    <div class="page-title">
+      <div>
+        <span class="badge badge-common">Application tool</span>
+        <h1>Transaction Checker</h1>
+        <p class="subtitle">Search a transaction or item by keyword to see whether it is Taxable / Non-taxable / Deductible / Non-deductible / Dutiable, with the exact IRO/SDO section and a link to the full explanation. This is the working tool for tax computation analysis — the topic pages hold the underlying study material.</p>
+      </div>
+    </div>
+
+    <div class="callout tip" style="margin-bottom:4px">
+      <span class="lbl">How to use</span>
+      Type a keyword describing the transaction (e.g. "lease premium", "director fee", "bad debt", "management fee", "donation", "share transfer"). Narrow further with the Tax Type or Status dropdowns. This list is curated from the topic pages — if a transaction isn't here, check the relevant topic page directly, or ask Claude to add it.
+    </div>
+
+    <div class="checker-controls">
+      <input type="search" id="q" placeholder="Search transactions (e.g. &quot;lease premium&quot;, &quot;bad debt&quot;, &quot;home loan interest&quot;)&hellip;" autocomplete="off">
+      <select id="filter-tax" aria-label="Filter by tax type"><option value="">All tax types</option></select>
+      <select id="filter-status" aria-label="Filter by status">
+        <option value="">All statuses</option>
+        <option value="taxable">Taxable</option>
+        <option value="nontaxable">Non-taxable</option>
+        <option value="deductible">Deductible</option>
+        <option value="nondeductible">Non-deductible</option>
+        <option value="dutiable">Dutiable</option>
+        <option value="dutyfree">Duty-free (0%)</option>
+        <option value="allowance">Allowance available</option>
+      </select>
+    </div>
+    <p class="checker-count" id="checker-count"></p>
+
+    <div class="checker-results">
+      <table>
+        <thead><tr><th style="width:120px">Status</th><th style="width:110px">Tax Type</th><th>Transaction / Item</th><th style="width:170px">Section</th><th>Note</th><th style="width:90px"></th></tr></thead>
+        <tbody id="results-body"></tbody>
+      </table>
+      <div class="checker-empty" id="checker-empty" style="display:none">No matching transaction found. Try a different keyword, or check the relevant topic page's full tables directly.</div>
+    </div>
+
+    <div class="callout watch" style="margin-top:24px">
+      <span class="lbl">Scope &amp; limits</span>
+      This tool covers the core items documented across the five topic pages — it is a lookup aid, not a substitute for professional judgement. Real transactions often combine several of these characterisations (e.g. a lease premium touches both Profits Tax and Property Tax) or turn on facts not captured in a one-line description (e.g. badges-of-trade analysis for a "capital vs revenue" asset sale). Always read the full topic-page section and the underlying DIPN/IRO text linked from it before finalising a position.
+    </div>
+
+    <div class="section-nav">
+      <a href="../index.html">&larr; Back to Hub</a>
+      <a href="profits-tax.html">Profits Tax &rarr;</a>
+    </div>
+  </main>
+</div>
+
+<footer class="site-footer">HK Tax Study Hub — internal working document. Verify against the Inland Revenue Ordinance (Cap. 112), the Stamp Duty Ordinance (Cap. 117), and current IRD guidance before relying on any classification for a filing position.</footer>
+
+<script src="../assets/js/transactions-data.js"></script>
+<script src="../assets/js/checker.js"></script>
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>

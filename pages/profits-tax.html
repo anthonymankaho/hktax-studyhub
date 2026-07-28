@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profits Tax — HK Tax Study Hub</title>
+<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <div class="brand">HK Tax Study Hub<small>Internal reference — not for external distribution</small></div>
+    <nav class="site-nav">
+      <a href="../index.html">Hub</a>
+      <a href="transaction-checker.html">Transaction Checker</a>
+      <a href="dipn-index.html">DIPN Index</a>
+      <a href="profits-tax.html" class="active">Profits Tax</a>
+      <a href="property-tax.html">Property Tax</a>
+      <a href="salaries-tax.html">Salaries Tax</a>
+      <a href="stamp-duty.html">Stamp Duty</a>
+      <a href="depreciation-allowances.html">Depreciation &amp; Allowances</a>
+      <a href="ird-administration.html">IRD Administration</a>
+    </nav>
+    <button id="theme-toggle" title="Toggle light/dark" style="background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:6px;padding:6px 10px;cursor:pointer;font-size:12px">Theme</button>
+  </div>
+</header>
+
+<div class="shell">
+  <aside class="toc">
+    <h4>On this page</h4>
+    <a href="#overview">Overview &amp; Charging Basis</a>
+    <a href="#rates">Rates &amp; Recent Changes</a>
+    <a href="#receipts">Taxable / Non-Taxable Receipts</a>
+    <a href="#deductions">Deductible / Non-Deductible Expenses</a>
+    <a href="#basis-losses">Basis Period &amp; Loss Relief</a>
+    <a href="#fsie">Foreign-Sourced Income Exemption</a>
+    <a href="#illustrations">Illustrations</a>
+    <a href="#computation">Computation Template</a>
+    <a href="#sources">Source Documents</a>
+  </aside>
+
+  <main class="content">
+    <div class="page-title">
+      <div>
+        <span class="badge badge-business">Business — Profits Tax</span>
+        <h1>Profits Tax</h1>
+        <p class="subtitle">Inland Revenue Ordinance (Cap. 112), Part 4 — charged on assessable profits arising in or derived from Hong Kong from a trade, profession or business carried on in Hong Kong.</p>
+      </div>
+    </div>
+
+    <div id="freshness-banner" class="freshness"></div>
+    <ul id="freshness-sources" class="src-list" style="display:none;margin-bottom:20px"></ul>
+
+    <section class="block" id="overview">
+      <h2>1. Overview &amp; Charging Basis <span class="sec-ref">IRO s.14</span></h2>
+      <p class="lede">Hong Kong taxes profits on a <strong>territorial source</strong> basis, not on residence. Section 14(1) charges profits tax on <em>every person</em> (including a corporation) carrying on a trade, profession or business in Hong Kong, on assessable profits <strong>arising in or derived from Hong Kong</strong> for that trade/profession/business — profits from the sale of capital assets are expressly excluded from the charge.</p>
+      <div class="callout law">
+        <span class="lbl">Statutory text — s.14(1)</span>
+        "...profits tax shall be charged for each year of assessment on every person carrying on a trade, profession or business in Hong Kong in respect of his assessable profits arising in or derived from Hong Kong for that year from such trade, profession or business (excluding profits arising from the sale of capital assets) as ascertained in accordance with this Part."
+      </div>
+      <p>Three conditions must all be met for a charge to arise: (1) the person carries on a trade, profession or business in Hong Kong; (2) the trade/profession/business produces profits other than from the sale of capital assets; (3) the profits are sourced in Hong Kong. Locality of profits is a question of fact determined by what the taxpayer did to earn the profit and where — see <strong>DIPN 21</strong> (Locality of Profits) for the "broad guiding principle" drawn from <em>Hang Seng Bank</em>, <em>HK-TVB International</em>, <em>Kwong Mile</em>, and other leading cases.</p>
+    </section>
+
+    <section class="block" id="rates">
+      <h2>2. Rates &amp; Recent Changes <span class="sec-ref">Schedule 8B</span></h2>
+      <table>
+        <caption>Two-tiered profits tax rates (from YA 2018/19, current)</caption>
+        <thead><tr><th>Taxpayer type</th><th>First HKD 2,000,000 of assessable profits</th><th>Remainder</th></tr></thead>
+        <tbody>
+          <tr><td>Corporations</td><td class="num">8.25%</td><td class="num">16.5%</td></tr>
+          <tr><td>Unincorporated businesses (sole proprietors / partnerships)</td><td class="num">7.5%</td><td class="num">15%</td></tr>
+        </tbody>
+      </table>
+      <p>Legislated via s.14(2)/(3) referring out to <strong>Schedule 8B</strong> (two-tiered rates) — Schedule 8 sets the flat standard/corporate rate that continues to apply where a group of connected entities has more than one entity in Hong Kong (only <strong>one</strong> connected entity per group may be nominated each year to access the discounted first-tier rate; s.14AAC deals with connected entities generally).</p>
+      <div class="callout watch">
+        <span class="lbl">Recent changes to watch</span>
+        <ul style="margin:4px 0 0 18px;padding:0">
+          <li><strong>Refined FSIE regime</strong> — effective 1 January 2023 (Division 3A of Part 4, added by 17 of 2022) — see §6 below.</li>
+          <li><strong>Patent Box concession</strong> — 5% concessionary rate on qualifying IP income from YA 2023/24 (Inland Revenue (Amendment) (Tax Concessions for Intellectual Property Income) Ordinance 2023).</li>
+          <li><strong>Pillar Two</strong> — Income Inclusion Rule + Hong Kong Minimum Top-up Tax for in-scope MNE groups, effective for fiscal years beginning on/after 1 January 2025.</li>
+          <li><strong>One-off relief</strong> — Inland Revenue (Amendment) Ordinance 2026 (gazetted 22 May 2026): 100% profits tax reduction for YA 2025/26, capped at HKD 3,000 per taxpayer. <em>(Source: PwC Tax Summaries, reviewed 22 Jul 2026 — verify against the gazetted ordinance before relying on this for a filing.)</em></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="block" id="receipts">
+      <h2>3. Taxable / Non-Taxable Receipts <span class="sec-ref">IRO s.15</span></h2>
+      <p>Section 15(1) deems certain sums to be Hong Kong-source trading receipts even though they might not otherwise be so regarded — this closes gaps the general s.14 source test would otherwise leave open (e.g. royalties, hire charges). Combine this with the general case-law source principle (DIPN 21) and the FSIE deeming rule (§6) to classify any receipt.</p>
+      <table>
+        <thead><tr><th style="width:110px">Status</th><th>Receipt</th><th>Basis</th></tr></thead>
+        <tbody>
+          <tr><td><span class="tag tag-taxable">Taxable</span></td><td>Royalties / sums for the use of, or right to use in Hong Kong, any patent, trade mark, copyright, design, secret process/formula or similar IP</td><td>s.15(1)(b)</td></tr>
+          <tr><td><span class="tag tag-taxable">Taxable</span></td><td>Sums for use outside Hong Kong of IP where the payer claimed a Hong Kong deduction for the payment</td><td>s.15(1)(ba)</td></tr>
+          <tr><td><span class="tag tag-taxable">Taxable</span></td><td>Grants, subsidies or similar financial assistance connected with carrying on the HK trade/business (other than towards capital expenditure)</td><td>s.15(1)(c)</td></tr>
+          <tr><td><span class="tag tag-taxable">Taxable</span></td><td>Hire, rental or similar charges for use of movable property in Hong Kong</td><td>s.15(1)(d)</td></tr>
+          <tr><td><span class="tag tag-taxable">Taxable</span></td><td>Interest derived from Hong Kong received by a <em>corporation</em> carrying on a HK trade/business</td><td>s.15(1)(f)</td></tr>
+          <tr><td><span class="tag tag-taxable">Taxable</span></td><td>Sums from exhibition/use in HK of film, tape, sound recording or related advertising material</td><td>s.15(1)(a)</td></tr>
+          <tr><td><span class="tag tag-nontaxable">Non-taxable</span></td><td>Profits from the sale of capital assets</td><td>s.14(1) (excluded from the charge)</td></tr>
+          <tr><td><span class="tag tag-nontaxable">Non-taxable</span></td><td>Interest on a Hong Kong bank deposit earned by a person other than a financial institution</td><td>Exemption from Profits Tax (Interest Income) Order 1998 — see DIPN 34; lost if the deposit secures a loan whose interest is tax-deductible (no partial exemption)</td></tr>
+          <tr><td><span class="tag tag-nontaxable">Non-taxable</span></td><td>Specified foreign-sourced income that satisfies the FSIE economic substance / nexus / participation conditions</td><td>Division 3A, Part 4 (s.15H onward) — see §6</td></tr>
+          <tr><td><span class="tag tag-taxable">Taxable (deemed)</span></td><td>Specified foreign-sourced income (interest, dividends, IP income, disposal gains on equity interests) that <em>fails</em> the FSIE conditions</td><td>s.15I — deemed to arise in/derive from Hong Kong</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="block" id="deductions">
+      <h2>4. Deductible / Non-Deductible Expenses <span class="sec-ref">IRO ss.16–17</span></h2>
+      <p>The general test (s.16(1)) is that outgoings and expenses are deductible <strong>to the extent</strong> incurred in the basis period in the production of chargeable profits (the "Ronpibon Tin" apportionment principle — see DIPN 3 for apportioning mixed-purpose expenses). Section 17 then carves out specific exclusions even where the general test would otherwise be met.</p>
+      <table>
+        <thead><tr><th style="width:130px">Status</th><th>Item</th><th>Basis / conditions</th></tr></thead>
+        <tbody>
+          <tr><td><span class="tag tag-deductible">Deductible</span></td><td>Interest on money borrowed for producing chargeable profits, plus related legal/procuration fees and stamp duty</td><td>s.16(1)(a), subject to the anti-avoidance conditions in s.16(2)–(2C) (see DIPN 13A)</td></tr>
+          <tr><td><span class="tag tag-deductible">Deductible</span></td><td>Rent paid for land/buildings used to produce chargeable profits (capped at assessable value if paid to a related party)</td><td>s.16(1)(b)</td></tr>
+          <tr><td><span class="tag tag-deductible">Deductible</span></td><td>Foreign tax of substantially the same nature as HK tax, paid on income also chargeable under s.15(1)(f)/(g)/(i)–(lb)</td><td>s.16(1)(c)/(ca), restricted by s.16(2J) where a DTA already gives s.50 credit relief (see DIPN 28)</td></tr>
+          <tr><td><span class="tag tag-deductible">Deductible</span></td><td>Bad debts written off, and doubtful debts to the extent estimated bad, if previously included as a trading receipt</td><td>s.16(1)(d)</td></tr>
+          <tr><td><span class="tag tag-deductible">Deductible</span></td><td>R&amp;D expenditure (enhanced deduction for qualifying Type B expenditure)</td><td>s.16B</td></tr>
+          <tr><td><span class="tag tag-deductible">Deductible</span></td><td>Capital expenditure on patents / know-how rights (one-off, no spreading)</td><td>s.16E — see DIPN 49</td></tr>
+          <tr><td><span class="tag tag-deductible">Deductible</span></td><td>Capital expenditure on "Specified IP Rights" (copyright, registered trade marks/designs, plant variety rights) — spread over 5 years</td><td>ss.16EA–16EC — see DIPN 49</td></tr>
+          <tr><td><span class="tag tag-deductible">Deductible</span></td><td>Capital expenditure on "prescribed fixed assets" (manufacturing plant, computer hardware/software) — 100% one-off</td><td>s.16G — see DIPN 5</td></tr>
+          <tr><td><span class="tag tag-nondeductible">Non-deductible</span></td><td>Domestic or private expenses (incl. home-to-office travel; MPF contributions in the person's own capacity as scheme member)</td><td>s.17(1)(a)</td></tr>
+          <tr><td><span class="tag tag-nondeductible">Non-deductible</span></td><td>Any disbursement or expense not incurred for the purpose of producing the chargeable profits</td><td>s.17(1)(b)</td></tr>
+          <tr><td><span class="tag tag-nondeductible">Non-deductible</span></td><td>Capital expenditure, or any loss or withdrawal of capital</td><td>s.17(1)(c)</td></tr>
+          <tr><td><span class="tag tag-nondeductible">Non-deductible</span></td><td>Cost of improvements (as opposed to repairs)</td><td>s.17(1)(d)</td></tr>
+          <tr><td><span class="tag tag-nondeductible">Non-deductible</span></td><td>Sums recoverable under insurance or an indemnity contract</td><td>s.17(1)(e)</td></tr>
+          <tr><td><span class="tag tag-nondeductible">Non-deductible</span></td><td>Rent/expenses for premises not occupied or used to produce the chargeable profits</td><td>s.17(1)(f)</td></tr>
+          <tr><td><span class="tag tag-nondeductible">Non-deductible</span></td><td>Tax paid under the IRO itself (property tax not set off, profits tax) — except salaries tax paid on employees' remuneration</td><td>s.17(1)(g)</td></tr>
+          <tr><td><span class="tag tag-nondeductible">Non-deductible</span></td><td>Employer retirement-scheme contributions (ORSO/MPF) in excess of 15% of the employee's total emoluments for the period</td><td>s.17(1)(h)/(i)</td></tr>
+          <tr><td><span class="tag tag-nondeductible">Non-deductible</span></td><td>Management fee paid to a related "Type II" service company in excess of cost plus a 12.5% mark-up</td><td>DIPN 24 minimum-requirements test (administrative practice, not a numbered section)</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="block" id="basis-losses">
+      <h2>5. Basis Period &amp; Loss Relief <span class="sec-ref">IRO ss.18, 18C, 19C</span></h2>
+      <p>Assessable profits are normally computed on the accounting year ending within the year preceding the year of assessment (s.18(1)). Where a business commences or ceases partway through a year, ss.18C–18H set special opening/closing basis periods. Trading losses are carried forward indefinitely and set off against future assessable profits from the <em>same source</em> (s.19C) — there is no time limit, but no carry-back and no group relief between separate legal entities in Hong Kong (each company is assessed on its own profits).</p>
+      <p>Where a taxpayer has both "normal" and "concessionary rate" trading receipts (e.g. under a qualifying debt instrument or reinsurance concession), s.19CA/19CB impose a cross-set-off formula using a statutory adjustment factor rather than a straight one-for-one offset — see DIPN 8.</p>
+    </section>
+
+    <section class="block" id="fsie">
+      <h2>6. Foreign-Sourced Income Exemption (FSIE) <span class="sec-ref">Part 4, Division 3A</span></h2>
+      <p>Division 3A (ss.15H onward, added by the Inland Revenue (Amendment) (Taxation on Specified Foreign-sourced Income) Ordinance 2022, effective 1 January 2023) deems specified categories of foreign-sourced income — interest, dividends, disposal gains on equity interests, and IP income — received in Hong Kong by an MNE entity to be Hong Kong-sourced <strong>unless</strong> the entity meets an economic substance requirement (for interest/dividends/disposal gains) or complies with the nexus approach (for IP income), or qualifies for the participation exemption (for dividends/disposal gains on substantial equity interests).</p>
+      <div class="callout law">
+        <span class="lbl">Practical effect</span>
+        A Hong Kong holding or treasury company receiving offshore dividends, interest, or IP royalties that would otherwise be treated as offshore (non-taxable) under the ordinary source principle may now be taxed on that income unless it can document adequate economic substance in Hong Kong or a qualifying participation/nexus position. This is a common trap in tax computations for group treasury/holding entities — always check FSIE before treating offshore passive income as automatically non-taxable.
+      </div>
+    </section>
+
+    <section class="block" id="illustrations">
+      <h2>7. Illustrations</h2>
+      <p>11 worked illustrations back this page — DIPN-sourced (lease premiums, interest deduction restrictions, service company fee caps, foreign tax deductibility, bank interest exemption, prepaid expenses) plus Module 9 textbook examples (basis periods, loss relief, secured loan/interest flow-back tests), all cross-checked against current law.</p>
+
+      <div class="illustration">
+        <div class="lbl">Illustration — Interest deduction restricted by a tax-free secured deposit <span class="src">DIPN 13A</span></div>
+        <p>Taxpayer F borrows $1,000,000 at 5% interest, secured by a $1,000,000 deposit earning tax-exempt interest at 4%. Because the loan is secured on a deposit generating tax-free income, s.16(2A)/(2B) restrict the deduction: the $40,000 tax-free interest earned reduces the otherwise-deductible $50,000 loan interest, leaving only <strong>$10,000</strong> deductible.</p>
+      </div>
+
+      <div class="callout tip" style="text-align:center">
+        <a href="profits-tax-illustrations.html" style="font-weight:700">View all 11 worked illustrations (DIPN + Module 9 textbook) &rarr;</a>
+      </div>
+    </section>
+
+    <section class="block" id="computation">
+      <h2>8. Computation Template</h2>
+      <p>A standard working proforma for converting accounting profit into assessable profits for a Hong Kong company:</p>
+      <table>
+        <tbody>
+          <tr><th style="width:60%">Net profit per audited financial statements</th><td class="num">X</td></tr>
+          <tr><td style="padding-left:24px">Add: Depreciation charged per accounts</td><td class="num">X</td></tr>
+          <tr><td style="padding-left:24px">Add: Non-deductible expenses (s.17 items — capital expenditure, domestic/private expenses, excess retirement contributions, disallowed provisions, etc.)</td><td class="num">X</td></tr>
+          <tr><td style="padding-left:24px">Less: Non-taxable income credited in the accounts (capital gains, FSIE-exempt offshore income, exempt bank interest)</td><td class="num">(X)</td></tr>
+          <tr><td style="padding-left:24px">Less: Depreciation allowances per Part 6 (industrial/commercial buildings, plant &amp; machinery pools — see the Depreciation &amp; Allowances page)</td><td class="num">(X)</td></tr>
+          <tr><th>Assessable profits</th><td class="num"><strong>X</strong></td></tr>
+          <tr><td style="padding-left:24px">Less: Losses brought forward (s.19C)</td><td class="num">(X)</td></tr>
+          <tr><th>Net assessable profits (charged at two-tiered rates — §2)</th><td class="num"><strong>X</strong></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="block" id="sources">
+      <h2>9. Source Documents</h2>
+      <p>CAP112 sections referenced above: s.14, s.14AAC, s.15 (incl. Division 3A ss.15H–15R FSIE), s.16 (incl. 16A–16G), s.17, s.18/18C, s.19C. Consolidated text: <code>Data/CAP112/</code>.</p>
+      <p>Core DIPNs for this page (download from the IRD DIPN index and save into <code>Data/DIPN/Profits-Tax/</code> — see checklist in that folder):</p>
+      <ul class="src-list">
+        <li><span class="file">DIPN 1 — Profits Tax: Computing Assessable Profits / Revenue Recognition (HKFRS 15) / Measurement of Inventories</span></li>
+        <li><span class="file">DIPN 3 — Apportionment of Expenses</span></li>
+        <li><span class="file">DIPN 4 — Lease Premiums, Non-Returnable Deposits, Key/Tea Money, Construction Fees</span></li>
+        <li><span class="file">DIPN 8 — Losses</span></li>
+        <li><span class="file">DIPN 13 / 13A — Taxation of Interest Received / Deductibility of Interest Expense</span></li>
+        <li><span class="file">DIPN 15 — Loss Relief Limitation, Leasing, GAAR, Loss Companies</span></li>
+        <li><span class="file">DIPN 21 — Locality of Profits</span></li>
+        <li><span class="file">DIPN 24 — Service Company "Type II" Arrangements</span></li>
+        <li><span class="file">DIPN 28 — Deduction of Foreign Taxes</span></li>
+        <li><span class="file">DIPN 34 — Exemption from Profits Tax (Interest Income) Order 1998</span></li>
+        <li><span class="file">DIPN 39 — Digital Economy, E-Commerce and Digital Assets</span></li>
+        <li><span class="file">DIPN 40 — Prepaid or Deferred Revenue Expenses</span></li>
+        <li><span class="file">DIPN 42 — Taxation of Financial Instruments &amp; Foreign Exchange Differences</span></li>
+        <li><span class="file">DIPN 49 — Deduction of Capital Expenditure on Patent Rights, Know-how and Specified IP</span></li>
+      </ul>
+      <p style="font-size:13px;color:var(--text-muted)">Cross-reference: PwC Worldwide Tax Summaries — Hong Kong SAR, Corporate tax pages (saved copies in <code>Data/PwC/</code>).</p>
+    </section>
+
+    <div class="section-nav">
+      <a href="../index.html">&larr; Back to Hub</a>
+      <a href="property-tax.html">Next: Property Tax &rarr;</a>
+    </div>
+  </main>
+</div>
+
+<footer class="site-footer">HK Tax Study Hub — internal working document. Verify against the Inland Revenue Ordinance (Cap. 112) and current IRD guidance before relying on any figure for a filing position.</footer>
+
+<script src="../assets/js/data-manifest.js"></script>
+<script>
+  window.PAGE_META = {
+    reviewed: "2026-07-27",
+    sources: ["CAP112", "PwC", "DIPN/Profits-Tax"]
+  };
+</script>
+<script src="../assets/js/freshness.js"></script>
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>

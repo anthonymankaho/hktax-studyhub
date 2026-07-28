@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stamp Duty — HK Tax Study Hub</title>
+<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <div class="brand">HK Tax Study Hub<small>Internal reference — not for external distribution</small></div>
+    <nav class="site-nav">
+      <a href="../index.html">Hub</a>
+      <a href="transaction-checker.html">Transaction Checker</a>
+      <a href="dipn-index.html">DIPN Index</a>
+      <a href="profits-tax.html">Profits Tax</a>
+      <a href="property-tax.html">Property Tax</a>
+      <a href="salaries-tax.html">Salaries Tax</a>
+      <a href="stamp-duty.html" class="active">Stamp Duty</a>
+      <a href="depreciation-allowances.html">Depreciation &amp; Allowances</a>
+      <a href="ird-administration.html">IRD Administration</a>
+    </nav>
+    <button id="theme-toggle" title="Toggle light/dark" style="background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:6px;padding:6px 10px;cursor:pointer;font-size:12px">Theme</button>
+  </div>
+</header>
+
+<div class="shell">
+  <aside class="toc">
+    <h4>On this page</h4>
+    <a href="#overview">Overview</a>
+    <a href="#shares">Share Transfers</a>
+    <a href="#agreements">Conveyances &amp; Agreements</a>
+    <a href="#property">Property Transfers (AVD)</a>
+    <a href="#bsd-ssd">BSD &amp; SSD</a>
+    <a href="#leases">Leases</a>
+    <a href="#reliefs">Reliefs</a>
+    <a href="#admission">Partnership Admission</a>
+    <a href="#illustrations">Illustrations</a>
+    <a href="#sources">Source Documents</a>
+  </aside>
+
+  <main class="content">
+    <div class="page-title">
+      <div>
+        <span class="badge badge-business">Business — Stamp Duty</span>
+        <h1>Stamp Duty</h1>
+        <p class="subtitle">Stamp Duty Ordinance (Cap. 117) — a <em>separate</em> ordinance from the Inland Revenue Ordinance. Charged on share transfers, immovable property transactions, and leases.</p>
+      </div>
+    </div>
+
+    <div id="freshness-banner" class="freshness"></div>
+    <ul id="freshness-sources" class="src-list" style="display:none;margin-bottom:20px"></ul>
+
+    <div class="callout law" style="margin-bottom:20px">
+      <span class="lbl">Source note</span>
+      Stamp duty sits in the <strong>Stamp Duty Ordinance (Cap. 117)</strong>, not Cap. 112 — the consolidated Cap. 117 text (current to 26 Feb 2026) is saved in <code>Data/CAP117/</code>. Section numbers below have been cross-checked directly against that text; where earlier SOIPN-based drafting of this page used outdated numbering or a superseded rate structure (notably the old flat-15% description of AVD Scale 1), it has been corrected below.
+    </div>
+
+    <section class="block" id="overview">
+      <h2>1. Overview</h2>
+      <p class="lede">Stamp duty is a transaction tax, not an income tax — it is charged on specific categories of <strong>instruments</strong> (documents), not on profit. The three main heads for a Hong Kong company are: (1) Hong Kong stock transfers, (2) immovable property conveyances/agreements, and (3) leases. Hong Kong has <strong>no</strong> capital gains tax, estate duty, gift tax, or VAT — stamp duty is the main transaction-based levy filling that gap.</p>
+      <div class="callout watch">
+        <span class="lbl">2026 amendment</span>
+        Stamp Duty (Amendment) Ordinance 2026 (gazetted 29 May 2026, effective retrospectively from 26 February 2026) revised the residential/non-residential AVD rate bands — figures below reflect the post-26-Feb-2026 rates per PwC (reviewed 22 Jul 2026). Verify against the gazetted schedule before relying on a specific banding for a transaction.
+      </div>
+    </section>
+
+    <section class="block" id="shares">
+      <h2>2. Share Transfers <span class="sec-ref">SDO s.19 (contract notes), First Schedule Head 2(1)</span></h2>
+      <table>
+        <tbody><tr><td>Ad valorem duty on transfer of Hong Kong stock</td><td class="num">0.2% of consideration or market value, whichever is higher (split 0.1% buyer / 0.1% seller, plus a small fixed contract note duty)</td></tr></tbody>
+      </table>
+      <p>Contract notes are charged under s.19 (First Schedule Head 2(1)); s.21 prohibits stock being passed through without duty on the intervening step, s.22 covers consideration paid in stock/securities, and s.23 covers periodical-payment consideration. <strong>s.20 (formerly a related contract-note provision) has been repealed</strong> (33 of 2024 s.5) — do not cite it. Reliefs exist for stock borrowing/lending transactions (s.19(11) excludes a stock borrowing/return from the charge; s.19(12A) sets the borrower's return conditions; registration fee currently $270, must register within 30 days) and for intra-group ("associated companies") transfers under <strong>s.45</strong> (§6 covers this in more detail) — see SOIPN 2.</p>
+    </section>
+
+    <section class="block" id="agreements">
+      <h2>2A. Conveyances &amp; Agreements for Sale — Charging Mechanics <span class="sec-ref">SDO s.4, Part IIIA (ss.29A–29DV)</span></h2>
+      <p>The general charge is s.4 ("Charging of, liability for, and recovery of stamp duty") read together with the <strong>First Schedule</strong>, which sets out each "Head of charge" and its rate. For immovable property, Part IIIA (originally ss.29A–29I, now expanded to ss.29A–29DV across 7 Divisions covering interpretation, conveyances, agreements for sale, refunds, and the AVD scale machinery) supplies the detailed mechanics — including the provisional/formal agreement stamping rules illustrated in DIPN/SOIPN 1 below.</p>
+    </section>
+
+    <section class="block" id="property">
+      <h2>3. Property Transfers — Ad Valorem Duty (AVD) <span class="sec-ref">First Schedule Head 1(1)/(1A); ss.29AI, 29AJ, 29AK</span></h2>
+      <div class="callout watch">
+        <span class="lbl">Correction vs. common assumption</span>
+        AVD Scale 1 is <strong>not</strong> a flat 15% on residential property. The flat-15% Scale 1 that applied from 5 Nov 2016 was superseded by a 2023 reform that made Scale 1 a <em>graduated</em> table matching Scale 2's bands (top rate 4.25%) — the only remaining difference is a new top band the <strong>Stamp Duty (Amendment) Ordinance 2026</strong> added above ~$109.57M (see below). If your prior understanding was "flat 15% for non-HKPR/company buyers," that is now out of date except at the very top of the market.
+      </div>
+      <p>AVD has three rate tables, all graduated (not flat), all sharing the same lower bands:</p>
+      <table>
+        <thead><tr><th>Scale</th><th>Applies to</th><th class="num">Top rate</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Scale 1</strong> (First Schedule Head 1(1)/(1A), default table — s.29AI)</td><td>Residential property, buyer not qualifying for the Scale 2 concession (incl. companies, non-HKPRs)</td><td class="num">4.25% up to $100,000,000; a transitional band charging $4,250,000 + 30% of the excess from $100,000,000–$109,574,470; <strong>6.5% flat</strong> above $109,574,470 (new top bands added by the Stamp Duty (Amendment) Ordinance 2026, s.14)</td></tr>
+          <tr><td><strong>Scale 2</strong> (s.29AJ concession)</td><td>Hong Kong Permanent Resident buying their sole residential property, or a qualifying closely-related-person reassignment</td><td class="num">4.25% — unchanged by the 2026 amendment</td></tr>
+          <tr><td><strong>Scale 3</strong> (s.29AI(b) default for non-residential; also s.29AK for a car park bought alongside a Scale-2 residential purchase)</td><td>Non-residential property</td><td class="num">4.25% — unchanged by the 2026 amendment</td></tr>
+        </tbody>
+      </table>
+      <p>All three scales start at a flat $100 for low-value transactions and climb through the same intermediate bands (1.5% / 2.25% / 3% / 3.75%) before reaching their respective top rate. Duty is charged on consideration or market value, whichever is higher. "Closely related persons" (for Scale 2 eligibility and for the close-relative exemptions on BSD/SSD) is defined at <strong>s.29AD</strong> — broadly parent/spouse/child/sibling. Reliefs: replacement of a sole residential property (refund window), exchange/partition ("equality money" only), court orders, mortgagee sales, associated-company transfers under s.45 (§6) — see SOIPN 8, though note SOIPN 8 (Nov 2018) predates the 2023 Scale 1 reform and the 2026 amendment.</p>
+    </section>
+
+    <section class="block" id="bsd-ssd">
+      <h2>4. Buyer's Stamp Duty (BSD) &amp; Special Stamp Duty (SSD) <span class="sec-ref">First Schedule Head 1(1AAB)/(1C) [BSD]; Head 1(1AA) [SSD]</span></h2>
+      <div class="callout watch">
+        <span class="lbl">Correction vs. common assumption</span>
+        There is no "Part IIIAA" or "Part IVA" for BSD/SSD in the current ordinance structure — Part IVA is actually the unrelated Unit Trusts/Open-ended Fund Companies part (ss.37A–41). BSD and SSD are instead defined as separate <strong>Heads of charge</strong> in the First Schedule, cross-referenced from Part IIIA.
+      </div>
+      <table>
+        <thead><tr><th>Duty</th><th>Applies to</th><th class="num">Rate</th></tr></thead>
+        <tbody>
+          <tr><td>Buyer's Stamp Duty (BSD) — Head 1(1AAB) conveyance / Head 1(1C) agreement for sale</td><td>Residential property acquired by a non-HKPR (companies are always treated as non-HKPR); subject to ss.29C, 29CB, 29CC</td><td class="num">0% — reduced from 15% in stages (L.N. 148 of 2023; 3 of 2024 s.14; L.N. 26 of 2024; 8 of 2024 s.6)</td></tr>
+          <tr><td>Special Stamp Duty (SSD) — Head 1(1AA), Part 4 (property disposed of on/after 28 Feb 2024)</td><td>Residential property resold within the holding-period window; subject to ss.29D, 29DA</td><td class="num">0% — reduced from up to 20% (L.N. 26 of 2024; 8 of 2024 s.6)</td></tr>
+        </tbody>
+      </table>
+      <div class="callout tip">
+        <span class="lbl">Note</span>
+        BSD and SSD remain fully defined in the First Schedule with their mechanics unchanged (liable party, timing, holding-period tiers for SSD) — only the <em>rate</em> was reduced to 0% as a market-support measure from 28 February 2024. Head 1(1AA)'s historical Parts 1–3 are preserved verbatim for legacy holding-period windows still being assessed (20 Nov 2010–27 Oct 2012 at 15/10/5%; 27 Oct 2012–25 Oct 2023 and 25 Oct 2023–28 Feb 2024, both at 20/15/10%) — relevant only if assessing an old disposal that hasn't yet been finalised. Both duties could in principle be reactivated at a non-zero rate by future amendment — see SOIPN 5 (SSD) and SOIPN 7 (BSD), noting both predate the current 0% rate and Head numbering nuances above.
+      </div>
+    </section>
+
+    <section class="block" id="leases">
+      <h2>5. Leases <span class="sec-ref">SDO Head 1(2)</span></h2>
+      <table>
+        <thead><tr><th>Lease term</th><th class="num">Duty</th></tr></thead>
+        <tbody>
+          <tr><td>Not defined or uncertain / ≤ 1 year</td><td class="num">0.25% of average annual rent (plus any premium, taxed as a sale)</td></tr>
+          <tr><td>Between 1 and 3 years</td><td class="num">0.5% of average annual rent</td></tr>
+          <tr><td>Over 3 years</td><td class="num">1% of average annual rent</td></tr>
+        </tbody>
+      </table>
+      <p>A premium paid for a lease is chargeable as if it were a sale consideration, separately from the rent-based duty above — see the interaction with Property Tax/Profits Tax premium-spreading rules on the Property Tax page.</p>
+    </section>
+
+    <section class="block" id="reliefs">
+      <h2>6. Reliefs <span class="sec-ref">SDO s.45; s.29AD</span></h2>
+      <p><strong>Associated bodies corporate relief (s.45)</strong> — relieves a conveyance from one associated body corporate to another from AVD, SSD, BSD, and HK-stock contract-note duty (it spans Heads 1(1), 1(1AA), 1(1AAB), 2(1) and 2(3)), where a ≥90% common-ownership test is met. A clawback applies under s.45(5A) if the ≥90% association ceases within 2 years of the relieved conveyance.</p>
+      <p><strong>Closely related persons (s.29AD)</strong> — defines the parent/spouse/child/sibling relationships that qualify for the Scale 2 AVD concession (§3) and are also picked up by the close-relative exemption notes applied to the BSD/SSD sub-heads (co-purchasers who are closely related are treated as "the same person" for ownership-counting purposes).</p>
+    </section>
+
+    <section class="block" id="admission">
+      <h2>7. Partnership Admission &amp; Retirement</h2>
+      <p>Where a partner is admitted to, or retires from, a partnership that holds Hong Kong stock or immovable property, the change in each partner's proportionate interest can itself be a chargeable "sale and purchase" of the underlying property/stock for stamp duty purposes (the incoming/continuing partners are treated as acquiring the outgoing/diluted partners' fractional interest). This is assessed using the same AVD/stock-transfer rules above, applied to the fractional interest that changes hands — always check partnership deeds and capital-account movements for a hidden stamp duty trigger whenever partners change.</p>
+    </section>
+
+    <section class="block" id="illustrations">
+      <h2>8. Illustrations</h2>
+      <p>10 worked illustrations back this page — SOIPN-sourced (agreement timing, AVD/SSD/BSD mechanics) plus Module 9 textbook examples. This is the topic needing the <strong>most</strong> correction: both source books predate the 2023 AVD Scale 1 reform and/or the 2024 BSD/SSD rate cut, so most headline rates in the older material are wrong — corrected figures are shown alongside the originals throughout.</p>
+
+      <div class="illustration">
+        <div class="lbl">Illustration — Current graduated Scale 1 vs. Scale 2 <span class="src">Corrected from Cap. 117 First Schedule, post-2026 amendment</span></div>
+        <p>A $13,000,000 residential property bought by a non-HKPR (or corporate) buyer with no Scale 2 concession available: Scale 1 is graduated exactly like Scale 2 at this value band (3.75%), giving <strong>$487,500</strong> — not a flat-15% $1,950,000 as older material describes. The two scales only diverge for a single residential property with consideration <strong>above $100,000,000</strong>, where the 2026 amendment gives Scale 1 a new 6.5% flat top band that Scale 2 does not get.</p>
+      </div>
+
+      <div class="callout tip" style="text-align:center">
+        <a href="stamp-duty-illustrations.html" style="font-weight:700">View all 10 worked illustrations (SOIPN + Module 9 textbook) &rarr;</a>
+      </div>
+    </section>
+
+    <section class="block" id="sources">
+      <h2>9. Source Documents</h2>
+      <p>Primary legislation: <strong>Stamp Duty Ordinance (Cap. 117)</strong>, consolidated version current to 26 Feb 2026 — saved in <code>Data/CAP117/</code>. Sections referenced above: s.4, First Schedule Head 1(1)/(1A)/(1AA)/(1AAB)/(1C)/2(1), s.19, ss.19(11)/(12A)/(1E), ss.21–24, Part IIIA (ss.29A–29DV, incl. ss.29AD, 29AI, 29AJ, 29AK, 29C/29CB/29CC, 29D/29DA), s.45.</p>
+      <div class="callout tip">
+        <span class="lbl">Note on this correction</span>
+        The SOIPNs below remain useful for mechanics and worked examples (timing rules, apportionment logic, relief conditions), but several were issued before the 2023 AVD Scale 1 reform and the 2026 amendment — cross-check any rate or Head/Part number they cite against the current Cap. 117 text in <code>Data/CAP117/</code> rather than relying on the SOIPN's own numbering.
+      </div>
+      <p>Core SOIPNs/DIPN for this page (download and save into <code>Data/DIPN/Stamp-Duty/</code>):</p>
+      <ul class="src-list">
+        <li><span class="file">SOIPN 1 — Stamping of Agreements for Sale and Purchase of Immovable Property</span></li>
+        <li><span class="file">SOIPN 2 — Relief for Stock Borrowing and Lending Transactions</span></li>
+        <li><span class="file">SOIPN 5 — Special Stamp Duty (SSD)</span></li>
+        <li><span class="file">SOIPN 7 — Buyer's Stamp Duty (BSD)</span></li>
+        <li><span class="file">SOIPN 8 — Ad Valorem Stamp Duty (AVD)</span></li>
+        <li><span class="file">DIPN 4 — Lease Premiums etc. (shared with Profits/Property Tax)</span></li>
+      </ul>
+      <p style="font-size:13px;color:var(--text-muted)">Cross-reference: PwC Worldwide Tax Summaries — Hong Kong SAR, Corporate/Individual — Other Taxes pages (saved copies in <code>Data/PwC/</code>).</p>
+    </section>
+
+    <div class="section-nav">
+      <a href="salaries-tax.html">&larr; Salaries Tax</a>
+      <a href="depreciation-allowances.html">Next: Depreciation &amp; Allowances &rarr;</a>
+    </div>
+  </main>
+</div>
+
+<footer class="site-footer">HK Tax Study Hub — internal working document. Verify against the Stamp Duty Ordinance (Cap. 117) and current IRD guidance before relying on any figure for a filing position.</footer>
+
+<script src="../assets/js/data-manifest.js"></script>
+<script>
+  window.PAGE_META = {
+    reviewed: "2026-07-27",
+    sources: ["CAP117", "PwC", "DIPN/Stamp-Duty"]
+  };
+</script>
+<script src="../assets/js/freshness.js"></script>
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>

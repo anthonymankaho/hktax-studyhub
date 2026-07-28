@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salaries Tax — HK Tax Study Hub</title>
+<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <div class="brand">HK Tax Study Hub<small>Internal reference — not for external distribution</small></div>
+    <nav class="site-nav">
+      <a href="../index.html">Hub</a>
+      <a href="transaction-checker.html">Transaction Checker</a>
+      <a href="dipn-index.html">DIPN Index</a>
+      <a href="profits-tax.html">Profits Tax</a>
+      <a href="property-tax.html">Property Tax</a>
+      <a href="salaries-tax.html" class="active">Salaries Tax</a>
+      <a href="stamp-duty.html">Stamp Duty</a>
+      <a href="depreciation-allowances.html">Depreciation &amp; Allowances</a>
+      <a href="ird-administration.html">IRD Administration</a>
+    </nav>
+    <button id="theme-toggle" title="Toggle light/dark" style="background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:6px;padding:6px 10px;cursor:pointer;font-size:12px">Theme</button>
+  </div>
+</header>
+
+<div class="shell">
+  <aside class="toc">
+    <h4>On this page</h4>
+    <a href="#overview">Overview &amp; Charging Basis</a>
+    <a href="#rates">Rates &amp; Standard Rate Cap</a>
+    <a href="#receipts">Taxable / Non-Taxable Income</a>
+    <a href="#deductions">Deductible / Non-Deductible Items</a>
+    <a href="#allowances">Personal Allowances</a>
+    <a href="#pa">Personal Assessment</a>
+    <a href="#illustrations">Illustrations</a>
+    <a href="#computation">Computation Template</a>
+    <a href="#sources">Source Documents</a>
+  </aside>
+
+  <main class="content">
+    <div class="page-title">
+      <div>
+        <span class="badge badge-individual">Individual — Salaries Tax</span>
+        <h1>Salaries Tax</h1>
+        <p class="subtitle">Inland Revenue Ordinance (Cap. 112), Part 3 — charged on Hong Kong-source income from an office, employment of profit, or pension.</p>
+      </div>
+    </div>
+
+    <div id="freshness-banner" class="freshness"></div>
+    <ul id="freshness-sources" class="src-list" style="display:none;margin-bottom:20px"></ul>
+
+    <section class="block" id="overview">
+      <h2>1. Overview &amp; Charging Basis <span class="sec-ref">IRO s.8</span></h2>
+      <p class="lede">Salaries tax is charged on income <strong>arising in or derived from Hong Kong</strong> from an office, employment of profit, or pension (s.8(1)) — again a territorial-source tax, not a residence-based one. Whether employment income is "Hong Kong employment" or "non-Hong Kong employment" is decided on the "totality of facts" test from <em>Goepfert</em> — the three key factors are: (1) where the employment contract was negotiated and is enforceable, (2) the residence of the employer, and (3) where the employee's remuneration is paid (see DIPN 10).</p>
+      <div class="callout law">
+        <span class="lbl">The 60-day rule — s.8(1A)(b)/(1B)</span>
+        Income from services rendered wholly outside Hong Kong by a person not employed by the Government (and not ship/aircraft crew) is excluded from the charge — <em>unless</em> the person visited Hong Kong for more than 60 days in the basis period, in which case services rendered during those visits are brought back into charge.
+      </div>
+      <p>Directors' fees from a Hong Kong resident company are always Hong Kong-sourced regardless of where the director renders services. Income taxed in a DTA territory that gives a s.50 credit is excluded from the s.8(1A)(c) exemption route (must use the credit mechanism instead, not double relief).</p>
+    </section>
+
+    <section class="block" id="rates">
+      <h2>2. Rates &amp; Standard Rate Cap <span class="sec-ref">IRO s.13, Schedule 2</span></h2>
+      <table>
+        <caption>Progressive rates on net chargeable income (2025/26 and continuing into 2026/27 basis) — Schedule 2</caption>
+        <thead><tr><th>Band</th><th class="num">Rate</th></tr></thead>
+        <tbody>
+          <tr><td>First HKD 50,000</td><td class="num">2%</td></tr>
+          <tr><td>Next HKD 50,000 (50,001–100,000)</td><td class="num">6%</td></tr>
+          <tr><td>Next HKD 50,000 (100,001–150,000)</td><td class="num">10%</td></tr>
+          <tr><td>Next HKD 50,000 (150,001–200,000)</td><td class="num">14%</td></tr>
+          <tr><td>Remainder (above 200,000)</td><td class="num">17%</td></tr>
+        </tbody>
+      </table>
+      <p>Under s.13, tax computed progressively on net chargeable income (i.e. after allowances) is <strong>capped</strong> at a standard-rate calculation applied to net <em>total</em> income (i.e. before personal allowances, but after concessionary deductions): 15% on the first HKD 5,000,000, 16% on the remainder. The taxpayer pays whichever of the two computations is lower — this matters most for higher earners with large personal allowances.</p>
+      <div class="callout watch">
+        <span class="lbl">One-off relief</span>
+        Inland Revenue (Amendment) Ordinance 2026 (gazetted 22 May 2026): 100% reduction of salaries tax/personal assessment tax for YA 2025/26, capped at HKD 3,000. <em>(Source: PwC, reviewed 22 Jul 2026 — verify against the gazetted ordinance.)</em>
+      </div>
+    </section>
+
+    <section class="block" id="receipts">
+      <h2>3. Taxable / Non-Taxable Income</h2>
+      <table>
+        <thead><tr><th style="width:110px">Status</th><th>Item</th><th>Basis</th></tr></thead>
+        <tbody>
+          <tr><td><span class="tag tag-taxable">Taxable</span></td><td>Salary, wages, bonus, commission, leave pay for services rendered in Hong Kong</td><td>s.8(1)(a), s.8(1A)(a)</td></tr>
+          <tr><td><span class="tag tag-taxable">Taxable</span></td><td>Director's fee from a Hong Kong resident company</td><td>s.8(1)(a) — sourced to the company's residence, not where services are performed</td></tr>
+          <tr><td><span class="tag tag-taxable">Taxable</span></td><td>Pension attributable to Hong Kong employment/office</td><td>s.8(1)(b)</td></tr>
+          <tr><td><span class="tag tag-taxable">Taxable</span></td><td>Employer-provided holiday journey benefits — actual cost to employer, regardless of convertibility, apportioned for business-cum-holiday trips</td><td>s.9(2A)(c); DIPN 41</td></tr>
+          <tr><td><span class="tag tag-taxable">Taxable</span></td><td>Share option gains at exercise (HK-employment portion) and share award vesting benefits</td><td>s.9(1)(d)/(4)/(5); DIPN 38</td></tr>
+          <tr><td><span class="tag tag-taxable">Taxable</span></td><td>Fringe benefits convertible into money, or specifically deemed by s.9(1)(a)(iv) "liability test" (e.g. employer settling the employee's personal debt/liability)</td><td>DIPN 16</td></tr>
+          <tr><td><span class="tag tag-nontaxable">Non-taxable</span></td><td>Income from services rendered wholly outside Hong Kong (non-Government employee, ≤60 days HK visits)</td><td>s.8(1A)(b), s.8(1B)</td></tr>
+          <tr><td><span class="tag tag-nontaxable">Non-taxable</span></td><td>Income already taxed in a non-DTA territory of substantially the same nature, tax actually paid</td><td>s.8(1A)(c)</td></tr>
+          <tr><td><span class="tag tag-nontaxable">Non-taxable</span></td><td>Genuine reimbursement of business expenses (no personal benefit)</td><td>General principle — not "income from employment"</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="block" id="deductions">
+      <h2>4. Deductible / Non-Deductible Items <span class="sec-ref">IRO s.12</span></h2>
+      <p>The general test (s.12(1)(a)) is stricter than the profits tax test — expenses must be <strong>"wholly, exclusively and necessarily"</strong> incurred in producing the assessable income (not merely "to the extent"), and domestic/private expenses and capital expenditure are excluded outright. In practice very few ordinary employment expenses pass this test (see DIPN 9).</p>
+      <table>
+        <thead><tr><th style="width:130px">Status</th><th>Item</th><th>Basis / cap (2026/27)</th></tr></thead>
+        <tbody>
+          <tr><td><span class="tag tag-deductible">Deductible</span></td><td>Outgoings/expenses wholly, exclusively and necessarily incurred in producing the income (rare in practice for employees)</td><td>s.12(1)(a)</td></tr>
+          <tr><td><span class="tag tag-deductible">Deductible</span></td><td>Self-education expenses</td><td>s.12(1)(e) — capped at HKD 100,000</td></tr>
+          <tr><td><span class="tag tag-deductible">Deductible</span></td><td>Mandatory MPF contributions</td><td>Capped at HKD 18,000</td></tr>
+          <tr><td><span class="tag tag-deductible">Deductible</span></td><td>Home loan interest (ss.26E/26F)</td><td>HKD 100,000 (120,000 if a qualifying child born after 25 Oct 2023); up to 20 years of assessment; apportioned among joint owners/tenants in common (DIPN 35)</td></tr>
+          <tr><td><span class="tag tag-deductible">Deductible</span></td><td>Domestic rent (new, non-owner-occupiers)</td><td>HKD 100,000 (120,000 with qualifying child)</td></tr>
+          <tr><td><span class="tag tag-deductible">Deductible</span></td><td>Elderly residential care expenses (s.26D)</td><td>HKD 110,000 per parent/grandparent; mutually exclusive with the dependent parent/grandparent allowance (DIPN 36)</td></tr>
+          <tr><td><span class="tag tag-deductible">Deductible</span></td><td>Approved charitable donations (s.26C)</td><td>Min. HKD 100 aggregate; capped at 35% of income after other deductions (DIPN 37)</td></tr>
+          <tr><td><span class="tag tag-deductible">Deductible</span></td><td>Health insurance premiums under VHIS Certified Plans (ss.26H–26M)</td><td>HKD 8,000 per insured person (DIPN 56)</td></tr>
+          <tr><td><span class="tag tag-deductible">Deductible</span></td><td>Qualifying annuity premiums + MPF voluntary contributions (ss.26N–26U)</td><td>Combined cap HKD 60,000/year, TVC deducted first (DIPN 57)</td></tr>
+          <tr><td><span class="tag tag-deductible">Deductible</span></td><td>Assisted reproductive services expenses</td><td>HKD 100,000 (from 2024/25)</td></tr>
+          <tr><td><span class="tag tag-nondeductible">Non-deductible</span></td><td>Cost of travel between home and workplace</td><td>s.12(1)(a) excludes domestic/private expenses (DIPN 9)</td></tr>
+          <tr><td><span class="tag tag-nondeductible">Non-deductible</span></td><td>Clothing, entertainment expenses of a personal nature</td><td>DIPN 9</td></tr>
+          <tr><td><span class="tag tag-nondeductible">Non-deductible</span></td><td>Excess deductions beyond each item's statutory cap (e.g. donations above 35%, VHIS above HKD 8,000/insured)</td><td>Excess simply lapses — no carry-forward for salaries tax deductions (unlike profits tax losses)</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="block" id="allowances">
+      <h2>5. Personal Allowances <span class="sec-ref">IRO Part 5, ss.28–33</span></h2>
+      <table>
+        <caption>Key allowances, 2026/27 (HKD) — cross-check against the current year of assessment before use</caption>
+        <tbody>
+          <tr><td>Basic allowance</td><td class="num">145,000</td></tr>
+          <tr><td>Married person's allowance</td><td class="num">290,000</td></tr>
+          <tr><td>Child allowance (1st–9th child)</td><td class="num">140,000 each (280,000 in year of birth + following year)</td></tr>
+          <tr><td>Single parent allowance</td><td class="num">145,000</td></tr>
+          <tr><td>Dependent parent/grandparent allowance (60+, not residing with taxpayer)</td><td class="num">55,000</td></tr>
+          <tr><td>Dependent parent/grandparent allowance (60+, residing with taxpayer)</td><td class="num">110,000</td></tr>
+          <tr><td>Dependent parent/grandparent allowance (55–59)</td><td class="num">27,500 / 55,000 (not residing / residing)</td></tr>
+          <tr><td>Dependent brother/sister allowance</td><td class="num">37,500</td></tr>
+          <tr><td>Personal disability allowance</td><td class="num">75,000</td></tr>
+          <tr><td>Disabled dependant allowance</td><td class="num">75,000 per dependant</td></tr>
+        </tbody>
+      </table>
+      <p>Child allowance claim period for the enhanced "year of birth" rate was extended from 1 to 2 years effective YA 2026/27 — check whether this affects the year you're computing.</p>
+    </section>
+
+    <section class="block" id="pa">
+      <h2>6. Personal Assessment <span class="sec-ref">IRO s.41</span></h2>
+      <p>Personal Assessment is an <strong>election</strong> (not automatic) available to individuals (and, if both elect, jointly for married couples under s.41(1A)) that aggregates all sources of income — including property tax and profits tax from an unincorporated business — into one computation, deducting personal allowances and applying salaries-tax-style progressive rates. It is beneficial mainly where the taxpayer has property tax or unincorporated-business profits tax that would otherwise get no benefit from personal allowances, or has losses in one source that can offset income in another.</p>
+      <p>Joint assessment (s.10(2), distinct from Personal Assessment) lets a married couple be taxed as one for salaries tax where beneficial — typically where one spouse has income below the value of their own allowances (DIPN 18).</p>
+      <p style="font-size:13px"><a href="salaries-tax-illustrations.html#pa">See 3 worked Personal Assessment election illustrations &rarr;</a></p>
+    </section>
+
+    <section class="block" id="illustrations">
+      <h2>7. Illustrations</h2>
+      <p>14 worked illustrations back this page — DIPN-sourced (joint assessment, home loan interest apportionment, VHIS/donation caps, share option vesting) plus Module 9 textbook examples (the 60-day rule, housing benefit valuation, termination gratuities, child allowance eligibility, a full computation, and 3 Personal Assessment election scenarios), all cross-checked against current YA 2026/27 rates and allowances.</p>
+
+      <div class="illustration">
+        <div class="lbl">Illustration — Joint assessment saves tax vs separate taxation <span class="src">DIPN 18</span></div>
+        <p>Mr A earns $680,000, Mrs A earns $100,000. Taxed separately, their combined liability is $23,030. Electing joint assessment under s.10(2) — pooling income and allowances — reduces the combined liability to <strong>$17,505</strong>, because Mrs A's unabsorbed allowances/deductions offset Mr A's higher-rate income.</p>
+      </div>
+
+      <div class="callout tip" style="text-align:center">
+        <a href="salaries-tax-illustrations.html" style="font-weight:700">View all 14 worked illustrations (DIPN + Module 9 textbook) &rarr;</a>
+      </div>
+    </section>
+
+    <section class="block" id="computation">
+      <h2>8. Computation Template</h2>
+      <table>
+        <tbody>
+          <tr><th style="width:60%">Income from employment/office/pension (Hong Kong-sourced, per §3)</th><td class="num">X</td></tr>
+          <tr><td style="padding-left:24px">Add: taxable fringe benefits, share-based benefits, holiday journey benefits</td><td class="num">X</td></tr>
+          <tr><th>Assessable income</th><td class="num"><strong>X</strong></td></tr>
+          <tr><td style="padding-left:24px">Less: outgoings/expenses under s.12(1)(a), self-education expenses</td><td class="num">(X)</td></tr>
+          <tr><th>Net assessable income</th><td class="num"><strong>X</strong></td></tr>
+          <tr><td style="padding-left:24px">Less: concessionary deductions (home loan interest, donations, MPF/TVC/annuity, elderly care, VHIS, rent — each subject to its own cap)</td><td class="num">(X)</td></tr>
+          <tr><th>Net total income</th><td class="num"><strong>X</strong></td></tr>
+          <tr><td style="padding-left:24px">Less: personal allowances (§5)</td><td class="num">(X)</td></tr>
+          <tr><th>Net chargeable income</th><td class="num"><strong>X</strong></td></tr>
+          <tr><th>Tax at progressive rates (§2) — compare against the standard-rate cap on net total income and pay the lower</th><td class="num"><strong>X</strong></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="block" id="sources">
+      <h2>9. Source Documents</h2>
+      <p>CAP112 sections referenced above: s.8, s.9, s.12, s.13, Part 5 (ss.28–33), s.41, ss.26C/26D/26E/26F/26H–26M/26N–26U. Consolidated text: <code>Data/CAP112/</code>.</p>
+      <p>Core DIPNs for this page (download and save into <code>Data/DIPN/Salaries-Tax/</code>):</p>
+      <ul class="src-list">
+        <li><span class="file">DIPN 9 — Major Deductible Items under Salaries Tax</span></li>
+        <li><span class="file">DIPN 10 — The Charge to Salaries Tax</span></li>
+        <li><span class="file">DIPN 16 — Taxation of Fringe Benefits</span></li>
+        <li><span class="file">DIPN 18 — Assessment of Individuals under Salaries Tax and Personal Assessment</span></li>
+        <li><span class="file">DIPN 23 — Recognized Retirement Schemes</span></li>
+        <li><span class="file">DIPN 25 — Service Company "Type I" Arrangements</span></li>
+        <li><span class="file">DIPN 33 — Insurance Agents</span></li>
+        <li><span class="file">DIPN 35 — Home Loan Interest (ss.26E &amp; 26F)</span></li>
+        <li><span class="file">DIPN 36 — Elderly Residential Care Expenses (s.26D)</span></li>
+        <li><span class="file">DIPN 37 — Approved Charitable Donations (s.26C)</span></li>
+        <li><span class="file">DIPN 38 — Employee Share-Based Benefits</span></li>
+        <li><span class="file">DIPN 41 — Taxation of Holiday Journey Benefits</span></li>
+        <li><span class="file">DIPN 56 — Health Insurance Premiums (VHIS, ss.26H–26M)</span></li>
+        <li><span class="file">DIPN 57 — Annuity Premiums and MPF Voluntary Contributions (ss.26N–26U)</span></li>
+      </ul>
+      <p style="font-size:13px;color:var(--text-muted)">Cross-reference: PwC Worldwide Tax Summaries — Hong Kong SAR, Individual tax pages (saved copies in <code>Data/PwC/</code>).</p>
+    </section>
+
+    <div class="section-nav">
+      <a href="property-tax.html">&larr; Property Tax</a>
+      <a href="stamp-duty.html">Next: Stamp Duty &rarr;</a>
+    </div>
+  </main>
+</div>
+
+<footer class="site-footer">HK Tax Study Hub — internal working document. Verify against the Inland Revenue Ordinance (Cap. 112) and current IRD guidance before relying on any figure for a filing position.</footer>
+
+<script src="../assets/js/data-manifest.js"></script>
+<script>
+  window.PAGE_META = {
+    reviewed: "2026-07-27",
+    sources: ["CAP112", "PwC", "DIPN/Salaries-Tax"]
+  };
+</script>
+<script src="../assets/js/freshness.js"></script>
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>

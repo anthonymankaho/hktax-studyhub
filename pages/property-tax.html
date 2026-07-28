@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Property Tax — HK Tax Study Hub</title>
+<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <div class="brand">HK Tax Study Hub<small>Internal reference — not for external distribution</small></div>
+    <nav class="site-nav">
+      <a href="../index.html">Hub</a>
+      <a href="transaction-checker.html">Transaction Checker</a>
+      <a href="dipn-index.html">DIPN Index</a>
+      <a href="profits-tax.html">Profits Tax</a>
+      <a href="property-tax.html" class="active">Property Tax</a>
+      <a href="salaries-tax.html">Salaries Tax</a>
+      <a href="stamp-duty.html">Stamp Duty</a>
+      <a href="depreciation-allowances.html">Depreciation &amp; Allowances</a>
+      <a href="ird-administration.html">IRD Administration</a>
+    </nav>
+    <button id="theme-toggle" title="Toggle light/dark" style="background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:6px;padding:6px 10px;cursor:pointer;font-size:12px">Theme</button>
+  </div>
+</header>
+
+<div class="shell">
+  <aside class="toc">
+    <h4>On this page</h4>
+    <a href="#overview">Overview &amp; Charging Basis</a>
+    <a href="#nav-calc">Net Assessable Value</a>
+    <a href="#receipts">Taxable / Non-Taxable Items</a>
+    <a href="#corporate">Corporate Interaction with Profits Tax</a>
+    <a href="#illustrations">Illustrations</a>
+    <a href="#computation">Computation Template</a>
+    <a href="#sources">Source Documents</a>
+  </aside>
+
+  <main class="content">
+    <div class="page-title">
+      <div>
+        <span class="badge badge-business">Business — Property Tax</span>
+        <h1>Property Tax</h1>
+        <p class="subtitle">Inland Revenue Ordinance (Cap. 112), Part 2 — charged on the owner of land or buildings in Hong Kong, on the net assessable value.</p>
+      </div>
+    </div>
+
+    <div id="freshness-banner" class="freshness"></div>
+    <ul id="freshness-sources" class="src-list" style="display:none;margin-bottom:20px"></ul>
+
+    <section class="block" id="overview">
+      <h2>1. Overview &amp; Charging Basis <span class="sec-ref">IRO s.5</span></h2>
+      <p class="lede">Property tax is charged for each year of assessment on every person who <strong>owns</strong> land or buildings in Hong Kong, computed at the standard rate on the <strong>net assessable value</strong> — regardless of whether the owner carries on any trade or business. It is a tax on ownership + letting, not on trading profit as such.</p>
+      <div class="callout law">
+        <span class="lbl">Statutory text — s.5(1)</span>
+        "Property tax shall...be charged for each year of assessment on every person being the owner of any land or buildings or land and buildings wherever situate in Hong Kong and shall be computed at the standard rate on the net assessable value of such land or buildings..."
+      </div>
+      <table>
+        <caption>Current rate</caption>
+        <tbody><tr><td>Standard rate applied to net assessable value</td><td class="num">15%</td></tr></tbody>
+      </table>
+      <p><strong>Owner-occupied</strong> property generates no rental consideration and therefore has no assessable value — no property tax arises. Where the owner of the land is not the owner of the buildings on it, separate assessments are made for each (s.5(1)(b)).</p>
+    </section>
+
+    <section class="block" id="nav-calc">
+      <h2>2. Net Assessable Value <span class="sec-ref">IRO s.5(1A), s.5B, s.7C</span></h2>
+      <p>Assessable value (s.5B(2)) is the consideration in money or money's worth payable for the right to use the land/buildings during the year — i.e. rent and other consideration receivable, not merely received. Net assessable value (s.5(1A)) then deducts:</p>
+      <table>
+        <tbody>
+          <tr><th style="width:60%">Assessable value (rent/consideration receivable for the year)</th><td class="num">X</td></tr>
+          <tr><td style="padding-left:24px">Less: irrecoverable consideration proved bad during the year (s.7C)</td><td class="num">(X)</td></tr>
+          <tr><td style="padding-left:24px">Less: rates paid by the owner, if the owner agreed to bear them</td><td class="num">(X)</td></tr>
+          <tr><td style="padding-left:24px">Less: statutory 20% allowance for repairs and outgoings (on the balance after rates)</td><td class="num">(X)</td></tr>
+          <tr><th>Net assessable value</th><td class="num"><strong>X</strong></td></tr>
+        </tbody>
+      </table>
+      <p>The 20% repairs/outgoings allowance is <strong>flat and statutory</strong> — it applies regardless of the owner's actual repair costs, and cannot be varied by claiming higher actual expenditure. Consideration recovered in a later year, having previously been written off as irrecoverable under s.7C, is brought back into that later year's assessable value (s.7C(2)).</p>
+      <p><strong>Lease premiums</strong> paid up front are deemed under s.5B(3)/(4) to be payable in equal monthly instalments spread over the period of the right of use, capped at a maximum of <strong>3 years</strong> — even if the actual lease term is longer. See the DIPN 4/DIPN 14 illustrations below.</p>
+    </section>
+
+    <section class="block" id="receipts">
+      <h2>3. Taxable / Non-Taxable Items</h2>
+      <table>
+        <thead><tr><th style="width:110px">Status</th><th>Item</th><th>Basis</th></tr></thead>
+        <tbody>
+          <tr><td><span class="tag tag-taxable">Taxable</span></td><td>Rent receivable for the year (whether or not actually received)</td><td>s.5B(2)</td></tr>
+          <tr><td><span class="tag tag-taxable">Taxable</span></td><td>Lease premiums / non-returnable deposits / key money, spread over up to 3 years</td><td>s.5B(3)/(4); DIPN 4, DIPN 14</td></tr>
+          <tr><td><span class="tag tag-taxable">Taxable</span></td><td>Consideration for services/benefits connected with the right of use (e.g. furniture, management services bundled into rent)</td><td>s.5B(6)</td></tr>
+          <tr><td><span class="tag tag-nontaxable">Non-taxable</span></td><td>Owner-occupied property (no rent receivable)</td><td>No assessable value arises — s.5(1)</td></tr>
+          <tr><td><span class="tag tag-nontaxable">Non-taxable</span></td><td>Rent/consideration proved to have become irrecoverable during the year</td><td>s.7C(1)</td></tr>
+          <tr><td><span class="tag deductible tag-deductible">Deduction (fixed)</span></td><td>Rates paid by owner + flat 20% repairs/outgoings allowance</td><td>s.5(1A)(b)</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="block" id="corporate">
+      <h2>4. Corporate Interaction with Profits Tax <span class="sec-ref">IRO s.25, s.5(2)(a)</span></h2>
+      <p>For a corporation carrying on a trade, profession or business in Hong Kong, property tax and profits tax can otherwise double-tax the same rental income. Two relief mechanisms apply:</p>
+      <ul>
+        <li><strong>Set-off (s.25):</strong> where the rental profits form part of the corporation's trading profits (or the property is used to produce chargeable profits), profits tax payable is reduced by the property tax already paid on that property. If property tax paid exceeds the profits tax payable, the excess is refunded (s.25, proviso (b), via s.79).</li>
+        <li><strong>Upfront exemption (s.5(2)(a)):</strong> instead of paying property tax and later claiming the set-off, a corporation entitled to the s.25 set-off may apply in writing to the Commissioner for the property to be <strong>exempted</strong> from property tax altogether. The corporation must notify the Commissioner within 30 days of any change in ownership/use affecting the exemption (s.5(2)(c)).</li>
+      </ul>
+      <div class="callout tip">
+        <span class="lbl">Practical note</span>
+        Non-corporate owners (individuals, partnerships) do <em>not</em> get the s.25 set-off/exemption against profits tax in the same way — they may instead elect Personal Assessment (IRO s.41) to have property tax effectively absorbed into a single personal-assessment computation where advantageous. See the Salaries Tax page for Personal Assessment.
+      </div>
+    </section>
+
+    <section class="block" id="illustrations">
+      <h2>5. Illustrations</h2>
+      <p>7 worked illustrations back this page — DIPN-sourced (premium spreading, the NAV computation chain) plus Module 9 textbook examples (a full 3-property NAV computation, irrecoverable-rent carry-back, the profits-tax set-off), all using the current 15%/20% rates.</p>
+
+      <div class="illustration">
+        <div class="lbl">Illustration — Premium spread over the statutory 3-year cap <span class="src">DIPN 14</span></div>
+        <p>A $60,000 premium is paid for a 5-year lease running from 1 June 2006 to 31 May 2011 (60 months). Because s.5B(4) caps the spreading period at 3 years (36 months) even though the lease itself runs 5 years, the premium is spread over 36 months only — nothing is assessed for the remaining 24 months of the lease.</p>
+      </div>
+
+      <div class="callout tip" style="text-align:center">
+        <a href="property-tax-illustrations.html" style="font-weight:700">View all 7 worked illustrations (DIPN + Module 9 textbook) &rarr;</a>
+      </div>
+    </section>
+
+    <section class="block" id="computation">
+      <h2>6. Computation Template</h2>
+      <table>
+        <tbody>
+          <tr><th style="width:60%">Rent and other consideration receivable for the year</th><td class="num">X</td></tr>
+          <tr><td style="padding-left:24px">Add: lease premium instalment for the year (s.5B(3)/(4), capped at 3 years)</td><td class="num">X</td></tr>
+          <tr><td style="padding-left:24px">Less: irrecoverable rent proved bad in the year (s.7C)</td><td class="num">(X)</td></tr>
+          <tr><th>Assessable value</th><td class="num"><strong>X</strong></td></tr>
+          <tr><td style="padding-left:24px">Less: rates paid by owner (if owner bears them)</td><td class="num">(X)</td></tr>
+          <tr><td style="padding-left:24px">Less: 20% statutory allowance for repairs and outgoings</td><td class="num">(X)</td></tr>
+          <tr><th>Net assessable value</th><td class="num"><strong>X</strong></td></tr>
+          <tr><th>Property tax payable (15% standard rate)</th><td class="num"><strong>X</strong></td></tr>
+          <tr><td style="padding-left:24px">Less: set-off against profits tax if corporation and s.25 conditions met</td><td class="num">(X)</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="block" id="sources">
+      <h2>7. Source Documents</h2>
+      <p>CAP112 sections referenced above: s.5, s.5(1A), s.5(2), s.5B, s.7A, s.7C, s.25. Consolidated text: <code>Data/CAP112/</code>.</p>
+      <p>Core DIPNs for this page (download and save into <code>Data/DIPN/Property-Tax/</code>):</p>
+      <ul class="src-list">
+        <li><span class="file">DIPN 14 — Property Tax</span></li>
+        <li><span class="file">DIPN 4 — Lease Premiums, Non-Returnable Deposits, Key/Tea Money, Construction Fees (shared with Profits Tax)</span></li>
+      </ul>
+      <p style="font-size:13px;color:var(--text-muted)">Cross-reference: PwC Worldwide Tax Summaries — Hong Kong SAR, Corporate — Other Taxes page (saved copies in <code>Data/PwC/</code>).</p>
+    </section>
+
+    <div class="section-nav">
+      <a href="profits-tax.html">&larr; Profits Tax</a>
+      <a href="salaries-tax.html">Next: Salaries Tax &rarr;</a>
+    </div>
+  </main>
+</div>
+
+<footer class="site-footer">HK Tax Study Hub — internal working document. Verify against the Inland Revenue Ordinance (Cap. 112) and current IRD guidance before relying on any figure for a filing position.</footer>
+
+<script src="../assets/js/data-manifest.js"></script>
+<script>
+  window.PAGE_META = {
+    reviewed: "2026-07-27",
+    sources: ["CAP112", "PwC", "DIPN/Property-Tax"]
+  };
+</script>
+<script src="../assets/js/freshness.js"></script>
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>
