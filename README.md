@@ -25,6 +25,7 @@ Open `index.html`. From the hub you can reach:
 | **DIPN Index** | Searchable catalogue of all 73 currently-in-force DIPN/SOIPN/EDOIPN documents, with topic, summary, and whether it backs a full study page or is reference-only. |
 | **Profits Tax / Property Tax / Salaries Tax / Stamp Duty / Depreciation & Allowances** | The five core topic pages — charging basis, rates, taxable/deductible tables, computation templates, all tied to exact IRO (Cap. 112) / Stamp Duty Ordinance (Cap. 117) sections. |
 | **[Topic] — Worked Illustrations** | Companion page per topic (linked from each topic page's Illustrations section) with every worked example — DIPN-sourced and textbook-sourced — in one place. |
+| **Profits Tax Return Guide** / **Box Finder** | Box-by-box walkthrough of the actual BIR51/52/54 return forms (linked from the Profits Tax page) — bridges "what the law says" to "what you type into the form," plus a keyword search over every box. |
 | **IRD Administration** | Returns, assessment, objections/appeals, provisional tax, penalties — the process layer common to all taxes. |
 
 ## How it stays current
@@ -55,6 +56,7 @@ programmatically does not, so step 1 for legislation is a manual download.
 - **`IRD-Administration/`** — DIPN 6, 11, 31 (objections/appeals, field audit, advance rulings).
 - Stamp Office notes (SOIPN 1–8) live under `DIPN/Stamp-Duty/`.
 - **`PwC/`** — reserved for saved PwC Worldwide Tax Summaries pages (cross-check source; not yet populated with saved files).
+- **`Forms/`** — BIR51/52/54 Profits Tax Return forms + Notes and Instructions, and IRC1952/1953 Notice to File forms, revision 4/2025.
 
 See `Data/DIPN-CHECKLIST.md` for the full document-by-document status, and
 `Data/README.md` for the refresh mechanics in more detail.
@@ -100,6 +102,7 @@ pages/
   transaction-checker.html       Search tool: transaction → tax treatment
   dipn-index.html                Searchable catalogue of all 73 DIPN/SOIPN/EDOIPN docs
   profits-tax.html               + profits-tax-illustrations.html
+  profits-tax-return-guide.html  + profits-tax-return-finder.html (BIR51/52/54 box guide + search)
   property-tax.html              + property-tax-illustrations.html
   salaries-tax.html              + salaries-tax-illustrations.html (incl. Personal Assessment)
   stamp-duty.html                + stamp-duty-illustrations.html
@@ -115,6 +118,7 @@ Data/
   CAP112/, CAP117/               Legislation
   DIPN/<topic>/                  DIPNs + SOIPNs, organized by tax topic
   IRD-Administration/            Admin-specific DIPNs
+  Forms/                         BIR51/52/54 return forms + notes
   README.md                      Refresh-workflow details and folder map
   DIPN-CHECKLIST.md              Document-by-document download status
 ```

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profits Tax Return Box Finder — HK Tax Study Hub</title>
+<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <div class="brand">HK Tax Study Hub<small>Internal reference — not for external distribution</small></div>
+    <nav class="site-nav">
+      <a href="../index.html">Hub</a>
+      <a href="transaction-checker.html">Transaction Checker</a>
+      <a href="dipn-index.html">DIPN Index</a>
+      <a href="profits-tax.html">Profits Tax</a>
+      <a href="property-tax.html">Property Tax</a>
+      <a href="salaries-tax.html">Salaries Tax</a>
+      <a href="stamp-duty.html">Stamp Duty</a>
+      <a href="depreciation-allowances.html">Depreciation &amp; Allowances</a>
+      <a href="ird-administration.html">IRD Administration</a>
+    </nav>
+    <button id="theme-toggle" title="Toggle light/dark" style="background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:6px;padding:6px 10px;cursor:pointer;font-size:12px">Theme</button>
+  </div>
+</header>
+
+<div class="shell" style="grid-template-columns:1fr">
+  <main class="content">
+    <p><a href="profits-tax-return-guide.html">&larr; Back to the Profits Tax Return Guide</a></p>
+    <div class="page-title">
+      <div>
+        <span class="badge badge-business">Application tool</span>
+        <h1>Profits Tax Return — Box Finder</h1>
+        <p class="subtitle">Search BIR51 (corporations), BIR52 (persons other than corporations), and BIR54 (non-resident persons) by keyword to find which box a figure or disclosure goes in. This is a lookup aid over the current (4/2025) forms — not a tax calculator; it does not compute figures for you.</p>
+      </div>
+    </div>
+
+    <div class="callout tip" style="margin-bottom:4px">
+      <span class="lbl">How to use</span>
+      Type a keyword (e.g. "depreciation", "two-tiered", "loss brought forward", "audited accounts", "MPF", "non-resident"). Filter by form if you already know which return you're working on. Where a box ties to a concept covered elsewhere in the hub, a "View section" link is shown.
+    </div>
+
+    <div class="checker-controls">
+      <input type="search" id="q" placeholder="Search boxes (e.g. &quot;two-tiered&quot;, &quot;depreciation&quot;, &quot;loss brought forward&quot;)&hellip;" autocomplete="off">
+      <select id="filter-form" aria-label="Filter by form">
+        <option value="">All forms</option>
+        <option value="BIR51">BIR51 (Corporations)</option>
+        <option value="BIR52">BIR52 (Persons Other Than Corporations)</option>
+        <option value="BIR54">BIR54 (Non-Resident Persons)</option>
+      </select>
+    </div>
+    <p class="checker-count" id="checker-count"></p>
+
+    <div class="checker-results">
+      <table>
+        <thead><tr><th style="width:70px">Form</th><th style="width:70px">Box</th><th style="width:220px">Part</th><th>Label</th><th>Note</th><th style="width:90px"></th></tr></thead>
+        <tbody id="results-body"></tbody>
+      </table>
+      <div class="checker-empty" id="checker-empty" style="display:none">No matching box found. Try a different keyword, or check the full Guide page directly.</div>
+    </div>
+
+    <div class="callout watch" style="margin-top:24px">
+      <span class="lbl">Scope &amp; limits</span>
+      Box numbers and labels are drawn from the current forms as published on ird.gov.hk (revision 4/2025) — verify against a freshly downloaded form before relying on a box number for an actual filing, since IRD periodically renumbers when new disclosure items are added. This tool does not replace the "tax computation with supporting schedules" you must prepare and attach separately — Part 1's boxes 1–3 are only the final results of that computation, not the computation itself.
+    </div>
+
+    <div class="section-nav">
+      <a href="profits-tax-return-guide.html">&larr; Back to the Guide</a>
+      <a href="profits-tax.html">Profits Tax rules &rarr;</a>
+    </div>
+  </main>
+</div>
+
+<footer class="site-footer">HK Tax Study Hub — internal working document. Source forms: BIR51/52/54 and their Notes, saved in <code>Data/Forms/</code>. Verify against a current download from ird.gov.hk before relying on any box number for a filing.</footer>
+
+<script src="../assets/js/bir-finder-data.js"></script>
+<script src="../assets/js/bir-finder.js"></script>
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>

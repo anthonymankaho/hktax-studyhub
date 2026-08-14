@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profits Tax Return Guide — HK Tax Study Hub</title>
+<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <div class="brand">HK Tax Study Hub<small>Internal reference — not for external distribution</small></div>
+    <nav class="site-nav">
+      <a href="../index.html">Hub</a>
+      <a href="transaction-checker.html">Transaction Checker</a>
+      <a href="dipn-index.html">DIPN Index</a>
+      <a href="profits-tax.html">Profits Tax</a>
+      <a href="property-tax.html">Property Tax</a>
+      <a href="salaries-tax.html">Salaries Tax</a>
+      <a href="stamp-duty.html">Stamp Duty</a>
+      <a href="depreciation-allowances.html">Depreciation &amp; Allowances</a>
+      <a href="ird-administration.html">IRD Administration</a>
+    </nav>
+    <button id="theme-toggle" title="Toggle light/dark" style="background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:6px;padding:6px 10px;cursor:pointer;font-size:12px">Theme</button>
+  </div>
+</header>
+
+<div class="shell">
+  <aside class="toc">
+    <h4>On this page</h4>
+    <a href="#which-form">Which Form Applies</a>
+    <a href="#part1">Part 1 — Assessable Profits/Loss</a>
+    <a href="#part2-3">Parts 2–3 — Rate Election &amp; Specified Matters</a>
+    <a href="#part4-8">Parts 4–8 — Company Details &amp; General Matters</a>
+    <a href="#part9">Part 9 — Supplementary Forms (S1–S22)</a>
+    <a href="#part10">Part 10 — Tax Data</a>
+    <a href="#part11">Part 11 — Depreciation Allowances</a>
+    <a href="#part12-13">Parts 12–13 — Financial Data &amp; Declaration</a>
+    <a href="#bir52">BIR52 — How It Differs</a>
+    <a href="#bir54">BIR54 — What It Actually Is</a>
+    <a href="#sources">Source Documents</a>
+  </aside>
+
+  <main class="content">
+    <div class="page-title">
+      <div>
+        <span class="badge badge-business">Business — Profits Tax</span>
+        <h1>Profits Tax Return Guide</h1>
+        <p class="subtitle">Box-by-box walkthrough of BIR51 (current revision 4/2025) — bridging "what the law says" (the Profits Tax and Depreciation &amp; Allowances pages) with "what you actually type into the form." Use the <a href="profits-tax-return-finder.html">Box Finder</a> to search by keyword instead of reading start to end.</p>
+      </div>
+    </div>
+
+    <div class="callout law">
+      <span class="lbl">Key structural point</span>
+      BIR51 does <strong>not</strong> contain a line-by-line add-back/deduction schedule as boxed items. Part 1 only captures the three final results — Assessable Profits, Adjusted Loss, Loss brought forward (boxes 1–3). The actual add-backs and deductions (depreciation, capital expenditure, non-deductible items, etc.) are worked out separately in a "tax computation with supporting schedules" that you attach as a Supporting Document — it is not printed on the form itself. That computation is exactly what the <a href="profits-tax.html#computation">Computation Template</a> on the Profits Tax page walks through.
+    </div>
+
+    <section class="block" id="which-form">
+      <h2>1. Which Form Applies</h2>
+      <table>
+        <thead><tr><th>Form</th><th>Who files it</th></tr></thead>
+        <tbody>
+          <tr><td><strong>BIR51</strong></td><td>Corporations — the primary form for HK incorporated companies, and the focus of this guide.</td></tr>
+          <tr><td><strong>BIR52</strong></td><td>Persons other than corporations — sole proprietorships, partnerships, limited partnership funds, bodies of persons. See §9 below for how it differs from BIR51.</td></tr>
+          <tr><td><strong>BIR54</strong></td><td>Not a second "persons other than corporations" form — filed by a Hong Kong resident payer/agent to report a <em>non-resident's</em> HK-sourced profits under ss.20A/20B. See §10 below.</td></tr>
+        </tbody>
+      </table>
+      <p>All three are issued annually and must be filed within the deadline stated on the Notice to File (IRC1952 for corporations, IRC1953 for others) — typically extended under the Block Extension Scheme where a tax representative is on record. Since 1 April 2023, all supplementary forms (S1–S22) must be filed electronically via <code>www.ird.gov.hk/e_pfr</code>.</p>
+    </section>
+
+    <section class="block" id="part1">
+      <h2>2. Part 1 — Statement of Assessable Profits or Adjusted Loss</h2>
+      <table>
+        <thead><tr><th style="width:70px">Box</th><th>Label</th><th>Maps to</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Assessable Profits (before loss brought forward)</td><td>The bottom line of your computation — see the <a href="profits-tax.html#computation">Computation Template</a>.</td></tr>
+          <tr><td>2</td><td>Adjusted Loss (before loss brought forward)</td><td>Fill instead of box 1 if the year produced a loss.</td></tr>
+          <tr><td>3</td><td>Loss brought forward from prior year</td><td>s.19C carry-forward — see <a href="profits-tax.html#basis-losses">Basis Period &amp; Loss Relief</a>.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="block" id="part2-3">
+      <h2>3. Parts 2–3 — Tax Liability, Rate Election &amp; Specified Matters</h2>
+      <p><strong>Part 2</strong> computes Tax Payable/Repayable (IRD-computed, no entry box) and asks:</p>
+      <table>
+        <tbody>
+          <tr><th style="width:60px">Box 4</th><td>Chargeable at two-tiered rates? — the <a href="profits-tax.html#rates">two-tiered rate election</a>. If Yes, upload <strong>Form S1</strong> (Part 9, box 42).</td></tr>
+        </tbody>
+      </table>
+      <p><strong>Part 3</strong> is a run of Yes/No disclosure questions (boxes 5–15) covering non-resident IP payments (s.15(1)), fund/carried-interest deeming provisions, short/medium-term debt instruments, DTA relief claims, advance rulings, alternative bond schemes, regulatory capital securities, permanent-establishment status, and the s.51AAB e-filing mandate. None of these require a computed figure — they flag which supplementary forms and disclosures apply.</p>
+    </section>
+
+    <section class="block" id="part4-8">
+      <h2>4. Parts 4–8 — Company Details &amp; General Matters</h2>
+      <p>Parts 4–6 are administrative: principal business activity + HSIC code (box 16), return-language preference, and an optional authorized representative section.</p>
+      <p><strong>Part 7 (General Matters, boxes 17–36)</strong> is the section most likely to interact with your tax computation:</p>
+      <table>
+        <thead><tr><th style="width:70px">Box</th><th>What it asks</th></tr></thead>
+        <tbody>
+          <tr><td>17–19</td><td>Whether accounts are audited by law, by a HK practice unit, and the signing CPA's practising certificate number.</td></tr>
+          <tr><td>20</td><td>Basis period From/To — feeds the <a href="profits-tax.html#basis-losses">basis-period rules</a> (s.18/18C).</td></tr>
+          <tr><td>21–24</td><td>Commencement/cessation of business, and what happened to the business/assets on cessation.</td></tr>
+          <tr><td>25</td><td>Election to align financial-instrument tax treatment with accounting treatment (ss.18I–18L) — see the <a href="profits-tax-illustrations.html#dipn">DIPN 42 illustration</a>.</td></tr>
+          <tr><td>26–27</td><td>Foreign-currency financial statements; private company status.</td></tr>
+          <tr><td>28</td><td>Change in shareholders during the basis period — relevant to loss-carry-forward anti-avoidance (DIPN 15).</td></tr>
+          <tr><td>29</td><td>Party to a court-free amalgamation (s.680/681 Companies Ordinance) — see DIPN 63.</td></tr>
+          <tr><td>30</td><td>Contract/import processing arrangement in the Chinese Mainland — the 50:50 apportionment convention (DIPN 21).</td></tr>
+          <tr><td>31–36</td><td>Insurance RBC-regime transition, family-owned SPE/single-family-office status.</td></tr>
+        </tbody>
+      </table>
+      <p><strong>Part 8 (Transactions For/With Non-Residents, boxes 37–41)</strong> covers acting as an agent for a non-resident, IP value-creation contributions, and HK$ amounts for hire charges/professional fees paid to non-residents.</p>
+    </section>
+
+    <section class="block" id="part9">
+      <h2>5. Part 9 — Supplementary Forms Uploaded (S1–S22)</h2>
+      <p>A checkbox per supplementary form, boxes 42–63 (BIR51). Every S-form must be e-filed via <code>www.ird.gov.hk/e_pfr</code>, signed, and submitted with a Control List.</p>
+      <table>
+        <thead><tr><th>Form</th><th>Covers</th></tr></thead>
+        <tbody>
+          <tr><td>S1</td><td>Two-tiered profits tax rates election</td></tr>
+          <tr><td>S2</td><td>Transfer pricing and international tax obligations</td></tr>
+          <tr><td>S3</td><td>Expenditure on research &amp; development (DIPN 55)</td></tr>
+          <tr><td>S4</td><td>Expenditure on energy efficient building installation</td></tr>
+          <tr><td>S5</td><td>Ship-owner</td></tr>
+          <tr><td>S6</td><td>Professional reinsurer</td></tr>
+          <tr><td>S7</td><td>Authorized captive insurer</td></tr>
+          <tr><td>S8</td><td>Qualifying corporate treasury centre (DIPN 52)</td></tr>
+          <tr><td>S9</td><td>Qualifying aircraft lessor (DIPN 54)</td></tr>
+          <tr><td>S10</td><td>Qualifying aircraft leasing manager</td></tr>
+          <tr><td>S11</td><td>Qualifying ship lessor (DIPN 62)</td></tr>
+          <tr><td>S12</td><td>Qualifying ship leasing manager</td></tr>
+          <tr><td>S13</td><td>Specified insurer</td></tr>
+          <tr><td>S14</td><td>Licensed insurance broker company</td></tr>
+          <tr><td>S15</td><td>Persons deriving eligible carried interest</td></tr>
+          <tr><td>S16</td><td>Qualifying ship agent</td></tr>
+          <tr><td>S17</td><td>Qualifying ship manager</td></tr>
+          <tr><td>S18</td><td>Qualifying ship broker</td></tr>
+          <tr><td>S19</td><td>Taxation on specified foreign-sourced income — the <a href="profits-tax.html#fsie">FSIE regime</a></td></tr>
+          <tr><td>S20</td><td>Tax concessions for family-owned investment holding vehicle</td></tr>
+          <tr><td>S21</td><td>Tax certainty enhancement scheme for onshore gain on disposal of equity interests</td></tr>
+          <tr><td>S22</td><td>Tax concessions for intellectual property income — the <a href="profits-tax.html#rates">Patent Box concession</a></td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:13px;color:var(--text-muted)">BIR52 only lists 10 of these (S1, S2, S3, S4, S5, S15, S19, S20, S21, S22) — the shipping/aircraft-leasing/insurance/treasury-centre forms are corporation-only concessions. BIR54 only references S1 and S5.</p>
+    </section>
+
+    <section class="block" id="part10">
+      <h2>6. Part 10 — Tax Data (boxes 64–93)</h2>
+      <p>HK$ amount fields (enter "0" if nil) for offshore profits excluded from Part 1, capital-asset sale profits, exempt interest/securities income, and — most relevant to a typical computation — the deduction items that mirror the Depreciation &amp; Allowances page's write-off regimes:</p>
+      <table>
+        <thead><tr><th style="width:70px">Box</th><th>Deduction</th></tr></thead>
+        <tbody>
+          <tr><td>74</td><td>Approved charitable donations</td></tr>
+          <tr><td>75</td><td>Building refurbishment expenditure (s.16F)</td></tr>
+          <tr><td>76</td><td>Computer hardware/software expenditure (s.16G)</td></tr>
+          <tr><td>77</td><td>Prescribed manufacturing machinery/plant expenditure (s.16G)</td></tr>
+          <tr><td>78–80</td><td>Environmental protection machinery / installation / environment-friendly vehicles (ss.16H–16L)</td></tr>
+          <tr><td>81–82</td><td>Patent rights / rights to know-how (s.16E)</td></tr>
+          <tr><td>83–88</td><td>Specified IP Rights — copyrights, performer's rights, layout-design, plant variety rights, registered designs, registered trade marks (ss.16EA–16EC)</td></tr>
+          <tr><td>89–91</td><td>DTA relief / unilateral foreign tax credit (s.50 vs s.16(1)(c) — see the DIPN 28 illustration)</td></tr>
+          <tr><td>92</td><td>Interest to non-HK associated corporations, intra-group financing business</td></tr>
+          <tr><td>93</td><td>Leased premises reinstatement costs</td></tr>
+        </tbody>
+      </table>
+      <p>All of boxes 75–88 correspond directly to write-off regimes on the <a href="depreciation-allowances.html#writeoffs">Depreciation &amp; Allowances page</a> — if you've already worked out that page's computation template, these boxes are just transcribing the same figures.</p>
+    </section>
+
+    <section class="block" id="part11">
+      <h2>7. Part 11 — Depreciation Allowances Claimed (boxes 94–104)</h2>
+      <table>
+        <thead><tr><th>Category</th><th class="num">Initial</th><th class="num">Annual</th><th class="num">Balancing Allowance</th><th class="num">Balancing Charge</th></tr></thead>
+        <tbody>
+          <tr><td>Industrial Building</td><td class="num">94</td><td class="num">95</td><td class="num">96</td><td class="num">97</td></tr>
+          <tr><td>Commercial Building</td><td class="num">—</td><td class="num">98</td><td class="num">99</td><td class="num">100</td></tr>
+          <tr><td>Machinery or Plant</td><td class="num">101</td><td class="num">102</td><td class="num">103</td><td class="num">104</td></tr>
+        </tbody>
+      </table>
+      <p>This is a direct transcription target for the <a href="depreciation-allowances.html#computation">Depreciation &amp; Allowances computation template</a> — work out the allowance there, then drop the totals into these boxes.</p>
+    </section>
+
+    <section class="block" id="part12-13">
+      <h2>8. Parts 12–13 — Financial Data &amp; Declaration</h2>
+      <p><strong>Part 12 (boxes 105–127)</strong> asks for headline financial-statement figures — gross income, turnover, inventories, gross profit/loss, dividend/interest income and expense, remuneration, commission, IP payments, management/consultancy fees, bad debts, net profit/loss per account, receivables/payables, issued share capital, and total assets. This is IRD cross-checking your return against the shape of your accounts, not a separate computation.</p>
+      <p><strong>Part 13 (boxes 128–129)</strong> is the declaration — tick exactly one: box 128 for a Secretary/Manager/Director/Investment Manager/Provisional Liquidator/Liquidator declaring the return is complete and accurate, or box 129 for a Service Provider declaring it was prepared per the taxpayer's confirmed instructions (IR1476).</p>
+    </section>
+
+    <section class="block" id="bir52">
+      <h2>9. BIR52 — How It Differs from BIR51</h2>
+      <p>Structurally parallel but shorter (129 boxes → ~111) and reorganized. The headline differences:</p>
+      <ul>
+        <li><strong>Part 1 extras (boxes 4–5):</strong> whether the proprietor/spouse/partner received emoluments or interest on capital from the business — such payments are non-deductible under s.17(2), and box 5 confirms the tax computation adjusts for it. The two-tiered rate election is <strong>box 6</strong> here, not box 4.</li>
+        <li><strong>Part 6 is entirely new:</strong> "Personal Particulars of Proprietor or Partners and Allocation of Profits/Loss and Claim for Deduction of Mandatory Contributions" (boxes 18–37) — per-partner HKID/BR number, profit/loss sharing ratio, a Personal Assessment election flag (the actual election is made on the individual's own BIR60, not here), allocated Assessable Profits/Adjusted Loss, and MPF contributions claimed. The allocation total must equal Part 1's box 1/2. See the <a href="salaries-tax.html#pa">Personal Assessment section</a>.</li>
+        <li><strong>Part 7</strong> drops the corporation-only items (RBC regime, Companies Ordinance amalgamation, private-company/shareholder-change questions) and adds business-specific ones: cessation by death of the proprietor, and property purchase for building allowance purposes.</li>
+        <li><strong>Part 9</strong> lists only 10 supplementary forms (the corporation-only concessions S6–S14, S16–S18 don't apply).</li>
+        <li><strong>Part 10</strong> swaps BIR51's "interest to non-HK associated corporations" box for a "mandatory MPF contributions for proprietor/partners" deduction.</li>
+        <li><strong>No separate depreciation-allowances Part</strong> — Financial Data shifts one part earlier, and the corporation-only "share-based payments"/"issued share capital" fields are dropped.</li>
+        <li><strong>Declaration title varies by entity type:</strong> sole proprietorship → "person"; partnership → "precedent partner"; limited partnership fund → "general partner" / "investment manager"; body of persons → "principal officer"; no resident proprietor/partner → "agent"/"manager"; deceased estate → "executor."</li>
+      </ul>
+    </section>
+
+    <section class="block" id="bir54">
+      <h2>10. BIR54 — What It Actually Is</h2>
+      <div class="callout watch">
+        <span class="lbl">Common misconception, corrected</span>
+        BIR54 is <strong>not</strong> a second "persons other than corporations" return. Its actual title is "Profits Tax Return — In Respect of Non-Resident Persons." It is filed under <strong>ss.20A/20B</strong> by the Hong Kong resident payer or agent, in the <em>non-resident's own name</em>, to report that non-resident's Hong Kong-sourced trade/business profits — most commonly royalty/IP payments, or income received via a Hong Kong agent. It's bilingual (Chinese/English) and far shorter than BIR51/52 (~22 boxes).
+      </div>
+      <p>Key sections: a two-tiered rate election made <em>on behalf of</em> the non-resident (box 3, with the same connected-entity disclosure logic as BIR51/S1); an IP use/assignment block (boxes 11–17) determining whether the deemed-profit computation under <strong>s.21A(1)(a)</strong> applies 100% or 30% of the royalty receipt as assessable profit; a section on the agent's role in Hong Kong; and a reciprocal shipowner exemption block (boxes 18–20, s.23B(4A)) for non-resident shipowners.</p>
+    </section>
+
+    <section class="block" id="sources">
+      <h2>11. Source Documents</h2>
+      <p>Forms (revision 4/2025) saved in <code>Data/Forms/</code>: BIR51, BIR52, BIR54, their respective Notes and Instructions, and the Notice to File forms (IRC1952 for corporations, IRC1953 for others).</p>
+      <ul class="src-list">
+        <li><span class="file">BIR51 — Profits Tax Return (Corporations)</span></li>
+        <li><span class="file">BIR51 Notes and Instructions</span></li>
+        <li><span class="file">BIR52 — Profits Tax Return (Persons Other Than Corporations)</span></li>
+        <li><span class="file">BIR52 Notes and Instructions</span></li>
+        <li><span class="file">BIR54 — Profits Tax Return (Non-Resident Persons)</span></li>
+        <li><span class="file">BIR54 Notes and Instructions</span></li>
+        <li><span class="file">IRC1952 / IRC1953 — Notice to File</span></li>
+      </ul>
+      <p style="font-size:13px;color:var(--text-muted)">Downloaded from ird.gov.hk (index pages: <code>eng/tax/bus_returnspecimen.htm</code>, <code>eng/tax/bus_cpt.htm</code>). Note G Part 1(2) of the BIR51 Notes lists the standard tax-computation add-back/deduction items in full — not yet fully extracted into this guide; ask Claude for a follow-up pass if your team needs that level of detail transcribed too.</p>
+    </section>
+
+    <div class="section-nav">
+      <a href="profits-tax.html">&larr; Profits Tax rules</a>
+      <a href="profits-tax-return-finder.html">Box Finder tool &rarr;</a>
+    </div>
+  </main>
+</div>
+
+<footer class="site-footer">HK Tax Study Hub — internal working document. Verify against a freshly downloaded BIR51/52/54 from ird.gov.hk before relying on any box number for a filing.</footer>
+
+<script src="../assets/js/theme.js"></script>
+</body>
+</html>

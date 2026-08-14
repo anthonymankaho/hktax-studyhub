@@ -28,6 +28,7 @@ loop:
 | `DIPN/Stamp-Duty/` | DIPNs on stamp duty | https://www.ird.gov.hk/eng/ppr/dip.htm |
 | `DIPN/Depreciation-Allowances/` | DIPNs on depreciation / capital allowances | https://www.ird.gov.hk/eng/ppr/dip.htm |
 | `IRD-Administration/` | IRD guides on filing, assessment, objections, appeals, penalties | https://www.ird.gov.hk |
+| `Forms/` | BIR51/52/54 Profits Tax Return forms + Notes and Instructions, and IRC1952/1953 Notice to File forms (revision 4/2025) — back the Profits Tax Return Guide and Box Finder | https://www.ird.gov.hk/eng/tax/bus_returnspecimen.htm |
 | `PwC/` | Saved PwC Worldwide Tax Summaries pages (cross-check only, not a primary legal source) | https://taxsummaries.pwc.com/hong-kong-sar |
 
 Category names above must match the `sources: [...]` list declared at the top
