@@ -27,15 +27,15 @@ OUT_WEB = os.path.join(ROOT, "combined.html")
 # so there is one landing page instead of two that drift apart.
 OUT_INDEX = os.path.join(ROOT, "index.html")
 
-BUILD_DATE = "24 September 2026"
-IRD_READ_DATE = "24 September 2026"
+BUILD_DATE = "6 October 2026"
+IRD_READ_DATE = "6 October 2026"
 
 # One entry per tab panel. `en` is the card blurb on the MAIN index; `zh` is the
 # Chinese summary shown both on the card and at the head of the panel.
 PAGES = [
     dict(id="ird-updates", src="ird-updates.html", group="Start here",
          label="IRD What's New", label_zh="稅務局最新消息",
-         en="Everything on IRD's What's New page, read against this Hub and marked enacted, bill or proposed — with the exact page each item changed. Last read 24 September 2026 (38 items, 1 Jun – 16 Sep 2026).",
+         en="Everything on IRD's What's New page, read against this Hub and marked enacted, bill or proposed — with the exact page each item changed. Last read 6 October 2026 (1 Jun – 30 Sep 2026).",
          zh="整理稅務局「最新消息」所載事項，標明哪些已成為法例、哪些仍屬草案或政策建議，以及本平台已據此更新的頁面。",
          kw="ird what's new news policy address updates bills"),
     dict(id="acca-tx-hkg", src="acca-tx-hkg.html", group="Start here",
@@ -948,7 +948,7 @@ def main():
   <div class="hub-freshness">
     <div class="freshness ok">
       <span class="dot"></span>
-      <span class="msg">IRD <a href="https://www.ird.gov.hk/eng/new/index.htm" target="_blank" rel="noopener">What's New</a> read on <strong>%(ird_date)s</strong> — all 38 items from 1 Jun to 16 Sep 2026 reviewed. Two 2026 Policy Address measures are carried as <strong>proposed</strong>, not enacted. · 稅務局最新消息已於 %(ird_date)s 覆核。</span>
+      <span class="msg">IRD <a href="https://www.ird.gov.hk/eng/new/index.htm" target="_blank" rel="noopener">What's New</a> read on <strong>%(ird_date)s</strong> — items from 1 Jun to 30 Sep 2026 reviewed. The Stamp Duty (Amendment) (No. 3) Bill 2026 is carried as a <strong>bill</strong>, and two 2026 Policy Address measures as <strong>proposed</strong> — none of the three is law yet. · 稅務局最新消息已於 %(ird_date)s 覆核。</span>
       <button data-target="ird-updates">Open IRD What's New &rarr;</button>
     </div>
   </div>

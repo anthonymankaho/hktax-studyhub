@@ -21,3 +21,9 @@ package-lock.json
 # Python build artifacts
 __pycache__/
 *.pyc
+
+# Private working documents - real client/company tax papers kept locally for
+# reference. These must never reach the repo: BOTH remotes are PUBLIC. An MPL
+# property tax assessment was swept in by `git add -A` on 2026-10-06 and caught
+# before pushing; this rule is what stops a repeat.
+EXAMPLE/
