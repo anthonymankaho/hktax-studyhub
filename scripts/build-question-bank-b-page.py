@@ -18,6 +18,10 @@ Run from the project root, after scripts/build-qbank-b.py:
 import io
 import json
 import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import qnote_widget  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 QBANK = os.path.join(ROOT, "assets", "qbank-b.json")
@@ -147,7 +151,7 @@ def main():
   .qbank-verdict-ok{background:var(--ok-bg);color:var(--ok-text);border:1px solid var(--ok-border)}
   .qbank-verdict-bad{background:var(--bad-bg);color:var(--bad-text);border:1px solid var(--bad-border)}
   .qbank-verdict-warn{background:var(--warn-bg);color:var(--warn-text);border:1px solid var(--warn-border)}
-</style>
+@@QNOTE_CSS@@</style>
 </head>
 <body>
 <header class="site-header">
@@ -191,6 +195,7 @@ def main():
 
     <div class="qbank-toolbar">
       <button type="button" class="qbank-btn qbank-reset-btn">Reset all three cases</button>
+      @@QNOTE_BTN@@
       <span class="qbank-score" title="Correct answers out of questions you've checked so far">Score: 0 / %d</span>
     </div>
 
@@ -279,6 +284,7 @@ def main():
     })();
     </script>
    </div>
+@@QNOTE_JS@@
   </main>
 </div>
 
@@ -289,6 +295,9 @@ def main():
 </body>
 </html>
 """ % (NAV, total, len(cases), sittings, SECTION_SWITCH, total, cases_html)
+    html = (html.replace("@@QNOTE_CSS@@", qnote_widget.CSS)
+                .replace("@@QNOTE_BTN@@", qnote_widget.BUTTON % "B")
+                .replace("@@QNOTE_JS@@", qnote_widget.JS))
 
     with io.open(OUT, "w", encoding="utf-8") as f:
         f.write(html)

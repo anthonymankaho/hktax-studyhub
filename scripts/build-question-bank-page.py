@@ -21,6 +21,10 @@ Run from the project root, after scripts/build-qbank.py:
 import io
 import json
 import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import qnote_widget  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 QBANK = os.path.join(ROOT, "assets", "qbank.json")
@@ -159,7 +163,7 @@ def main():
   .qbank-verdict-bad{background:var(--bad-bg);color:var(--bad-text);border:1px solid var(--bad-border)}
   .qbank-verdict-warn{background:var(--warn-bg);color:var(--warn-text);border:1px solid var(--warn-border)}
   .qbank-score{font-size:12.5px;font-weight:700;color:var(--brand);background:var(--surface-alt);border:1px solid var(--border);border-radius:20px;padding:4px 12px;margin-left:auto}
-</style>
+@@QNOTE_CSS@@</style>
 </head>
 <body>
 <header class="site-header">
@@ -243,6 +247,7 @@ def main():
         <div class="qbank-actions">
           <button type="button" class="qbank-btn">Random 15</button>
           <button type="button" class="qbank-btn secondary">Show all</button>
+          @@QNOTE_BTN@@
           <span class="qbank-score" title="Correct answers out of questions you've checked so far &mdash; resets when you draw a new Random 15">Score: 0 / 0</span>
           <span class="qbank-count">Showing %d of %d</span>
         </div>
@@ -408,6 +413,7 @@ def main():
     })();
     </script>
    </div>
+@@QNOTE_JS@@
   </main>
 </div>
 
@@ -418,6 +424,9 @@ def main():
 </html>
 """ % (NAV, total, coverage_rows, total, n_topics, n_computational, total,
        "\n".join(area_chips), total, total, items_html)
+    html = (html.replace("@@QNOTE_CSS@@", qnote_widget.CSS)
+                .replace("@@QNOTE_BTN@@", qnote_widget.BUTTON % "A")
+                .replace("@@QNOTE_JS@@", qnote_widget.JS))
 
     with io.open(OUT, "w", encoding="utf-8") as f:
         f.write(html)
