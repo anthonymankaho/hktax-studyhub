@@ -554,6 +554,22 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
 #question-bank-c .rule td, #question-bank-c .rule th{border-top:2px solid var(--text-muted)}
 #question-bank-c .dbl td, #question-bank-c .dbl th{border-top:1px solid var(--text-muted);border-bottom:3px double var(--text-muted);font-weight:600}
 #question-bank-c .note-no{font-weight:700;color:var(--brand);white-space:nowrap}
+#question-bank-c .qa-sheet{margin:14px 0 4px}
+#question-bank-c .qa-sheet .qa-head{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;margin-bottom:6px}
+#question-bank-c .qa-sheet .qa-title{font-weight:700;font-size:13.5px}
+#question-bank-c .qa-sheet .qa-hint{font-size:12px;color:var(--text-muted);margin:0 0 6px}
+#question-bank-c .qa-sheet button{cursor:pointer;font:inherit;font-size:12.5px;font-weight:600;padding:5px 12px;border-radius:6px;border:1px solid var(--border);background:var(--surface-alt);color:var(--brand)}
+#question-bank-c .qa-sheet button.primary{background:var(--brand);color:#fff;border-color:var(--brand)}
+#question-bank-c .qa-sheet .qa-scroll{max-height:310px;overflow:auto;border:1px solid var(--border);border-radius:6px;background:var(--surface)}
+#question-bank-c .qa-sheet table{border-collapse:separate;border-spacing:0;font-size:13px;width:max-content;min-width:100%}
+#question-bank-c .qa-sheet th{position:sticky;top:0;z-index:2;background:var(--surface-alt);color:var(--text-muted);font-weight:600;font-size:11.5px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);padding:0;height:28px;text-align:center}
+#question-bank-c .qa-sheet th.qa-rn{left:0;z-index:3;min-width:38px}
+#question-bank-c .qa-sheet td.qa-rn{position:sticky;left:0;z-index:1;background:var(--surface-alt);color:var(--text-muted);font-size:11.5px;text-align:center;border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
+#question-bank-c .qa-sheet td{padding:0;border-right:1px solid var(--border);border-bottom:1px solid var(--border);height:28px}
+#question-bank-c .qa-sheet td input{display:block;box-sizing:border-box;width:100%;height:27px;border:0;background:transparent;color:var(--text);font:inherit;padding:0 6px;margin:0;outline:none}
+#question-bank-c .qa-sheet td:not(.qa-rn){min-width:150px}
+#question-bank-c .qa-sheet td:not(.qa-rn):first-of-type{min-width:300px}
+#question-bank-c .qa-sheet td input:focus{box-shadow:inset 0 0 0 2px var(--brand);background:var(--surface)}
 #question-bank-c details.model-answer{margin-top:12px;border-top:1px dotted var(--border);padding-top:10px}
 #question-bank-c details.model-answer summary{cursor:pointer;font-weight:600;color:var(--brand);list-style:none;padding:6px 12px;background:var(--surface-alt);border:1px solid var(--border);border-radius:6px;display:inline-block;font-size:13px}
 #question-bank-c details.model-answer summary::-webkit-details-marker{display:none}
@@ -8112,6 +8128,127 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <a href="#question-bank-b">&larr; Question Bank B</a>
       <a href="#computation-formats">Computation Formats &rarr;</a>
     </div>
+
+    <script>
+    /* Excel-style answer sheet + "copy marking prompt" for each Section C question.
+       Class/data-attribute scoped only (no ids) so it survives build-combined.py. */
+    (function () {
+      var ROWS = 100, COLS = 10, VIEW = 'hktax-qbc-answer-';
+      function colName(i) { return String.fromCharCode(65 + i); }
+      function load(k) { try { return JSON.parse(localStorage.getItem(k) || '{}'); } catch (e) { return {}; } }
+      function save(k, d) { try { localStorage.setItem(k, JSON.stringify(d)); } catch (e) {} }
+      function copyText(t) {
+        function fb() {
+          var ta = document.createElement('textarea'); ta.value = t;
+          ta.style.position = 'fixed'; ta.style.top = '-1000px'; document.body.appendChild(ta); ta.select();
+          var ok = false; try { ok = document.execCommand('copy'); } catch (e) {}
+          document.body.removeChild(ta); return ok;
+        }
+        if (navigator.clipboard && window.isSecureContext)
+          return navigator.clipboard.writeText(t).then(function () { return true; }, function () { return fb(); });
+        return Promise.resolve(fb());
+      }
+      function clean(t) { return (t || '').replace(/[ \t]+/g, ' ').replace(/\n\s*\n+/g, '\n').trim(); }
+
+      Array.prototype.forEach.call(document.querySelectorAll('.block'), function (block, qi) {
+        var qbox = block.querySelector('.qbox'), ans = block.querySelector('details.model-answer');
+        if (!qbox || !ans) return;
+        var key = VIEW + qi, data = load(key);
+        var wrap = document.createElement('div'); wrap.className = 'qa-sheet';
+        var h = '<div class="qa-head"><span class="qa-title">Your answer sheet &middot; 作答表格</span><span>' +
+          '<button type="button" class="primary qa-copy">Copy marking prompt &middot; 複製批改提示</button> ' +
+          '<button type="button" class="qa-clear">Clear &middot; 清除</button></span></div>' +
+          '<p class="qa-hint">Type like Excel: arrow keys / Tab / Enter to move; paste from Excel works; scroll down for rows 11&ndash;100. Saved in this browser only. &middot; 可用方向鍵、Tab、Enter 移動，支援由 Excel 貼上，向下捲動可輸入至第 100 行；只儲存於本瀏覽器。</p>' +
+          '<div class="qa-scroll"><table><thead><tr><th class="qa-rn"></th>';
+        for (var c = 0; c < COLS; c++) h += '<th>' + colName(c) + '</th>';
+        h += '</tr></thead><tbody>';
+        for (var r = 0; r < ROWS; r++) {
+          h += '<tr><td class="qa-rn">' + (r + 1) + '</td>';
+          for (c = 0; c < COLS; c++) h += '<td><input type="text" autocomplete="off" spellcheck="false" data-r="' + r + '" data-c="' + c + '"></td>';
+          h += '</tr>';
+        }
+        h += '</tbody></table></div>';
+        wrap.innerHTML = h;
+        ans.parentNode.insertBefore(wrap, ans);
+
+        var inputs = wrap.querySelectorAll('input');
+        function at(r, c) { return wrap.querySelector('input[data-r="' + r + '"][data-c="' + c + '"]'); }
+        Array.prototype.forEach.call(inputs, function (inp) {
+          var k = inp.getAttribute('data-r') + ',' + inp.getAttribute('data-c');
+          if (data[k]) inp.value = data[k];
+          inp.addEventListener('input', function () {
+            if (inp.value) data[k] = inp.value; else delete data[k];
+            save(key, data);
+          });
+          inp.addEventListener('keydown', function (e) {
+            var r = +inp.getAttribute('data-r'), c = +inp.getAttribute('data-c'), t = null;
+            if (e.key === 'ArrowDown' || e.key === 'Enter') t = at(Math.min(r + 1, ROWS - 1), c);
+            else if (e.key === 'ArrowUp') t = at(Math.max(r - 1, 0), c);
+            else if (e.key === 'ArrowLeft' && inp.selectionStart === 0 && inp.selectionEnd === 0) t = at(r, Math.max(c - 1, 0));
+            else if (e.key === 'ArrowRight' && inp.selectionStart === inp.value.length) t = at(r, Math.min(c + 1, COLS - 1));
+            if (t) { e.preventDefault(); t.focus(); t.select(); }
+          });
+          inp.addEventListener('paste', function (e) {
+            var txt = (e.clipboardData || window.clipboardData).getData('text');
+            if (txt.indexOf('\n') < 0 && txt.indexOf('\t') < 0) return;
+            e.preventDefault();
+            var r0 = +inp.getAttribute('data-r'), c0 = +inp.getAttribute('data-c');
+            txt.replace(/\r/g, '').replace(/\n$/, '').split('\n').forEach(function (line, i) {
+              line.split('\t').forEach(function (v, j) {
+                var cell = at(r0 + i, c0 + j); if (!cell) return;
+                cell.value = v; var kk = (r0 + i) + ',' + (c0 + j);
+                if (v) data[kk] = v; else delete data[kk];
+              });
+            });
+            save(key, data);
+          });
+        });
+
+        wrap.querySelector('.qa-clear').addEventListener('click', function () {
+          if (!Object.keys(data).length || !confirm('Clear this answer sheet? \u6e05\u9664\u6b64\u984c\u5168\u90e8\u4f5c\u7b54\uff1f')) return;
+          data = {}; save(key, data);
+          Array.prototype.forEach.call(inputs, function (i) { i.value = ''; });
+        });
+
+        var btn = wrap.querySelector('.qa-copy'), label = btn.innerHTML;
+        btn.addEventListener('click', function () {
+          var lines = [], maxC = -1, last = -1, r, c;
+          for (r = 0; r < ROWS; r++) for (c = 0; c < COLS; c++) if (data[r + ',' + c]) { last = r; if (c > maxC) maxC = c; }
+          for (r = 0; r <= last; r++) {
+            var cells = [];
+            for (c = 0; c <= maxC; c++) cells.push(data[r + ',' + c] || '');
+            lines.push((r + 1) + '\t' + cells.join('\t'));
+          }
+          var head = ['Row'];
+          for (c = 0; c <= maxC; c++) head.push(colName(c));
+          var student = last < 0 ? '(blank \u2014 the student has not entered an answer)' : head.join('\t') + '\n' + lines.join('\n');
+          var prompt = [
+            'You are an ACCA TX-HKG (Hong Kong taxation) examiner. Mark the student answer below against the question and the model answer.',
+            'Use year of assessment 2026/27 law unless the question says otherwise. Work only from the Inland Revenue Ordinance (Cap. 112) and IRD guidance; if unsure of a section number, say so rather than guessing.',
+            '',
+            '=== QUESTION ===',
+            clean(qbox.textContent),
+            '',
+            '=== MODEL ANSWER AND MARK ALLOCATION (the "(n mark)" tags show marks) ===',
+            clean(ans.textContent.replace('Show model answer', '')),
+            '',
+            '=== STUDENT ANSWER (spreadsheet cells, tab-separated; columns A\u2013J, row numbers in the first column) ===',
+            student,
+            '',
+            '=== WHAT TO DO ===',
+            '1. Mark each part, (a), (b)... separately, awarding marks line by line against the model answer. Give "own figure" credit where a wrong earlier figure is carried through correctly.',
+            '2. For every mark lost, state exactly what was missing or wrong and the correct treatment (with the IRO section if you are certain).',
+            '3. Give a mark per part and a TOTAL out of the question total shown above, in a small table.',
+            '4. Finish with 2\u20133 concrete tips to improve. Reply in English, with a short Traditional Chinese (\u7e41\u9ad4\u4e2d\u6587) summary at the end.'
+          ].join('\n');
+          copyText(prompt).then(function (ok) {
+            btn.innerHTML = ok ? 'Copied \u2713 \u5df2\u8907\u88fd \u2014 paste into your browser AI \u8cbc\u4e0a\u5230\u700f\u89bd\u5668 AI' : 'Copy failed \u8907\u88fd\u5931\u6557';
+            setTimeout(function () { btn.innerHTML = label; }, 2500);
+          });
+        });
+      });
+    })();
+    </script>
   </main></div>
 </section>
 
