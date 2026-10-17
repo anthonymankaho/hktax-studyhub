@@ -90,7 +90,7 @@ a:hover{text-decoration:underline}
   height:56px;
 }
 .site-header .brand{font-weight:700;font-size:16px;color:#fff;white-space:nowrap}
-.site-header .brand small{display:block;font-weight:400;font-size:11px;opacity:.85}
+.site-header .brand small{display:block;font-weight:400;font-size:12px;opacity:.85}
 .site-nav{display:flex;gap:4px;flex-wrap:wrap;flex:1}
 .site-nav a{
   color:#fdeceb;font-size:13.5px;padding:7px 10px;border-radius:6px;white-space:nowrap;
@@ -101,7 +101,7 @@ a:hover{text-decoration:underline}
 @media (max-width:900px){.shell{grid-template-columns:1fr}}
 
 .toc{position:sticky;top:76px;align-self:start;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;font-size:13.5px;max-height:calc(100vh - 100px);overflow:auto}
-.toc h4{margin:0 0 8px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted)}
+.toc h4{margin:0 0 8px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted)}
 .toc a{display:block;padding:4px 0;color:var(--text)}
 .toc a:hover{color:var(--link)}
 .toc .sub{padding-left:12px;font-size:12.5px;color:var(--text-muted)}
@@ -112,7 +112,7 @@ a:hover{text-decoration:underline}
 .page-title{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:6px}
 .page-title h1{margin:0;font-size:26px}
 .page-title .subtitle{color:var(--text-muted);font-size:14px;margin:4px 0 0}
-.badge{display:inline-block;font-size:11px;font-weight:600;padding:2px 9px;border-radius:20px;letter-spacing:.02em}
+.badge{display:inline-block;font-size:12px;font-weight:600;padding:2px 9px;border-radius:20px;letter-spacing:.02em}
 .badge-business{background:var(--tax-bg);color:var(--tax-text)}
 .badge-individual{background:var(--deduct-bg);color:var(--deduct-text)}
 .badge-common{background:var(--surface-alt);color:var(--text-muted)}
@@ -151,7 +151,7 @@ th{background:var(--surface-alt);font-weight:600;font-size:13px}
 tr:hover td{background:var(--surface-alt)}
 .num{text-align:right;font-variant-numeric:tabular-nums}
 
-.tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.03em;padding:2px 8px;border-radius:5px;white-space:nowrap}
+.tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.03em;padding:2px 8px;border-radius:5px;white-space:nowrap}
 .tag-taxable{background:var(--tax-bg);color:var(--tax-text)}
 .tag-nontaxable{background:var(--surface-alt);color:var(--text-muted)}
 .tag-deductible{background:var(--deduct-bg);color:var(--deduct-text)}
@@ -181,7 +181,7 @@ tr:hover td{background:var(--surface-alt)}
   border:1px solid var(--border);border-left:4px solid var(--brand);border-radius:var(--radius);
   background:var(--surface);padding:14px 18px;margin:14px 0;
 }
-.illustration .lbl{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--brand);margin-bottom:6px;display:flex;justify-content:space-between}
+.illustration .lbl{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--brand);margin-bottom:6px;display:flex;justify-content:space-between}
 .illustration .src{font-weight:500;color:var(--text-muted);text-transform:none;letter-spacing:0}
 .illustration pre, .illustration table{margin:8px 0 0}
 
@@ -193,7 +193,7 @@ pre code{background:none;padding:0}
 .callout.law{background:var(--tax-bg);border-color:var(--border);color:var(--text)}
 .callout.tip{background:var(--ok-bg);border-color:var(--ok-border);color:var(--ok-text)}
 .callout.watch{background:var(--warn-bg);border-color:var(--warn-border);color:var(--warn-text)}
-.callout .lbl{font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px;display:block}
+.callout .lbl{font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px;display:block}
 
 .src-list{list-style:none;margin:0;padding:0;font-size:13px}
 .src-list li{padding:6px 0;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;gap:10px}

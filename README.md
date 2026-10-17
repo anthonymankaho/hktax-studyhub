@@ -160,10 +160,8 @@ every rate and allowance taken from it must be re-checked against IRD.
 ## Folder structure
 
 ```
-index.html                       GENERATED — the site's landing page; same app as below
-combined.html                    GENERATED — identical, clean URL for sharing
-HK Tax Study Hub - Combined.html GENERATED — identical, the name people recognise
-                                 as an email attachment
+index.html                       GENERATED — the whole Hub in ONE self-contained file
+                                 (all pages, data and question banks embedded)
 pages/                           THE SOURCES. Edit these, then rebuild.
   ird-updates.html               IRD What's New, marked enacted / bill / proposed
   acca-tx-hkg.html                Exam syllabus mapping + examiner-report digest + sample Qs
@@ -215,15 +213,13 @@ There are two ways to read the Hub, from **one** set of sources:
 
 - **Single-file app** — a tabbed frame: sticky topbar, a bilingual card index,
   one panel per page, jump-search and a dark-mode toggle. The build writes it
-  to three paths, byte-identical:
-  - `index.html` — the landing page of the published site
-  - `combined.html` — same thing, clean URL for pasting into Slack or email
-  - `HK Tax Study Hub - Combined.html` — same thing again; this is the name
-    that makes it recognisable in someone's Downloads folder
+  to a single file, `index.html`, which is both the landing page of the
+  published site and the one file to share or download — every page, data
+  table and question bank is embedded, nothing is fetched at run time.
 - **Multi-file** — `pages/*.html` opened individually. These are the sources
   you edit, and they stay browsable on their own.
 
-**All three outputs are generated. Never hand-edit them** — including
+**`index.html` is generated. Never hand-edit it** — including
 `index.html`, which used to be a hand-written hub page and no longer is. Edit
 the page under `pages/` and rebuild:
 
@@ -343,7 +339,7 @@ To regenerate Section A after editing a question or adding new ones:
 ```
 python scripts\build-qbank.py                 # writes assets/qbank.json
 python scripts\build-question-bank-page.py    # writes pages/question-bank.html
-python scripts\build-combined.py              # folds it into the three combined outputs
+python scripts\build-combined.py              # folds it into index.html
 ```
 
 Section B is generated the same way, from its own smaller pair of scripts:

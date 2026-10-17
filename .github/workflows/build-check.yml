@@ -1,0 +1,16 @@
+name: build-check
+
+on: [push, pull_request]
+
+jobs:
+  index-is-current:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Rebuild index.html
+        run: python scripts/build-combined.py
+      - name: Fail if the committed index.html is stale
+        run: git diff --exit-code -- index.html

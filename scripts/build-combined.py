@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Build "HK Tax Study Hub - Combined.html" as a single self-contained file.
+Build index.html as a single self-contained file (all pages, data and question
+banks embedded - nothing is fetched at run time).
 
 Frame follows HKICPA_Study_Platform.html: sticky topbar, a MAIN card index,
 one tab-panel per page, jump-search and a dark-mode toggle. Each panel keeps
@@ -20,8 +21,6 @@ import sys
 from datetime import date
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-OUT = os.path.join(ROOT, "HK Tax Study Hub - Combined.html")
-OUT_WEB = os.path.join(ROOT, "combined.html")
 # The published site's landing page IS this app. The old hand-written
 # multi-file hub used to live here; its card blurbs now live in PAGES[*]["en"],
 # so there is one landing page instead of two that drift apart.
@@ -335,6 +334,13 @@ def page_style(html, pid):
     return "\n/* ---- %s ---- */\n%s\n" % (pid, "\n".join(out)) if out else ""
 
 
+def add_col_scope(fragment):
+    """Give header cells inside <thead> scope="col" so screen readers announce them."""
+    def fix(m):
+        return re.sub(r"<th(?![^>]*\bscope=)(?=[\s>])", '<th scope="col"', m.group(0))
+    return re.sub(r"<thead\b.*?</thead>", fix, fragment, flags=re.S)
+
+
 def zh_note(label_zh, summary_zh):
     """Traditional Chinese orientation note shown at the head of every panel."""
     return (
@@ -364,6 +370,7 @@ def build_panel(pid, label, src, label_zh, summary_zh):
     toc = extract(html, "aside", 'class="toc"')
 
     content = localise(content, pid)
+    content = add_col_scope(content)
     content = inject_zh(content, zh_note(label_zh, summary_zh))
     toc = localise(toc, pid) if toc else ""
 
@@ -371,7 +378,7 @@ def build_panel(pid, label, src, label_zh, summary_zh):
     aside = '<aside class="toc">%s</aside>' % toc if toc else ""
     panel = (
         '<section class="tab-panel" id="%s" data-label="%s">\n'
-        '  <div class="shell"%s>%s<main class="content">%s</main></div>\n'
+        '  <div class="shell"%s>%s<div class="content">%s</div></div>\n'
         "</section>\n" % (pid, label, shell_style, aside, content)
     )
     return panel, page_style(html, pid)
@@ -533,7 +540,7 @@ FRAME_CSS = """
   box-shadow:var(--shadow);
 }
 .topbar .brand{font-weight:700;padding:10px 14px 10px 6px;white-space:nowrap;letter-spacing:.2px;font-size:15px;color:var(--topbar-text)}
-.topbar .brand small{display:block;font-weight:400;font-size:11px;opacity:.85}
+.topbar .brand small{display:block;font-weight:400;font-size:12px;opacity:.85}
 .navlink,.toolbtn{
   background:transparent;border:none;color:var(--topbar-dim);font-family:inherit;
   padding:12px 13px;cursor:pointer;font-size:13.5px;font-weight:600;
@@ -621,7 +628,7 @@ FRAME_CSS = """
 .rev-notice > summary{cursor:pointer;padding:11px 14px;list-style:none;
   display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
 .rev-notice > summary::-webkit-details-marker{display:none}
-.rev-notice > summary::before{content:"\25b8";display:inline-block;transition:transform .15s}
+.rev-notice > summary::before{content:"\\25b8";display:inline-block;transition:transform .15s}
 .rev-notice[open] > summary::before{transform:rotate(90deg)}
 .rev-meta{font-size:12px;opacity:.85;margin-left:auto}
 .rev-body{padding:0 14px 14px;border-top:1px solid var(--warn-border)}
@@ -631,14 +638,42 @@ FRAME_CSS = """
 .rev-list{margin:0;padding-left:20px}
 .rev-list li{margin:7px 0;line-height:1.5}
 .rev-list-gap li{color:var(--text)}
-.rev-date{font-size:11.5px;opacity:.75;font-variant-numeric:tabular-nums}
+.rev-date{font-size:12px;opacity:.75;font-variant-numeric:tabular-nums}
 .rev-foot{margin:12px 0 0;font-size:12.5px;opacity:.85}
 @media (max-width:760px){.rev-notice-wrap{padding:0 14px}.rev-meta{margin-left:0;width:100%}}
 
 footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;padding:22px 20px 40px;border-top:1px solid var(--border);max-width:1280px;margin:0 auto}
 
+
+/* ---------- accessibility ---------- */
+.skip-link{position:absolute;left:8px;top:-60px;z-index:200;background:var(--surface);color:var(--text);padding:8px 14px;border-radius:6px;box-shadow:var(--shadow);font-weight:600}
+.skip-link:focus{top:8px}
+:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+.topbar :focus-visible{outline-color:var(--topbar-accent);outline-offset:-3px}
+#question-bank .qnote-panel td input:focus-visible,
+#question-bank-b .qnote-panel td input:focus-visible,
+#question-bank-c .qa-sheet td input:focus-visible{outline:2px solid var(--link);outline-offset:-2px}
+#content-main:focus{outline:none}
+.topnav{display:flex;flex-wrap:wrap;align-items:center;gap:4px}
+.noscript-msg{max-width:860px;margin:20px auto;padding:14px 18px;background:var(--warn-bg);color:var(--warn-text);border:1px solid var(--warn-border);border-radius:var(--radius)}
+.qbank-report{display:inline-block;margin-top:8px;font-size:12px;color:var(--text-muted)}
+.quick-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.quick-actions button{background:var(--surface);color:var(--brand);border:1px solid var(--brand);border-radius:var(--radius);padding:9px 16px;font:inherit;font-weight:600;cursor:pointer}
+.quick-actions button:hover{background:var(--surface-alt)}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+}
+@media print{
+  .topbar,.skip-link,.toc,footer.appfoot,.hero-actions,.quick-actions,.crumb{display:none!important}
+  body{background:#fff;color:#000;font-size:12pt}
+  .tab-panel .shell{display:block;padding:0}
+  table,pre,.illustration,.callout{break-inside:avoid;box-shadow:none}
+  a{color:inherit;text-decoration:underline}
+}
 @media (max-width:760px){
   .topbar{position:static}
+  .topnav{flex-wrap:nowrap;overflow-x:auto;width:100%;order:3;-webkit-overflow-scrolling:touch}
+  .topnav .navlink{white-space:nowrap;flex:0 0 auto}
   .tab-panel .toc{position:static;max-height:none}
   .topbar input[type="search"]{width:170px}
 }
@@ -671,14 +706,29 @@ FRAME_JS = r"""
   }
 
   /* ---------- tabs ---------- */
-  function activate(id){
-    if(!document.getElementById(id)) id = 'MAIN';
+  var BASE_TITLE = document.title;
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function activate(id, mode){
+    if(!document.getElementById(id) || !document.getElementById(id).classList.contains('tab-panel')){
+      var hit = document.getElementById(id);
+      var owner = hit && hit.closest('.tab-panel');
+      id = owner ? owner.id : 'MAIN';
+    }
     document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.toggle('active', p.id === id); });
-    document.querySelectorAll('.navlink').forEach(function(b){ b.classList.toggle('active', b.dataset.target === id); });
-    try{ history.replaceState(null, '', '#' + id); }catch(e){}
+    document.querySelectorAll('.navlink').forEach(function(b){
+      var on = b.dataset.target === id;
+      b.classList.toggle('active', on);
+      if(on) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current');
+    });
+    var panel = document.getElementById(id);
+    document.title = id === 'MAIN' ? BASE_TITLE : (panel.dataset.label || id) + ' \u00b7 ' + BASE_TITLE;
+    if(mode !== 'none' && location.hash !== '#' + id){
+      try{ history[mode === 'replace' ? 'replaceState' : 'pushState'](null, '', '#' + id); }catch(e){}
+    }
     window.scrollTo(0, 0);
   }
-  window.hubActivate = activate;
+  window.hubActivate = function(id){ activate(id); };
+  window.addEventListener('hashchange', function(){ activate((location.hash || '#MAIN').slice(1), 'none'); });
 
   document.addEventListener('click', function(ev){
     var tabBtn = ev.target.closest('[data-target]');
@@ -695,7 +745,7 @@ FRAME_JS = r"""
     var owner = el.closest('.tab-panel');
     ev.preventDefault();
     if(owner && !owner.classList.contains('active')) activate(owner.id);
-    el.scrollIntoView({behavior:'smooth', block:'start'});
+    el.scrollIntoView({behavior: reduceMotion ? 'auto' : 'smooth', block:'start'});
   });
 
   /* ---------- MAIN card search ---------- */
@@ -863,8 +913,25 @@ FRAME_JS = r"""
     }
   });
 
+  /* ---------- "report an error" link on every question ---------- */
+  document.querySelectorAll('.tab-panel').forEach(function(panel){
+    panel.querySelectorAll('.qbank-item').forEach(function(item, i){
+      var topicEl = item.querySelector('.qbank-topic');
+      var qText = (item.querySelector('.qbank-q, .qbank-stem, p') || item).textContent.trim().replace(/\s+/g, ' ').slice(0, 140);
+      var title = 'Question error: ' + (panel.dataset.label || panel.id) + ' #' + (i + 1) + (topicEl ? ' (' + topicEl.textContent.trim() + ')' : '');
+      var body = 'Page: ' + (panel.dataset.label || panel.id) + '\nQuestion #' + (i + 1) + '\nStarts: ' + qText + '\n\nWhat looks wrong (with the IRO/SDO section or IRD source):\n';
+      var a = document.createElement('a');
+      a.className = 'qbank-report';
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.href = 'https://github.com/anthonymankaho/hktax-studyhub/issues/new?title=' + encodeURIComponent(title) + '&body=' + encodeURIComponent(body);
+      a.textContent = 'Report an error \u00b7 \u56de\u5831\u932f\u8aa4';
+      item.appendChild(a);
+    });
+  });
+
   /* ---------- open the requested tab ---------- */
-  activate((location.hash || '#MAIN').slice(1));
+  activate((location.hash || '#MAIN').slice(1), 'replace');
 })();
 """
 
@@ -893,23 +960,34 @@ def main():
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="A study aid for Hong Kong tax - profits, property and salaries tax, stamp duty, depreciation allowances and personal assessment - built from IRD guidance and the Inland Revenue Ordinance. Not professional advice.">
 <title>HK Tax Study Hub</title>
+<meta name="theme-color" content="#8b2635">
+<link rel="canonical" href="https://anthonymankaho.github.io/hktax-studyhub/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="HK Tax Study Hub">
+<meta property="og:description" content="Hong Kong tax study aid: profits, property and salaries tax, stamp duty, depreciation allowances, ACCA TX-HKG question banks and a transaction checker. Not professional advice.">
+<meta property="og:url" content="https://anthonymankaho.github.io/hktax-studyhub/">
+<link rel="icon" href="data:image/svg+xml,%%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%%3E%%3Crect width='32' height='32' rx='6' fill='%%238b2635'/%%3E%%3Ctext x='16' y='22' font-size='16' font-family='Arial' font-weight='700' text-anchor='middle' fill='white'%%3EHK%%3C/text%%3E%%3C/svg%%3E">
 <style>
 %(css)s
 </style>
 </head>
 <body>
+<a class="skip-link" href="#content-main">Skip to content</a>
+<noscript><div class="noscript-msg">This study hub needs JavaScript to switch between pages, search and run the question banks. Please enable JavaScript and reload. · 本平台需要啟用 JavaScript 才能切換頁面及使用題庫。</div></noscript>
 
-<div class="topbar">
-  <div class="brand">HK Tax Study Hub<small>Combined single-file edition</small></div>
-  <button class="navlink active" data-target="MAIN">MAIN 主頁</button>
+<header class="topbar">
+  <div class="brand">HK Tax Study Hub<small>香港稅務學習平台</small></div>
+  <nav class="topnav" aria-label="Primary">
+  <button class="navlink active" data-target="MAIN" aria-current="page">MAIN 主頁</button>
 %(nav)s
+  </nav>
   <div class="spacer"></div>
   <div class="searchwrap">
-    <input type="search" id="jumpSearch" placeholder="Jump to a page... 跳至頁面" />
+    <input type="search" id="jumpSearch" aria-label="Jump to a page" placeholder="Jump to a page... 跳至頁面" />
   </div>
   <button class="toolbtn ai-prompt-btn" title="Copy a hardened HK-tax prompt to paste into your browser AI">AI Prompts</button>
   <button class="toolbtn" id="themeBtn">&#9789; Dark Mode</button>
-</div>
+</header>
 
 <dialog class="intro-dialog" id="welcomeGuide" aria-labelledby="welcomeTitle">
   <div class="intro-body">
@@ -931,7 +1009,8 @@ def main():
   </div>
 </dialog>
 
-<section class="tab-panel active" id="MAIN">
+<main id="content-main" tabindex="-1">
+<section class="tab-panel active" id="MAIN" data-label="Home">
   <div class="hero">
     <h1>Hong Kong Tax Study Hub</h1>
     <p>Consolidated internal reference for HK profits, property and salaries tax, stamp duty, and depreciation allowances — built for (1) tax computation and taxable/deductible analysis on Hong Kong incorporated companies' financial statements, and (2) team study with worked illustrations drawn from IRD's Departmental Interpretation &amp; Practice Notes (DIPNs).</p>
@@ -943,6 +1022,11 @@ def main():
     </div>
     <div class="hero-actions">
       <button type="button" class="intro-open" id="guideOpen">How to use this Hub · 使用指南</button>
+    </div>
+    <div class="quick-actions" role="group" aria-label="Quick start">
+      <button type="button" data-target="transaction-checker">Transaction Checker · 交易稅務檢查器</button>
+      <button type="button" data-target="question-bank">Question Bank A · 題庫 A</button>
+      <button type="button" data-target="ird-updates">IRD What's New · 稅務局最新消息</button>
     </div>
   </div>
   <div class="hub-freshness">
@@ -960,8 +1044,9 @@ def main():
 </section>
 
 %(panels)s
+</main>
 
-<footer class="appfoot">HK Tax Study Hub — combined single-file snapshot, built %(build_date)s. Internal working document: verify against the Inland Revenue Ordinance (Cap. 112) and current IRD guidance before relying on any figure for a filing position. · 內部工作文件，引用前請核對《稅務條例》及稅務局現行指引。</footer>
+<footer class="appfoot">HK Tax Study Hub — single-file edition, built %(build_date)s. Internal working document: verify against the Inland Revenue Ordinance (Cap. 112) and current IRD guidance before relying on any figure for a filing position. · 內部工作文件，引用前請核對《稅務條例》及稅務局現行指引。</footer>
 
 <script>
 %(data)s
@@ -987,17 +1072,10 @@ def main():
         "ird_date": IRD_READ_DATE,
     }
 
-    with io.open(OUT, "w", encoding="utf-8", newline="\n") as fh:
+    with io.open(OUT_INDEX, "w", encoding="utf-8", newline="\n") as fh:
         fh.write(html)
 
-    # Clean-URL twin for the published site: the spaced filename is what people
-    # recognise as an email attachment, but it URL-encodes badly in a link.
-    for extra in (OUT_WEB, OUT_INDEX):
-        with io.open(extra, "w", encoding="utf-8", newline="\n") as fh:
-            fh.write(html)
-
-    print("wrote %s (%.1f KB)" % (os.path.basename(OUT), len(html.encode("utf-8")) / 1024.0))
-    print("wrote combined.html and index.html (same content)")
+    print("wrote %s (%.1f KB)" % (os.path.basename(OUT_INDEX), len(html.encode("utf-8")) / 1024.0))
     print("panels: %d + MAIN | page CSS blocks inlined: %d" % (len(panels), len(page_css)))
     print("allowance guard: %d allowance types checked against %s and %s"
           % (check_allowances(html), CURRENT_YA, EXAM_YA))

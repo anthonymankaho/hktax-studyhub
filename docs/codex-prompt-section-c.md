@@ -228,8 +228,7 @@ Also update, in the same file:
 ```bash
 cd "C:/Users/User/Desktop/HKTAX STUDYHUB - CLAUDE"
 
-# 1. Rebuild the single-file/combined editions (regenerates index.html,
-#    combined.html and "HK Tax Study Hub - Combined.html" from pages/)
+# 1. Rebuild the single-file edition (regenerates index.html from pages/)
 python scripts/build-combined.py
 
 # 2. Layout audit: every panel, desktop 1400px and phone 380px.
@@ -240,8 +239,7 @@ node scripts/audit-layout.js
 ```
 
 The build must print `allowance guard: …`, `corruption check '??': 0` and
-`corruption check '§': 0`. **Never hand-edit `index.html`, `combined.html` or
-`HK Tax Study Hub - Combined.html`** — all three are generated.
+`corruption check '§': 0`. **Never hand-edit `index.html`** — it is generated.
 
 Then check in a browser that each new `<details>` opens and the tables line up,
 in both light and dark mode.

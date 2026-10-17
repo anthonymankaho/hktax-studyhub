@@ -5,6 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="A study aid for Hong Kong tax - profits, property and salaries tax, stamp duty, depreciation allowances and personal assessment - built from IRD guidance and the Inland Revenue Ordinance. Not professional advice.">
 <title>HK Tax Study Hub</title>
+<meta name="theme-color" content="#8b2635">
+<link rel="canonical" href="https://anthonymankaho.github.io/hktax-studyhub/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="HK Tax Study Hub">
+<meta property="og:description" content="Hong Kong tax study aid: profits, property and salaries tax, stamp duty, depreciation allowances, ACCA TX-HKG question banks and a transaction checker. Not professional advice.">
+<meta property="og:url" content="https://anthonymankaho.github.io/hktax-studyhub/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%238b2635'/%3E%3Ctext x='16' y='22' font-size='16' font-family='Arial' font-weight='700' text-anchor='middle' fill='white'%3EHK%3C/text%3E%3C/svg%3E">
 <style>
 /* HK Tax Study Hub — shared design system */
 
@@ -98,7 +105,7 @@ a:hover{text-decoration:underline}
   height:56px;
 }
 .site-header .brand{font-weight:700;font-size:16px;color:#fff;white-space:nowrap}
-.site-header .brand small{display:block;font-weight:400;font-size:11px;opacity:.85}
+.site-header .brand small{display:block;font-weight:400;font-size:12px;opacity:.85}
 .site-nav{display:flex;gap:4px;flex-wrap:wrap;flex:1}
 .site-nav a{
   color:#fdeceb;font-size:13.5px;padding:7px 10px;border-radius:6px;white-space:nowrap;
@@ -109,7 +116,7 @@ a:hover{text-decoration:underline}
 @media (max-width:900px){.shell{grid-template-columns:1fr}}
 
 .toc{position:sticky;top:76px;align-self:start;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;font-size:13.5px;max-height:calc(100vh - 100px);overflow:auto}
-.toc h4{margin:0 0 8px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted)}
+.toc h4{margin:0 0 8px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted)}
 .toc a{display:block;padding:4px 0;color:var(--text)}
 .toc a:hover{color:var(--link)}
 .toc .sub{padding-left:12px;font-size:12.5px;color:var(--text-muted)}
@@ -120,7 +127,7 @@ a:hover{text-decoration:underline}
 .page-title{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:6px}
 .page-title h1{margin:0;font-size:26px}
 .page-title .subtitle{color:var(--text-muted);font-size:14px;margin:4px 0 0}
-.badge{display:inline-block;font-size:11px;font-weight:600;padding:2px 9px;border-radius:20px;letter-spacing:.02em}
+.badge{display:inline-block;font-size:12px;font-weight:600;padding:2px 9px;border-radius:20px;letter-spacing:.02em}
 .badge-business{background:var(--tax-bg);color:var(--tax-text)}
 .badge-individual{background:var(--deduct-bg);color:var(--deduct-text)}
 .badge-common{background:var(--surface-alt);color:var(--text-muted)}
@@ -159,7 +166,7 @@ th{background:var(--surface-alt);font-weight:600;font-size:13px}
 tr:hover td{background:var(--surface-alt)}
 .num{text-align:right;font-variant-numeric:tabular-nums}
 
-.tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.03em;padding:2px 8px;border-radius:5px;white-space:nowrap}
+.tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.03em;padding:2px 8px;border-radius:5px;white-space:nowrap}
 .tag-taxable{background:var(--tax-bg);color:var(--tax-text)}
 .tag-nontaxable{background:var(--surface-alt);color:var(--text-muted)}
 .tag-deductible{background:var(--deduct-bg);color:var(--deduct-text)}
@@ -189,7 +196,7 @@ tr:hover td{background:var(--surface-alt)}
   border:1px solid var(--border);border-left:4px solid var(--brand);border-radius:var(--radius);
   background:var(--surface);padding:14px 18px;margin:14px 0;
 }
-.illustration .lbl{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--brand);margin-bottom:6px;display:flex;justify-content:space-between}
+.illustration .lbl{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--brand);margin-bottom:6px;display:flex;justify-content:space-between}
 .illustration .src{font-weight:500;color:var(--text-muted);text-transform:none;letter-spacing:0}
 .illustration pre, .illustration table{margin:8px 0 0}
 
@@ -201,7 +208,7 @@ pre code{background:none;padding:0}
 .callout.law{background:var(--tax-bg);border-color:var(--border);color:var(--text)}
 .callout.tip{background:var(--ok-bg);border-color:var(--ok-border);color:var(--ok-text)}
 .callout.watch{background:var(--warn-bg);border-color:var(--warn-border);color:var(--warn-text)}
-.callout .lbl{font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px;display:block}
+.callout .lbl{font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px;display:block}
 
 .src-list{list-style:none;margin:0;padding:0;font-size:13px}
 .src-list li{padding:6px 0;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;gap:10px}
@@ -345,7 +352,7 @@ footer.site-footer{max-width:1280px;margin:0 auto;padding:20px;color:var(--text-
   box-shadow:var(--shadow);
 }
 .topbar .brand{font-weight:700;padding:10px 14px 10px 6px;white-space:nowrap;letter-spacing:.2px;font-size:15px;color:var(--topbar-text)}
-.topbar .brand small{display:block;font-weight:400;font-size:11px;opacity:.85}
+.topbar .brand small{display:block;font-weight:400;font-size:12px;opacity:.85}
 .navlink,.toolbtn{
   background:transparent;border:none;color:var(--topbar-dim);font-family:inherit;
   padding:12px 13px;cursor:pointer;font-size:13.5px;font-weight:600;
@@ -433,7 +440,7 @@ footer.site-footer{max-width:1280px;margin:0 auto;padding:20px;color:var(--text-
 .rev-notice > summary{cursor:pointer;padding:11px 14px;list-style:none;
   display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
 .rev-notice > summary::-webkit-details-marker{display:none}
-.rev-notice > summary::before{content:"b8";display:inline-block;transition:transform .15s}
+.rev-notice > summary::before{content:"\25b8";display:inline-block;transition:transform .15s}
 .rev-notice[open] > summary::before{transform:rotate(90deg)}
 .rev-meta{font-size:12px;opacity:.85;margin-left:auto}
 .rev-body{padding:0 14px 14px;border-top:1px solid var(--warn-border)}
@@ -443,14 +450,42 @@ footer.site-footer{max-width:1280px;margin:0 auto;padding:20px;color:var(--text-
 .rev-list{margin:0;padding-left:20px}
 .rev-list li{margin:7px 0;line-height:1.5}
 .rev-list-gap li{color:var(--text)}
-.rev-date{font-size:11.5px;opacity:.75;font-variant-numeric:tabular-nums}
+.rev-date{font-size:12px;opacity:.75;font-variant-numeric:tabular-nums}
 .rev-foot{margin:12px 0 0;font-size:12.5px;opacity:.85}
 @media (max-width:760px){.rev-notice-wrap{padding:0 14px}.rev-meta{margin-left:0;width:100%}}
 
 footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;padding:22px 20px 40px;border-top:1px solid var(--border);max-width:1280px;margin:0 auto}
 
+
+/* ---------- accessibility ---------- */
+.skip-link{position:absolute;left:8px;top:-60px;z-index:200;background:var(--surface);color:var(--text);padding:8px 14px;border-radius:6px;box-shadow:var(--shadow);font-weight:600}
+.skip-link:focus{top:8px}
+:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+.topbar :focus-visible{outline-color:var(--topbar-accent);outline-offset:-3px}
+#question-bank .qnote-panel td input:focus-visible,
+#question-bank-b .qnote-panel td input:focus-visible,
+#question-bank-c .qa-sheet td input:focus-visible{outline:2px solid var(--link);outline-offset:-2px}
+#content-main:focus{outline:none}
+.topnav{display:flex;flex-wrap:wrap;align-items:center;gap:4px}
+.noscript-msg{max-width:860px;margin:20px auto;padding:14px 18px;background:var(--warn-bg);color:var(--warn-text);border:1px solid var(--warn-border);border-radius:var(--radius)}
+.qbank-report{display:inline-block;margin-top:8px;font-size:12px;color:var(--text-muted)}
+.quick-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.quick-actions button{background:var(--surface);color:var(--brand);border:1px solid var(--brand);border-radius:var(--radius);padding:9px 16px;font:inherit;font-weight:600;cursor:pointer}
+.quick-actions button:hover{background:var(--surface-alt)}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+}
+@media print{
+  .topbar,.skip-link,.toc,footer.appfoot,.hero-actions,.quick-actions,.crumb{display:none!important}
+  body{background:#fff;color:#000;font-size:12pt}
+  .tab-panel .shell{display:block;padding:0}
+  table,pre,.illustration,.callout{break-inside:avoid;box-shadow:none}
+  a{color:inherit;text-decoration:underline}
+}
 @media (max-width:760px){
   .topbar{position:static}
+  .topnav{flex-wrap:nowrap;overflow-x:auto;width:100%;order:3;-webkit-overflow-scrolling:touch}
+  .topnav .navlink{white-space:nowrap;flex:0 0 auto}
   .tab-panel .toc{position:static;max-height:none}
   .topbar input[type="search"]{width:170px}
 }
@@ -487,7 +522,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
 #question-bank .qbank-btn.secondary{background:var(--surface);color:var(--brand)}
 #question-bank .qbank-count{font-size:12.5px;color:var(--text-muted)}
 #question-bank .qbank-item{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--brand);border-radius:var(--radius);padding:14px 16px;margin:12px 0;box-shadow:var(--shadow)}
-#question-bank .qbank-meta{font-size:11px;text-transform:uppercase;letter-spacing:.03em;margin-bottom:6px}
+#question-bank .qbank-meta{font-size:12px;text-transform:uppercase;letter-spacing:.03em;margin-bottom:6px}
 #question-bank .qbank-tag{font-weight:700;color:var(--brand);margin-right:6px}
 #question-bank .qbank-topic{color:var(--text-muted);margin-right:6px}
 #question-bank .qbank-diff{padding:1px 8px;border-radius:10px;background:var(--surface-alt);color:var(--text-muted)}
@@ -498,7 +533,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
 #question-bank .qbank-reveal{border:1px solid var(--border);background:var(--surface-alt);color:var(--text);border-radius:6px;padding:5px 12px;font-size:12.5px;cursor:pointer;font-family:inherit}
 #question-bank .qbank-ans{margin-top:10px;padding-top:9px;border-top:1px dotted var(--border);font-size:13.5px}
 #question-bank .qbank-answer-line strong{color:var(--ok-text)}
-#question-bank .qbank-ref{display:inline-block;margin-top:4px;font-size:11.5px;color:var(--text-muted);border:1px solid var(--border);border-radius:4px;padding:1px 7px}
+#question-bank .qbank-ref{display:inline-block;margin-top:4px;font-size:12px;color:var(--text-muted);border:1px solid var(--border);border-radius:4px;padding:1px 7px}
 #question-bank .qbank-opts label{display:flex;align-items:flex-start;gap:8px;cursor:pointer;padding:2px 4px;border-radius:4px}
 #question-bank .qbank-opts label:hover{background:var(--surface-alt)}
 #question-bank .qbank-opts input[type="radio"]{margin-top:3px;flex-shrink:0}
@@ -513,13 +548,13 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
 #question-bank .qnote-head{display:flex;align-items:center;gap:8px;padding:6px 10px;cursor:move;background:var(--surface-alt);border-radius:7px 7px 0 0;user-select:none;touch-action:none}
 #question-bank .qnote-head strong{flex:1;font-size:13px}
 #question-bank .qnote-head button{cursor:pointer;font:inherit;font-size:12px;padding:2px 9px;border-radius:5px;border:1px solid var(--border);background:var(--surface);color:var(--brand)}
-#question-bank .qnote-hint{margin:0;padding:4px 10px;font-size:11.5px;color:var(--text-muted)}
+#question-bank .qnote-hint{margin:0;padding:4px 10px;font-size:12px;color:var(--text-muted)}
 #question-bank .qnote-scroll{height:250px;overflow:auto;border-top:1px solid var(--border);background:var(--surface)}
 #question-bank .qnote-panel.min .qnote-scroll, #question-bank .qnote-panel.min .qnote-hint{display:none}
 #question-bank .qnote-panel table{border-collapse:separate;border-spacing:0;table-layout:fixed;width:max-content}
-#question-bank .qnote-panel th{position:sticky;top:0;z-index:2;background:var(--surface-alt);color:var(--text-muted);font-size:11px;font-weight:600;height:24px;width:90px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);padding:0}
+#question-bank .qnote-panel th{position:sticky;top:0;z-index:2;background:var(--surface-alt);color:var(--text-muted);font-size:12px;font-weight:600;height:24px;width:90px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);padding:0}
 #question-bank .qnote-panel th.qnote-rn{left:0;z-index:3;width:36px}
-#question-bank .qnote-panel td.qnote-rn{position:sticky;left:0;z-index:1;width:36px;background:var(--surface-alt);color:var(--text-muted);font-size:11px;text-align:center;border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
+#question-bank .qnote-panel td.qnote-rn{position:sticky;left:0;z-index:1;width:36px;background:var(--surface-alt);color:var(--text-muted);font-size:12px;text-align:center;border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
 #question-bank .qnote-panel td{padding:0;height:25px;border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
 #question-bank .qnote-panel td input{display:block;box-sizing:border-box;width:90px;height:24px;border:0;background:transparent;color:var(--text);font:inherit;padding:0 5px;margin:0;outline:none}
 #question-bank .qnote-panel td input.qnote-num{text-align:right}
@@ -538,7 +573,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
 #question-bank-b .qbank-marks{font-size:12px;font-weight:500;color:var(--text-muted)}
 #question-bank-b .qbank-scenario{background:var(--surface-alt);border:1px solid var(--border);border-left:4px solid var(--brand);border-radius:var(--radius);padding:14px 16px;margin:0 0 14px;font-size:14px}
 #question-bank-b .qbank-item{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;margin:12px 0;box-shadow:var(--shadow)}
-#question-bank-b .qbank-meta{font-size:11px;text-transform:uppercase;letter-spacing:.03em;margin-bottom:6px;color:var(--brand);font-weight:700}
+#question-bank-b .qbank-meta{font-size:12px;text-transform:uppercase;letter-spacing:.03em;margin-bottom:6px;color:var(--brand);font-weight:700}
 #question-bank-b .qbank-q{margin:6px 0 8px;font-size:14.5px}
 #question-bank-b .qbank-opts{margin:0 0 10px 22px;padding:0;font-size:14px}
 #question-bank-b .qbank-opts li{margin:3px 0}
@@ -548,7 +583,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
 #question-bank-b .qbank-reveal{border:1px solid var(--border);background:var(--surface-alt);color:var(--text);border-radius:6px;padding:5px 12px;font-size:12.5px;cursor:pointer;font-family:inherit}
 #question-bank-b .qbank-ans{margin-top:10px;padding-top:9px;border-top:1px dotted var(--border);font-size:13.5px}
 #question-bank-b .qbank-answer-line strong{color:var(--ok-text)}
-#question-bank-b .qbank-ref{display:inline-block;margin-top:4px;font-size:11.5px;color:var(--text-muted);border:1px solid var(--border);border-radius:4px;padding:1px 7px}
+#question-bank-b .qbank-ref{display:inline-block;margin-top:4px;font-size:12px;color:var(--text-muted);border:1px solid var(--border);border-radius:4px;padding:1px 7px}
 #question-bank-b .qbank-verdict{font-weight:700;padding:6px 10px;border-radius:6px;margin:0 0 8px;font-size:13.5px}
 #question-bank-b .qbank-verdict:empty{display:none;margin:0;padding:0}
 #question-bank-b .qbank-verdict-ok{background:var(--ok-bg);color:var(--ok-text);border:1px solid var(--ok-border)}
@@ -559,13 +594,13 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
 #question-bank-b .qnote-head{display:flex;align-items:center;gap:8px;padding:6px 10px;cursor:move;background:var(--surface-alt);border-radius:7px 7px 0 0;user-select:none;touch-action:none}
 #question-bank-b .qnote-head strong{flex:1;font-size:13px}
 #question-bank-b .qnote-head button{cursor:pointer;font:inherit;font-size:12px;padding:2px 9px;border-radius:5px;border:1px solid var(--border);background:var(--surface);color:var(--brand)}
-#question-bank-b .qnote-hint{margin:0;padding:4px 10px;font-size:11.5px;color:var(--text-muted)}
+#question-bank-b .qnote-hint{margin:0;padding:4px 10px;font-size:12px;color:var(--text-muted)}
 #question-bank-b .qnote-scroll{height:250px;overflow:auto;border-top:1px solid var(--border);background:var(--surface)}
 #question-bank-b .qnote-panel.min .qnote-scroll, #question-bank-b .qnote-panel.min .qnote-hint{display:none}
 #question-bank-b .qnote-panel table{border-collapse:separate;border-spacing:0;table-layout:fixed;width:max-content}
-#question-bank-b .qnote-panel th{position:sticky;top:0;z-index:2;background:var(--surface-alt);color:var(--text-muted);font-size:11px;font-weight:600;height:24px;width:90px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);padding:0}
+#question-bank-b .qnote-panel th{position:sticky;top:0;z-index:2;background:var(--surface-alt);color:var(--text-muted);font-size:12px;font-weight:600;height:24px;width:90px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);padding:0}
 #question-bank-b .qnote-panel th.qnote-rn{left:0;z-index:3;width:36px}
-#question-bank-b .qnote-panel td.qnote-rn{position:sticky;left:0;z-index:1;width:36px;background:var(--surface-alt);color:var(--text-muted);font-size:11px;text-align:center;border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
+#question-bank-b .qnote-panel td.qnote-rn{position:sticky;left:0;z-index:1;width:36px;background:var(--surface-alt);color:var(--text-muted);font-size:12px;text-align:center;border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
 #question-bank-b .qnote-panel td{padding:0;height:25px;border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
 #question-bank-b .qnote-panel td input{display:block;box-sizing:border-box;width:90px;height:24px;border:0;background:transparent;color:var(--text);font:inherit;padding:0 5px;margin:0;outline:none}
 #question-bank-b .qnote-panel td input.qnote-num{text-align:right}
@@ -596,9 +631,9 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
 #question-bank-c .qa-sheet button.primary{background:var(--brand);color:#fff;border-color:var(--brand)}
 #question-bank-c .qa-sheet .qa-scroll{max-height:310px;overflow:auto;border:1px solid var(--border);border-radius:6px;background:var(--surface)}
 #question-bank-c .qa-sheet table{border-collapse:separate;border-spacing:0;font-size:13px;width:max-content;min-width:100%}
-#question-bank-c .qa-sheet th{position:sticky;top:0;z-index:2;background:var(--surface-alt);color:var(--text-muted);font-weight:600;font-size:11.5px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);padding:0;height:28px;text-align:center}
+#question-bank-c .qa-sheet th{position:sticky;top:0;z-index:2;background:var(--surface-alt);color:var(--text-muted);font-weight:600;font-size:12px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);padding:0;height:28px;text-align:center}
 #question-bank-c .qa-sheet th.qa-rn{left:0;z-index:3;min-width:38px}
-#question-bank-c .qa-sheet td.qa-rn{position:sticky;left:0;z-index:1;background:var(--surface-alt);color:var(--text-muted);font-size:11.5px;text-align:center;border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
+#question-bank-c .qa-sheet td.qa-rn{position:sticky;left:0;z-index:1;background:var(--surface-alt);color:var(--text-muted);font-size:12px;text-align:center;border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
 #question-bank-c .qa-sheet td{padding:0;border-right:1px solid var(--border);border-bottom:1px solid var(--border);height:28px}
 #question-bank-c .qa-sheet td input{display:block;box-sizing:border-box;width:100%;height:27px;border:0;background:transparent;color:var(--text);font:inherit;padding:0 6px;margin:0;outline:none}
 #question-bank-c .qa-sheet td:not(.qa-rn){min-width:150px}
@@ -652,10 +687,13 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
 </style>
 </head>
 <body>
+<a class="skip-link" href="#content-main">Skip to content</a>
+<noscript><div class="noscript-msg">This study hub needs JavaScript to switch between pages, search and run the question banks. Please enable JavaScript and reload. · 本平台需要啟用 JavaScript 才能切換頁面及使用題庫。</div></noscript>
 
-<div class="topbar">
-  <div class="brand">HK Tax Study Hub<small>Combined single-file edition</small></div>
-  <button class="navlink active" data-target="MAIN">MAIN 主頁</button>
+<header class="topbar">
+  <div class="brand">HK Tax Study Hub<small>香港稅務學習平台</small></div>
+  <nav class="topnav" aria-label="Primary">
+  <button class="navlink active" data-target="MAIN" aria-current="page">MAIN 主頁</button>
 <button class="navlink" data-target="ird-updates">IRD What's New</button>
 <button class="navlink" data-target="acca-tx-hkg">ACCA TX-HKG</button>
 <button class="navlink" data-target="question-bank">Question Bank A</button>
@@ -666,13 +704,14 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
 <button class="navlink" data-target="transaction-checker">Transaction Checker</button>
 <button class="navlink" data-target="dipn-index">DIPN Index</button>
 <a class="navlink" href="https://anthonymanhk.github.io/hkfrs-as-study-platform/" target="_blank" rel="noopener">HKFRS / HKAS &rarr;</a>
+  </nav>
   <div class="spacer"></div>
   <div class="searchwrap">
-    <input type="search" id="jumpSearch" placeholder="Jump to a page... 跳至頁面" />
+    <input type="search" id="jumpSearch" aria-label="Jump to a page" placeholder="Jump to a page... 跳至頁面" />
   </div>
   <button class="toolbtn ai-prompt-btn" title="Copy a hardened HK-tax prompt to paste into your browser AI">AI Prompts</button>
   <button class="toolbtn" id="themeBtn">&#9789; Dark Mode</button>
-</div>
+</header>
 
 <dialog class="intro-dialog" id="welcomeGuide" aria-labelledby="welcomeTitle">
   <div class="intro-body">
@@ -694,7 +733,8 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
   </div>
 </dialog>
 
-<section class="tab-panel active" id="MAIN">
+<main id="content-main" tabindex="-1">
+<section class="tab-panel active" id="MAIN" data-label="Home">
   <div class="hero">
     <h1>Hong Kong Tax Study Hub</h1>
     <p>Consolidated internal reference for HK profits, property and salaries tax, stamp duty, and depreciation allowances — built for (1) tax computation and taxable/deductible analysis on Hong Kong incorporated companies' financial statements, and (2) team study with worked illustrations drawn from IRD's Departmental Interpretation &amp; Practice Notes (DIPNs).</p>
@@ -706,6 +746,11 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
     </div>
     <div class="hero-actions">
       <button type="button" class="intro-open" id="guideOpen">How to use this Hub · 使用指南</button>
+    </div>
+    <div class="quick-actions" role="group" aria-label="Quick start">
+      <button type="button" data-target="transaction-checker">Transaction Checker · 交易稅務檢查器</button>
+      <button type="button" data-target="question-bank">Question Bank A · 題庫 A</button>
+      <button type="button" data-target="ird-updates">IRD What's New · 稅務局最新消息</button>
     </div>
   </div>
   <div class="hub-freshness">
@@ -796,7 +841,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
     <a href="#ird-updates__treaties">Treaty network</a>
     <a href="#ird-updates__fraud">Fraud alerts</a>
     <a href="#ird-updates__noted">Noted, no content change</a>
-  </aside><main class="content">
+  </aside><div class="content">
     <div class="page-title">
       <div>
         <span class="badge badge-common">Living page — re-check each month</span>
@@ -815,7 +860,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <h2>1. How to use this page</h2>
       <p class="lede">The Study Hub's tax pages state the law as it stands. This page is the audit trail behind them: what IRD announced, whether it is <em>enacted</em> or still <em>proposed</em>, and which page was edited as a result.</p>
       <table>
-        <thead><tr><th style="width:150px">Marker</th><th>Meaning</th></tr></thead>
+        <thead><tr><th scope="col" style="width:150px">Marker</th><th scope="col">Meaning</th></tr></thead>
         <tbody>
           <tr><td><span class="tag tag-deductible">Enacted</span></td><td>In force, or an ordinance already gazetted. Safe to apply, subject to its own commencement date.</td></tr>
           <tr><td><span class="tag tag-taxable">Gazetted / bill</span></td><td>Published or before LegCo but not yet law. Know it is coming; do not apply it.</td></tr>
@@ -831,7 +876,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
     <section class="block" id="ird-updates__acted">
       <h2>2. Changes already applied to this Hub</h2>
       <table>
-        <thead><tr><th style="width:110px">IRD date</th><th>Item</th><th>Status</th><th>Page updated</th></tr></thead>
+        <thead><tr><th scope="col" style="width:110px">IRD date</th><th scope="col">Item</th><th scope="col">Status</th><th scope="col">Page updated</th></tr></thead>
         <tbody>
           <tr><td>29 Sep 2026</td><td>Stamp Duty (Amendment) (No. 3) Bill 2026 — intra-group relief: association test 90% → 75%, widened to non-share-capital entities</td><td><span class="tag tag-taxable">Bill</span></td><td><a href="#stamp-duty__reliefs">Stamp Duty §6</a></td></tr>
           <tr><td>16 Sep 2026</td><td>Child allowance $140,000 → $160,000, 2nd and subsequent children born on/after 16 Sep 2026</td><td><span class="tag tag-nontaxable">Proposed</span></td><td><a href="#salaries-tax__allowances">Salaries Tax §5</a></td></tr>
@@ -858,7 +903,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
         <div class="lbl">2026 Policy Address — child allowance <span class="src">16 September 2026 · proposed</span></div>
         <p>Child allowance rises from <strong>HKD 140,000 to HKD 160,000</strong> for a taxpayer's <strong>second and subsequent children born on or after 16 September 2026</strong>, claimable until age 25 on the usual conditions. The <strong>additional</strong> child allowance for the year of birth and the following year rises to HKD 160,000 on the same basis — so HKD 320,000 per qualifying child in each of those two years.</p>
         <table>
-          <thead><tr><th>Child</th><th>Born before 16 Sep 2026</th><th>Born on/after 16 Sep 2026</th></tr></thead>
+          <thead><tr><th scope="col">Child</th><th scope="col">Born before 16 Sep 2026</th><th scope="col">Born on/after 16 Sep 2026</th></tr></thead>
           <tbody>
             <tr><td>First child</td><td class="num">140,000</td><td class="num">140,000 (unchanged)</td></tr>
             <tr><td>Second and subsequent</td><td class="num">140,000</td><td class="num"><strong>160,000</strong> (proposed)</td></tr>
@@ -888,7 +933,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
     <section class="block" id="ird-updates__profits">
       <h2>5. Profits tax &amp; concession regimes</h2>
       <table>
-        <thead><tr><th style="width:110px">Date</th><th>Measure</th><th>What changes</th><th style="width:110px">Status</th></tr></thead>
+        <thead><tr><th scope="col" style="width:110px">Date</th><th scope="col">Measure</th><th scope="col">What changes</th><th scope="col" style="width:110px">Status</th></tr></thead>
         <tbody>
           <tr>
             <td>12 Jun 2026</td>
@@ -935,7 +980,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <div class="illustration">
         <div class="lbl">Block Extension Scheme — 2025/26 "D" code returns <span class="src">Circular, 14 July 2026 · enacted</span></div>
         <table>
-          <thead><tr><th>Accounting Date Code "D" (1–31 December 2025)</th><th>Previous due date</th><th>Extended due date</th></tr></thead>
+          <thead><tr><th scope="col">Accounting Date Code "D" (1–31 December 2025)</th><th scope="col">Previous due date</th><th scope="col">Extended due date</th></tr></thead>
           <tbody>
             <tr><td>Paper filing</td><td>17 August 2026</td><td><strong>31 August 2026</strong></td></tr>
             <tr><td>Electronic filing</td><td>17 September 2026</td><td><strong>2 October 2026</strong></td></tr>
@@ -944,7 +989,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
         <p style="font-size:13px;color:var(--text-muted)">Granted to help businesses and practitioners adapt to new compliance requirements; representatives are still urged to file well ahead. Codes "N" and "M" were not changed by this circular. <a href="https://www.ird.gov.hk/eng/pdf/bel26ea.pdf" target="_blank" rel="noopener">Circular Letter to Tax Representatives</a>, signed by the Commissioner, 14 Jul 2026.</p>
       </div>
       <table>
-        <thead><tr><th style="width:110px">Date</th><th>Item</th><th>Why it matters</th></tr></thead>
+        <thead><tr><th scope="col" style="width:110px">Date</th><th scope="col">Item</th><th scope="col">Why it matters</th></tr></thead>
         <tbody>
           <tr><td>17 Jun 2026</td><td><a href="https://www.ird.gov.hk/eng/ppr/archives/26061706.htm" target="_blank" rel="noopener">AEOI Amendment Ordinance 2026 passed</a></td><td>Implements the OECD's <strong>amended Common Reporting Standard</strong> — new/changed due diligence and reporting fields for reporting financial institutions.</td></tr>
           <tr><td>1 Jun 2026</td><td><a href="https://www.ird.gov.hk/eng/ppr/archives/26060101.htm" target="_blank" rel="noopener">CARF Bill introduced into LegCo</a></td><td>Crypto-Asset Reporting Framework — brings <strong>crypto-asset service providers</strong> into the reporting net. A new population of reporting entities, not merely a new field.</td></tr>
@@ -962,7 +1007,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
     <section class="block" id="ird-updates__treaties">
       <h2>7. Treaty network</h2>
       <table>
-        <thead><tr><th style="width:110px">Signed</th><th>Jurisdiction</th><th>Note</th></tr></thead>
+        <thead><tr><th scope="col" style="width:110px">Signed</th><th scope="col">Jurisdiction</th><th scope="col">Note</th></tr></thead>
         <tbody>
           <tr><td>4 Sep 2026</td><td><a href="https://www.ird.gov.hk/eng/ppr/archives/26090401.htm" target="_blank" rel="noopener">Slovenia</a></td><td>Hong Kong's <strong>60th</strong> comprehensive double taxation agreement.</td></tr>
           <tr><td>13 Jul 2026</td><td><a href="https://www.ird.gov.hk/eng/ppr/archives/26071401.htm" target="_blank" rel="noopener">Nigeria</a></td><td>First CDTA with Nigeria.</td></tr>
@@ -1008,7 +1053,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <a href="#MAIN">&larr; Back to Hub</a>
       <a href="#ird-administration">IRD Administration &rarr;</a>
     </div>
-  </main></div>
+  </div></div>
 </section>
 
 <section class="tab-panel" id="acca-tx-hkg" data-label="ACCA TX-HKG">
@@ -1027,7 +1072,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
     <a href="#acca-tx-hkg__secB6">Practice: salaries tax</a>
     <a href="#acca-tx-hkg__links">Verified ACCA links</a>
     <a href="#acca-tx-hkg__copyright">Why nothing is reproduced here</a>
-  </aside><main class="content">
+  </aside><div class="content">
     <div class="page-title">
       <div>
         <span class="badge badge-common">Exam preparation — TX-HKG (Taxation, Hong Kong)</span>
@@ -1050,7 +1095,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
     <section class="block" id="acca-tx-hkg__format">
       <h2>1. Exam format</h2>
       <table>
-        <thead><tr><th style="width:110px">Section</th><th>Structure</th><th class="num" style="width:90px">Marks</th></tr></thead>
+        <thead><tr><th scope="col" style="width:110px">Section</th><th scope="col">Structure</th><th scope="col" class="num" style="width:90px">Marks</th></tr></thead>
         <tbody>
           <tr><td><strong>A</strong></td><td>15 multiple-choice questions, 2 marks each, across the whole syllabus</td><td class="num">30</td></tr>
           <tr><td><strong>B</strong></td><td>4 questions of 10 marks + 2 questions of 15 marks. All compulsory.</td><td class="num">70</td></tr>
@@ -1072,7 +1117,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       </div>
       <p>Everywhere on this Hub the current basis is <strong>YA 2026/27</strong>. The practice questions below are worked on that basis, with the <strong>exam-year figure shown alongside</strong> wherever it differs — so you can see both what the rule is now and what the 2025 papers wanted.</p>
       <table>
-        <thead><tr><th>Item</th><th class="num">YA 2026/27 — current, used here</th><th class="num">YA 2024/25 &amp; 2025/26 — J25 to <strong>D26</strong></th></tr></thead>
+        <thead><tr><th scope="col">Item</th><th scope="col" class="num">YA 2026/27 — current, used here</th><th scope="col" class="num">YA 2024/25 &amp; 2025/26 — J25 to <strong>D26</strong></th></tr></thead>
         <tbody>
           <tr><td>Basic allowance</td><td class="num"><strong>145,000</strong></td><td class="num">132,000</td></tr>
           <tr><td>Married person's allowance</td><td class="num"><strong>290,000</strong></td><td class="num">264,000</td></tr>
@@ -1093,7 +1138,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <h2>3. Syllabus → Hub coverage</h2>
       <p class="lede">Every TX-HKG syllabus area mapped to the page that covers it, with the gaps stated rather than glossed over.</p>
       <table>
-        <thead><tr><th style="width:44px">§</th><th style="width:26%">Syllabus area</th><th>Covered by</th><th style="width:96px">Status</th></tr></thead>
+        <thead><tr><th scope="col" style="width:44px">§</th><th scope="col" style="width:26%">Syllabus area</th><th scope="col">Covered by</th><th scope="col" style="width:96px">Status</th></tr></thead>
         <tbody>
           <tr>
             <td><strong>A</strong></td><td>The Hong Kong tax system and its administration</td>
@@ -1141,7 +1186,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <div class="callout law">
         <span class="lbl">What two consecutive years tell you</span>
         <table style="margin-top:8px;box-shadow:none">
-          <thead><tr><th style="width:24%"></th><th>June 2026</th><th>June 2025</th></tr></thead>
+          <thead><tr><th scope="col" style="width:24%"></th><th scope="col">June 2026</th><th scope="col">June 2025</th></tr></thead>
           <tbody>
             <tr><td><strong>Weakest</strong></td><td>Tax administration · profits tax <em>expense treatment</em> · <strong>personal assessment computation</strong></td><td>Tax administration · depreciation allowances · partnerships</td></tr>
             <tr><td><strong>Best</strong></td><td>Property tax · profits tax computation</td><td>Property tax · salaries tax · profits tax</td></tr>
@@ -1158,7 +1203,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       </div>
 
       <table>
-        <thead><tr><th style="width:24%">Topic</th><th>Reported performance and the errors named</th></tr></thead>
+        <thead><tr><th scope="col" style="width:24%">Topic</th><th scope="col">Reported performance and the errors named</th></tr></thead>
         <tbody>
           <tr>
             <td><strong>Tax administration</strong><br><span class="tag tag-nondeductible">weakest</span></td>
@@ -1327,7 +1372,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
         <p><strong>REQUIRED:</strong> For each event, state the company's reporting obligation, the statutory provision, and the time limit or due date. <span class="marks">(10 marks)</span></p>
       </div>
       <table>
-        <thead><tr><th style="width:48px">Event</th><th>Obligation and provision</th><th style="width:31%">Time limit / due date</th></tr></thead>
+        <thead><tr><th scope="col" style="width:48px">Event</th><th scope="col">Obligation and provision</th><th scope="col" style="width:31%">Time limit / due date</th></tr></thead>
         <tbody>
           <tr>
             <td><strong>1</strong></td>
@@ -1374,7 +1419,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <div class="proforma">
         <table>
           <caption><strong>Reddane Engineering Limited — Depreciation Allowance Schedule</strong> · YA 2026/27</caption>
-          <thead><tr><th style="width:38%"></th><th class="num">20%</th><th class="num">30%</th><th class="num">Allowances</th></tr></thead>
+          <thead><tr><th scope="col" style="width:38%"></th><th scope="col" class="num">20%</th><th scope="col" class="num">30%</th><th scope="col" class="num">Allowances</th></tr></thead>
           <tbody>
             <tr><td>Written down value b/f</td><td class="num">180,000</td><td class="num">240,000</td><td class="num"></td></tr>
             <tr><td>Additions — lathe, cash</td><td class="num">250,000</td><td class="num">—</td><td class="num"></td></tr>
@@ -1390,7 +1435,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
         </table>
       </div>
       <table>
-        <thead><tr><th style="width:40%">The trap</th><th>Why the wrong answer is wrong</th></tr></thead>
+        <thead><tr><th scope="col" style="width:40%">The trap</th><th scope="col">Why the wrong answer is wrong</th></tr></thead>
         <tbody>
           <tr><td><strong>IA on the van's full cash price</strong></td><td>60% × $360,000 = $216,000 instead of $144,000. On hire purchase the allowance follows the <strong>capital sums actually paid in the year</strong>. Named by the examiners as a specific error.</td></tr>
           <tr><td><strong>Van put in the pool at full cost</strong></td><td>Only the capital paid enters. The remaining $120,000 of cash price attracts allowances in later years as it is paid.</td></tr>
@@ -1499,7 +1544,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <div class="proforma">
         <table>
           <caption>Allocation between the partners</caption>
-          <thead><tr><th style="width:44%"></th><th class="num">Total</th><th class="num">Amy</th><th class="num">Ben</th></tr></thead>
+          <thead><tr><th scope="col" style="width:44%"></th><th scope="col" class="num">Total</th><th scope="col" class="num">Amy</th><th scope="col" class="num">Ben</th></tr></thead>
           <tbody>
             <tr><td>Salary — Amy</td><td class="num">360,000</td><td class="num">360,000</td><td class="num">—</td></tr>
             <tr><td>Salary and MPF — Amy's husband<br><span class="dual">disallowed under s.17(2), so attributed to Amy as the related partner</span></td><td class="num">252,000</td><td class="num">252,000</td><td class="num">—</td></tr>
@@ -1520,7 +1565,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
         </table>
       </div>
       <table>
-        <thead><tr><th style="width:42%">The trap</th><th>Why</th></tr></thead>
+        <thead><tr><th scope="col" style="width:42%">The trap</th><th scope="col">Why</th></tr></thead>
         <tbody>
           <tr><td><strong>Allocating the loss per the accounts</strong></td><td>Allocation is of the <strong>adjusted</strong> figure. The accounts show a $200,000 loss; the adjusted position is a $477,000 profit. Named by the examiners as a specific error.</td></tr>
           <tr><td><strong>Not allocating the disallowed items</strong></td><td>The spouse's salary and MPF are disallowed, but the benefit went to Amy's household — they are attributed to <strong>Amy</strong> in the allocation, not shared 60:40.</td></tr>
@@ -1676,7 +1721,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <h2>12. Verified ACCA resources</h2>
       <p class="lede">Every link below was tested on <strong>24 September 2026</strong>. Five URLs in the source list this was compiled from were dead and have been removed rather than passed on.</p>
       <table>
-        <thead><tr><th style="width:26%">Resource</th><th>What it is good for</th><th style="width:74px">Link</th></tr></thead>
+        <thead><tr><th scope="col" style="width:26%">Resource</th><th scope="col">What it is good for</th><th scope="col" style="width:74px">Link</th></tr></thead>
         <tbody>
           <tr><td><strong>June 2026 examiner's report</strong></td><td>The most recent. Tax administration, profits tax expense treatment and personal assessment reported as weakest. §4 summarises it.</td><td><a href="https://www.accaglobal.com/gb/en/student/exam-support-resources/fundamentals-exams-study-resources/f6/examiners-reports.html" target="_blank" rel="noopener">Index →</a></td></tr>
           <tr><td><strong>June 2025 examiner's report</strong></td><td>The most recent detailed account of what candidates got wrong, question by question. §4 above summarises it; the original has more.</td><td><a href="https://www.accaglobal.com/content/dam/acca/global/PDF-students/acca/f6/examreports/J25%20TX%20HKG%20examiner's%20report.pdf" target="_blank" rel="noopener">PDF →</a></td></tr>
@@ -1705,7 +1750,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <p>ACCA publishes past papers, model answers and examiner's reports free for students to download. That is a licence to <strong>use</strong> them for study — it is not a licence to <strong>republish</strong> them. Their PDFs carry "© ACCA — All rights reserved", and this Hub is a public website.</p>
       <p>So the division on this page is deliberate:</p>
       <table>
-        <thead><tr><th style="width:44%">What this page does</th><th>What it does not do</th></tr></thead>
+        <thead><tr><th scope="col" style="width:44%">What this page does</th><th scope="col">What it does not do</th></tr></thead>
         <tbody>
           <tr><td>Links to ACCA's own PDFs on their own site</td><td>Host or mirror any of them</td></tr>
           <tr><td>Maps the published syllabus areas to our pages</td><td>Reproduce the study guide</td></tr>
@@ -1728,7 +1773,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <a href="#tax-reconciliation">&larr; Tax Reconciliation</a>
       <a href="#computation-formats">Computation Formats &rarr;</a>
     </div>
-  </main></div>
+  </div></div>
 </section>
 
 <section class="tab-panel" id="question-bank" data-label="Question Bank A">
@@ -1739,7 +1784,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
     <a href="#question-bank__howtouse">How to use it</a>
     <a href="#question-bank__tool">The question bank</a>
     <a href="#question-bank__copyright">Originality</a>
-  </aside><main class="content">
+  </aside><div class="content">
    <div class="qbank-app">
     <div class="page-title">
       <div>
@@ -1768,7 +1813,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
     <section class="block" id="question-bank__coverage">
       <h2>Coverage by syllabus area</h2>
       <table>
-        <thead><tr><th>Area</th><th>Syllabus area</th><th>Questions</th></tr></thead>
+        <thead><tr><th scope="col">Area</th><th scope="col">Syllabus area</th><th scope="col">Questions</th></tr></thead>
         <tbody>
           <tr><td>A</td><td>Tax system and administration</td><td>44</td></tr>
           <tr><td>B</td><td>Salaries tax</td><td>72</td></tr>
@@ -7144,8 +7189,8 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
             '<button type="button" class="qnote-clear">Clear</button>' +
             '<button type="button" class="qnote-close" aria-label="Close">&times;</button></div>' +
             '<p class="qnote-hint">Type numbers or formulas like =A1+B1*2 (only + - * / and brackets). Arrow keys / Enter / Tab move; Excel paste works. Saved in this browser. &middot; 支援 = + - * / 公式，自動儲存。</p>' +
-            '<div class="qnote-scroll"><table><thead><tr><th class="qnote-rn"></th>';
-          for (var c = 0; c < COLS; c++) h += '<th>' + colName(c) + '</th>';
+            '<div class="qnote-scroll"><table><thead><tr><th scope="col" class="qnote-rn"></th>';
+          for (var c = 0; c < COLS; c++) h += '<th scope="col">' + colName(c) + '</th>';
           h += '</tr></thead><tbody>';
           for (var r = 0; r < ROWS; r++) {
             h += '<tr><td class="qnote-rn">' + (r + 1) + '</td>';
@@ -7219,7 +7264,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
     })();
     </script>
 
-  </main></div>
+  </div></div>
 </section>
 
 <section class="tab-panel" id="question-bank-b" data-label="Question Bank B">
@@ -7230,7 +7275,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
     <a href="#question-bank-b__case2">Case 2 — Golden Horizon Ltd</a>
     <a href="#question-bank-b__case3">Case 3 — Harbour Partners</a>
     <a href="#question-bank-b__copyright">Originality</a>
-  </aside><main class="content">
+  </aside><div class="content">
    <div class="qbank-app">
     <div class="page-title">
       <div>
@@ -8000,8 +8045,8 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
             '<button type="button" class="qnote-clear">Clear</button>' +
             '<button type="button" class="qnote-close" aria-label="Close">&times;</button></div>' +
             '<p class="qnote-hint">Type numbers or formulas like =A1+B1*2 (only + - * / and brackets). Arrow keys / Enter / Tab move; Excel paste works. Saved in this browser. &middot; 支援 = + - * / 公式，自動儲存。</p>' +
-            '<div class="qnote-scroll"><table><thead><tr><th class="qnote-rn"></th>';
-          for (var c = 0; c < COLS; c++) h += '<th>' + colName(c) + '</th>';
+            '<div class="qnote-scroll"><table><thead><tr><th scope="col" class="qnote-rn"></th>';
+          for (var c = 0; c < COLS; c++) h += '<th scope="col">' + colName(c) + '</th>';
           h += '</tr></thead><tbody>';
           for (var r = 0; r < ROWS; r++) {
             h += '<tr><td class="qnote-rn">' + (r + 1) + '</td>';
@@ -8075,7 +8120,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
     })();
     </script>
 
-  </main></div>
+  </div></div>
 </section>
 
 <section class="tab-panel" id="question-bank-c" data-label="Question Bank C">
@@ -8091,7 +8136,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
     <a href="#question-bank-c__q7">Question 7 — Harbor Link Sourcing Ltd (15 marks)</a>
     <a href="#question-bank-c__q8">Question 8 — East Point Design Ltd (25 marks)</a>
     <a href="#question-bank-c__copyright">Originality</a>
-  </aside><main class="content">
+  </aside><div class="content">
     <div class="page-title">
       <div>
         <span class="badge badge-common">ACCA TX-HKG</span>
@@ -8527,8 +8572,8 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
           '<button type="button" class="primary qa-copy">Copy marking prompt &middot; 複製批改提示</button> ' +
           '<button type="button" class="qa-clear">Clear &middot; 清除</button></span></div>' +
           '<p class="qa-hint">Type like Excel: arrow keys / Tab / Enter to move; paste from Excel works; scroll down for rows 11&ndash;100. Saved in this browser only. &middot; 可用方向鍵、Tab、Enter 移動，支援由 Excel 貼上，向下捲動可輸入至第 100 行；只儲存於本瀏覽器。</p>' +
-          '<div class="qa-scroll"><table><thead><tr><th class="qa-rn"></th>';
-        for (var c = 0; c < COLS; c++) h += '<th>' + colName(c) + '</th>';
+          '<div class="qa-scroll"><table><thead><tr><th scope="col" class="qa-rn"></th>';
+        for (var c = 0; c < COLS; c++) h += '<th scope="col">' + colName(c) + '</th>';
         h += '</tr></thead><tbody>';
         for (var r = 0; r < ROWS; r++) {
           h += '<tr><td class="qa-rn">' + (r + 1) + '</td>';
@@ -8617,7 +8662,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       });
     })();
     </script>
-  </main></div>
+  </div></div>
 </section>
 
 <section class="tab-panel" id="computation-formats" data-label="Computation Formats">
@@ -8631,7 +8676,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
     <a href="#computation-formats__pa">5. Personal Assessment</a>
     <a href="#computation-formats__revisions">What has changed since the textbook</a>
     <a href="#computation-formats__sources">Source documents</a>
-  </aside><main class="content">
+  </aside><div class="content">
     <div class="page-title">
       <div>
         <span class="badge badge-common">Revision aid — one page, every format</span>
@@ -8650,7 +8695,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <h2>How to use these</h2>
       <p class="lede">A tax computation is marked on structure as much as on arithmetic. Getting a figure into the wrong line — or the right figure in the right line but the wrong order — loses the marks even when the final number is close. These are the skeletons to have in your head before you start writing.</p>
       <table>
-        <thead><tr><th style="width:170px">Convention</th><th>Meaning</th></tr></thead>
+        <thead><tr><th scope="col" style="width:170px">Convention</th><th scope="col">Meaning</th></tr></thead>
         <tbody>
           <tr><td><strong>X</strong></td><td>A figure goes here. Letters (A, B, Y, ZB…) mark subtotals that a later line refers back to.</td></tr>
           <tr><td><strong>Indentation</strong></td><td>Indented lines are workings feeding the subtotal on the right; they do not themselves enter the main column.</td></tr>
@@ -8689,7 +8734,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
         </table>
       </div>
       <table>
-        <thead><tr><th style="width:38%">Line</th><th>What belongs there</th></tr></thead>
+        <thead><tr><th scope="col" style="width:38%">Line</th><th scope="col">What belongs there</th></tr></thead>
         <tbody>
           <tr><td>Premium</td><td>Spread evenly over the lease term, capped at 36 months (s.5B(4)). A 3-year lease premium received in one year is taxed <sup>12</sup>⁄<sub>36</sub> in each.</td></tr>
           <tr><td>Irrecoverable rent</td><td>Deducted in the year it is <strong>recognised as irrecoverable</strong>, not the year the rent accrued (s.7C(1)). Recovery later is assessable in the year of recovery, not related back.</td></tr>
@@ -8784,7 +8829,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
         The textbook's format shows the standard rate as a flat <strong>15%</strong>. From <strong>YA 2024/25</strong> the standard rate is <strong>two-tiered: 15% on the first HKD 5,000,000 of net income, 16% on the remainder.</strong> Under HKD 5,000,000 the book's line still gives the right answer; above it, the book understates. Write line (c) as the two-tier calculation.
       </div>
       <table>
-        <thead><tr><th style="width:38%">Line</th><th>What catches people out</th></tr></thead>
+        <thead><tr><th scope="col" style="width:38%">Line</th><th scope="col">What catches people out</th></tr></thead>
         <tbody>
           <tr><td>Rental value base (H)</td><td>10% of income <strong>after</strong> s.12(1)(a) outgoings — not of gross salary. 4% for a hotel room / shared boarding-type accommodation, 8% for two rooms in a hotel.</td></tr>
           <tr><td>Rent suffered (K)</td><td>Deducted from rental value, and only down to <strong>nil</strong> — it cannot create a negative.</td></tr>
@@ -8958,7 +9003,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <div class="proforma">
         <table>
           <caption><strong>Depreciation Allowance Schedule</strong> · Year of Assessment 20XX/XX</caption>
-          <thead><tr><th style="width:40%"></th><th class="num">10%</th><th class="num">20%</th><th class="num">30%</th><th class="num">Allowances</th></tr></thead>
+          <thead><tr><th scope="col" style="width:40%"></th><th scope="col" class="num">10%</th><th scope="col" class="num">20%</th><th scope="col" class="num">30%</th><th scope="col" class="num">Allowances</th></tr></thead>
           <tbody>
             <tr><td>Written down value b/f</td><td class="num">X</td><td class="num">X</td><td class="num">X</td><td class="num"></td></tr>
             <tr><td>Additions (qualifying cash purchases)</td><td class="num">X</td><td class="num">X</td><td class="num">X</td><td class="num"></td></tr>
@@ -8973,7 +9018,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
         </table>
       </div>
       <table>
-        <thead><tr><th style="width:38%">Point</th><th>Detail</th></tr></thead>
+        <thead><tr><th scope="col" style="width:38%">Point</th><th scope="col">Detail</th></tr></thead>
         <tbody>
           <tr><td><strong>Initial allowance, 60%</strong></td><td>On the <strong>addition</strong>, not on the pool. Taken before the annual allowance, so the annual allowance is computed on the reduced figure.</td></tr>
           <tr><td><strong>Order: IA → disposal → AA</strong></td><td>Disposals come out <em>after</em> the initial allowance and <em>before</em> the annual allowance. Reversing this changes every figure below it.</td></tr>
@@ -8988,7 +9033,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
         <p>Pools brought forward: 10% $100,000, 20% $200,000, 30% $300,000. During the year the business bought machinery for cash $150,000 (a 20% pool item) and sold an item from the 30% pool for $50,000, below its original cost.</p>
         <div class="proforma">
           <table>
-            <thead><tr><th style="width:40%"></th><th class="num">10%</th><th class="num">20%</th><th class="num">30%</th><th class="num">Allowances</th></tr></thead>
+            <thead><tr><th scope="col" style="width:40%"></th><th scope="col" class="num">10%</th><th scope="col" class="num">20%</th><th scope="col" class="num">30%</th><th scope="col" class="num">Allowances</th></tr></thead>
             <tbody>
               <tr><td>Written down value b/f</td><td class="num">100,000</td><td class="num">200,000</td><td class="num">300,000</td><td class="num"></td></tr>
               <tr><td>Additions</td><td class="num">—</td><td class="num">150,000</td><td class="num">—</td><td class="num"></td></tr>
@@ -9042,7 +9087,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <h2>What has changed since the textbook</h2>
       <p class="lede">The 22nd edition states the law <strong>to 31 May 2024</strong>. Every rate and figure in the formats above was re-checked against IRD. Here is what moved and what did not, so you can see that the unchanged items were checked rather than assumed.</p>
       <table>
-        <thead><tr><th style="width:26%">Item</th><th>Textbook (to 31 May 2024)</th><th>Current — used above</th></tr></thead>
+        <thead><tr><th scope="col" style="width:26%">Item</th><th scope="col">Textbook (to 31 May 2024)</th><th scope="col">Current — used above</th></tr></thead>
         <tbody>
           <tr>
             <td><strong>Salaries tax standard rate</strong></td>
@@ -9098,7 +9143,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <a href="#question-bank-c">&larr; Question Bank C</a>
       <a href="#personal-assessment">Personal Assessment &rarr;</a>
     </div>
-  </main></div>
+  </div></div>
 </section>
 
 <section class="tab-panel" id="tax-reconciliation" data-label="Tax Reconciliation">
@@ -9113,7 +9158,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
     <a href="#tax-reconciliation__q2">B. Personal assessment</a>
     <a href="#tax-reconciliation__planted">Errors examiners plant</a>
     <a href="#tax-reconciliation__technique">Marking technique</a>
-  </aside><main class="content">
+  </aside><div class="content">
     <div class="page-title">
       <div>
         <span class="badge badge-business">Exam technique — the most heavily weighted question type</span>
@@ -9132,7 +9177,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       </div>
       <p>Three consequences follow, and they drive everything on this page:</p>
       <table>
-        <thead><tr><th style="width:30%">Because…</th><th>…therefore</th></tr></thead>
+        <thead><tr><th scope="col" style="width:30%">Because…</th><th scope="col">…therefore</th></tr></thead>
         <tbody>
           <tr><td>The given computation looks plausible</td><td>You cannot spot errors by eye. You must work <strong>note by note</strong>, in order, and decide an adjustment for each — including "no adjustment".</td></tr>
           <tr><td>Some notes are distractors</td><td>A note that needs <strong>no adjustment</strong> still earns a mark if you say so and why. Silence earns nothing and looks like an oversight.</td></tr>
@@ -9144,7 +9189,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
     <section class="block" id="tax-reconciliation__method">
       <h2>2. The six-step method</h2>
       <table>
-        <thead><tr><th style="width:56px">Step</th><th>Do this</th></tr></thead>
+        <thead><tr><th scope="col" style="width:56px">Step</th><th scope="col">Do this</th></tr></thead>
         <tbody>
           <tr><td class="note-no">1</td><td><strong>Do not edit the given computation.</strong> Start a clean one from <em>profit per the accounts</em> (or, for personal assessment, from each source's own correct figure). Editing someone else's layout inherits their structural errors.</td></tr>
           <tr><td class="note-no">2</td><td><strong>Rule up a note-by-note working schedule</strong> before touching the computation: note number, treatment, adjustment, amount. Every note gets a row, including the ones needing no adjustment.</td></tr>
@@ -9189,7 +9234,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
 
       <table>
         <caption>Notes</caption>
-        <thead><tr><th style="width:56px">Note</th><th>Information</th></tr></thead>
+        <thead><tr><th scope="col" style="width:56px">Note</th><th scope="col">Information</th></tr></thead>
         <tbody>
           <tr><td class="note-no">1</td><td>The profit is after charging depreciation of $420,000. Depreciation allowances properly computed under Part 6 of the IRO for the year amount to <strong>$505,000</strong>.</td></tr>
           <tr><td class="note-no">2</td><td>Turnover includes <strong>$680,000</strong> of profit on a contract negotiated and concluded entirely in Singapore by the company's Singapore branch. The Assessor has accepted this profit as offshore.</td></tr>
@@ -9209,7 +9254,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <h2>4. Illustration A — note-by-note working</h2>
       <p class="lede">Build this before the computation. Two questions per note: <strong>is the item chargeable or deductible?</strong> and <strong>how was it treated in the accounts?</strong> The adjustment is the difference between the two.</p>
       <table>
-        <thead><tr><th style="width:52px">Note</th><th>Correct treatment</th><th style="width:130px">Adjustment</th><th class="num" style="width:100px">$</th></tr></thead>
+        <thead><tr><th scope="col" style="width:52px">Note</th><th scope="col">Correct treatment</th><th scope="col" style="width:130px">Adjustment</th><th scope="col" class="num" style="width:100px">$</th></tr></thead>
         <tbody>
           <tr>
             <td class="note-no">1</td>
@@ -9377,7 +9422,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
         </table>
       </div>
       <table>
-        <thead><tr><th style="width:52px">Error</th><th>What is wrong</th></tr></thead>
+        <thead><tr><th scope="col" style="width:52px">Error</th><th scope="col">What is wrong</th></tr></thead>
         <tbody>
           <tr><td class="note-no">1</td><td>Property brought in at <strong>gross rent</strong>. Personal assessment takes the <strong>net assessable value</strong>: rates are deducted inside the property computation, and the <strong>20% statutory allowance</strong> is then taken. Deducting rates as a separate line below total income skips the 20% entirely.</td></tr>
           <tr><td class="note-no">2</td><td>A <strong>basic allowance</strong> claimed where a jointly electing married couple is entitled to the <strong>married person's allowance</strong> of $290,000.</td></tr>
@@ -9440,7 +9485,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
     <section class="block" id="tax-reconciliation__planted">
       <h2>8. The errors examiners plant, in rough order of frequency</h2>
       <table>
-        <thead><tr><th style="width:34%">Planted error</th><th>How to catch it</th></tr></thead>
+        <thead><tr><th scope="col" style="width:34%">Planted error</th><th scope="col">How to catch it</th></tr></thead>
         <tbody>
           <tr><td><strong>Offshore profit left in</strong></td><td>Any note mentioning a place outside Hong Kong is a source question. Decide it explicitly.</td></tr>
           <tr><td><strong>Donation deducted without being added back</strong></td><td>If it was charged in the accounts it must go back in first, or the 35% cap cannot be computed.</td></tr>
@@ -9513,11 +9558,11 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <a href="#computation-formats">&larr; Computation Formats</a>
       <a href="#profits-tax-illustrations">Profits Tax Illustrations &rarr;</a>
     </div>
-  </main></div>
+  </div></div>
 </section>
 
 <section class="tab-panel" id="transaction-checker" data-label="Transaction Checker">
-  <div class="shell" style="grid-template-columns:1fr"><main class="content">
+  <div class="shell" style="grid-template-columns:1fr"><div class="content">
     <div class="page-title">
       <div>
         <span class="badge badge-common">Application tool</span>
@@ -9550,7 +9595,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
 
     <div class="checker-results">
       <table>
-        <thead><tr><th style="width:120px">Status</th><th style="width:110px">Tax Type</th><th>Transaction / Item</th><th style="width:170px">Section</th><th>Note</th><th style="width:90px"></th></tr></thead>
+        <thead><tr><th scope="col" style="width:120px">Status</th><th scope="col" style="width:110px">Tax Type</th><th scope="col">Transaction / Item</th><th scope="col" style="width:170px">Section</th><th scope="col">Note</th><th scope="col" style="width:90px"></th></tr></thead>
         <tbody id="transaction-checker__results-body"></tbody>
       </table>
       <div class="checker-empty" id="transaction-checker__checker-empty" style="display:none">No matching transaction found. Try a different keyword, or check the relevant topic page's full tables directly.</div>
@@ -9565,11 +9610,11 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <a href="#MAIN">&larr; Back to Hub</a>
       <a href="#profits-tax">Profits Tax &rarr;</a>
     </div>
-  </main></div>
+  </div></div>
 </section>
 
 <section class="tab-panel" id="dipn-index" data-label="DIPN Index">
-  <div class="shell" style="grid-template-columns:1fr"><main class="content">
+  <div class="shell" style="grid-template-columns:1fr"><div class="content">
     <div class="page-title">
       <div>
         <span class="badge badge-common">Catalogue</span>
@@ -9597,7 +9642,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
 
     <div class="checker-results">
       <table>
-        <thead><tr><th style="width:80px">No.</th><th>Title</th><th style="width:130px">Group</th><th style="width:90px">Date</th><th>Summary</th><th style="width:95px">Official</th><th style="width:130px">Status</th></tr></thead>
+        <thead><tr><th scope="col" style="width:80px">No.</th><th scope="col">Title</th><th scope="col" style="width:130px">Group</th><th scope="col" style="width:90px">Date</th><th scope="col">Summary</th><th scope="col" style="width:95px">Official</th><th scope="col" style="width:130px">Status</th></tr></thead>
         <tbody id="dipn-index__results-body"></tbody>
       </table>
       <div class="checker-empty" id="dipn-index__checker-empty" style="display:none">No matching document found.</div>
@@ -9612,7 +9657,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <a href="#MAIN">&larr; Back to Hub</a>
       <a href="#transaction-checker">Transaction Checker &rarr;</a>
     </div>
-  </main></div>
+  </div></div>
 </section>
 
 <section class="tab-panel" id="profits-tax" data-label="Profits Tax">
@@ -9629,7 +9674,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
     <a href="#profits-tax__computation">Computation Template</a>
     <a href="#profits-tax__return-guide">Profits Tax Return Guide</a>
     <a href="#profits-tax__sources">Source Documents</a>
-  </aside><main class="content">
+  </aside><div class="content">
     <div class="page-title">
       <div>
         <span class="badge badge-business">Business — Profits Tax</span>
@@ -9656,7 +9701,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <h2>2. Rates &amp; Recent Changes <span class="sec-ref">Schedule 8B</span></h2>
       <table>
         <caption>Two-tiered profits tax rates (from YA 2018/19, current)</caption>
-        <thead><tr><th>Taxpayer type</th><th>First HKD 2,000,000 of assessable profits</th><th>Remainder</th></tr></thead>
+        <thead><tr><th scope="col">Taxpayer type</th><th scope="col">First HKD 2,000,000 of assessable profits</th><th scope="col">Remainder</th></tr></thead>
         <tbody>
           <tr><td>Corporations</td><td class="num">8.25%</td><td class="num">16.5%</td></tr>
           <tr><td>Unincorporated businesses (sole proprietors / partnerships)</td><td class="num">7.5%</td><td class="num">15%</td></tr>
@@ -9688,7 +9733,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <h2>3. Taxable / Non-Taxable Receipts <span class="sec-ref">IRO s.15</span></h2>
       <p>Section 15(1) deems certain sums to be Hong Kong-source trading receipts even though they might not otherwise be so regarded — this closes gaps the general s.14 source test would otherwise leave open (e.g. royalties, hire charges). Combine this with the general case-law source principle (DIPN 21) and the FSIE deeming rule (§6) to classify any receipt.</p>
       <table>
-        <thead><tr><th style="width:110px">Status</th><th>Receipt</th><th>Basis</th></tr></thead>
+        <thead><tr><th scope="col" style="width:110px">Status</th><th scope="col">Receipt</th><th scope="col">Basis</th></tr></thead>
         <tbody>
           <tr><td><span class="tag tag-taxable">Taxable</span></td><td>Royalties / sums for the use of, or right to use in Hong Kong, any patent, trade mark, copyright, design, secret process/formula or similar IP</td><td>s.15(1)(b)</td></tr>
           <tr><td><span class="tag tag-taxable">Taxable</span></td><td>Sums for use outside Hong Kong of IP where the payer claimed a Hong Kong deduction for the payment</td><td>s.15(1)(ba)</td></tr>
@@ -9708,7 +9753,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <h2>4. Deductible / Non-Deductible Expenses <span class="sec-ref">IRO ss.16–17</span></h2>
       <p>The general test (s.16(1)) is that outgoings and expenses are deductible <strong>to the extent</strong> incurred in the basis period in the production of chargeable profits (the "Ronpibon Tin" apportionment principle — see DIPN 3 for apportioning mixed-purpose expenses). Section 17 then carves out specific exclusions even where the general test would otherwise be met.</p>
       <table>
-        <thead><tr><th style="width:130px">Status</th><th>Item</th><th>Basis / conditions</th></tr></thead>
+        <thead><tr><th scope="col" style="width:130px">Status</th><th scope="col">Item</th><th scope="col">Basis / conditions</th></tr></thead>
         <tbody>
           <tr><td><span class="tag tag-deductible">Deductible</span></td><td>Interest on money borrowed for producing chargeable profits, plus related legal/procuration fees and stamp duty</td><td>s.16(1)(a), subject to the anti-avoidance conditions in s.16(2)–(2C) (see DIPN 13A)</td></tr>
           <tr><td><span class="tag tag-deductible">Deductible</span></td><td>Rent paid for land/buildings used to produce chargeable profits (capped at assessable value if paid to a related party)</td><td>s.16(1)(b)</td></tr>
@@ -9735,7 +9780,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <h2>4A. Research and Development — the enhanced deduction <span class="sec-ref">IRO s.16B, Schedule 45</span></h2>
       <p class="lede">Qualifying R&amp;D expenditure splits into two types with very different treatment. Getting the split wrong, or applying the enhanced rate to the whole of Type B, is the error the June 2026 examining team reported on the question fewest candidates answered correctly.</p>
       <table>
-        <thead><tr><th style="width:110px">Type</th><th>What falls in it</th><th style="width:34%">Deduction</th></tr></thead>
+        <thead><tr><th scope="col" style="width:110px">Type</th><th scope="col">What falls in it</th><th scope="col" style="width:34%">Deduction</th></tr></thead>
         <tbody>
           <tr>
             <td><strong>Type A</strong></td>
@@ -9853,7 +9898,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <a href="#MAIN">&larr; Back to Hub</a>
       <a href="#property-tax">Next: Property Tax &rarr;</a>
     </div>
-  </main></div>
+  </div></div>
 </section>
 
 <section class="tab-panel" id="profits-tax-entities" data-label="Profits Tax by Entity">
@@ -9868,7 +9913,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
     <a href="#profits-tax-entities__corp">3. Corporation</a>
     <a href="#profits-tax-entities__same">Same business, three forms</a>
     <a href="#profits-tax-entities__checklist">Exam checklist</a>
-  </aside><main class="content">
+  </aside><div class="content">
     <div class="page-title">
       <div>
         <span class="badge badge-business">Business — Profits Tax</span>
@@ -9892,7 +9937,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
     <section class="block" id="profits-tax-entities__compare">
       <h2>2. The three side by side</h2>
       <table>
-        <thead><tr><th style="width:23%">Point</th><th>Sole proprietorship</th><th>Partnership</th><th>Corporation</th></tr></thead>
+        <thead><tr><th scope="col" style="width:23%">Point</th><th scope="col">Sole proprietorship</th><th scope="col">Partnership</th><th scope="col">Corporation</th></tr></thead>
         <tbody>
           <tr>
             <td><strong>Two-tiered rates</strong></td>
@@ -10001,7 +10046,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <h2>4. Partnership</h2>
       <p class="lede">One assessment is raised <strong>on the partnership</strong>, not on the partners. But the profit must still be allocated partner by partner — because the allocation drives loss relief, personal assessment, and (where a partner is a company) the rate itself.</p>
       <table>
-        <thead><tr><th style="width:56px">Step</th><th>What happens</th></tr></thead>
+        <thead><tr><th scope="col" style="width:56px">Step</th><th scope="col">What happens</th></tr></thead>
         <tbody>
           <tr><td><strong>1</strong></td><td>Compute the partnership's <strong>assessable profit or adjusted loss</strong> in the ordinary way, adding back salaries and interest to partners and to partners' spouses under s.17(2).</td></tr>
           <tr><td><strong>2</strong></td><td>Allocate <strong>prior allocations</strong> first — the salaries and interest just added back go to the partner they relate to, not into the profit-sharing ratio.</td></tr>
@@ -10031,7 +10076,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <div class="proforma">
         <table>
           <caption><strong>Novena Trading — profits tax by partner</strong> · YA 2026/27</caption>
-          <thead><tr><th style="width:34%"></th><th class="num">Carol (individual)</th><th class="num">Elm Holdings Ltd</th><th class="num">Total</th></tr></thead>
+          <thead><tr><th scope="col" style="width:34%"></th><th scope="col" class="num">Carol (individual)</th><th scope="col" class="num">Elm Holdings Ltd</th><th scope="col" class="num">Total</th></tr></thead>
           <tbody>
             <tr><td>Share of assessable profits, 50 : 50</td><td class="num">1,500,000</td><td class="num">1,500,000</td><td class="num">3,000,000</td></tr>
             <tr><td>Share of the $2,000,000 first-tier band<br><span class="dual">apportioned in the profit-sharing ratio</span></td><td class="num">1,000,000</td><td class="num">1,000,000</td><td class="num">2,000,000</td></tr>
@@ -10043,7 +10088,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       </div>
       <table>
         <caption>What the answer would have been in a uniform partnership</caption>
-        <thead><tr><th>Composition</th><th class="num">Profits tax on $3,000,000</th></tr></thead>
+        <thead><tr><th scope="col">Composition</th><th scope="col" class="num">Profits tax on $3,000,000</th></tr></thead>
         <tbody>
           <tr><td>All partners individuals</td><td class="num">300,000</td></tr>
           <tr><td><strong>Mixed, 50 : 50 as above</strong></td><td class="num"><strong>315,000</strong></td></tr>
@@ -10127,7 +10172,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <div class="proforma">
         <table>
           <caption>The identical trade, earning $1,500,000 before remunerating the owner and spouse</caption>
-          <thead><tr><th style="width:44%"></th><th class="num">Sole proprietorship</th><th class="num">Corporation</th></tr></thead>
+          <thead><tr><th scope="col" style="width:44%"></th><th scope="col" class="num">Sole proprietorship</th><th scope="col" class="num">Corporation</th></tr></thead>
           <tbody>
             <tr><td>Profit per accounts</td><td class="num">960,000</td><td class="num">960,000</td></tr>
             <tr><td>Add back: owner's and spouse's salaries — s.17(2)</td><td class="num">540,000</td><td class="num">—</td></tr>
@@ -10150,7 +10195,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
     <section class="block" id="profits-tax-entities__checklist">
       <h2>9. Exam checklist</h2>
       <table>
-        <thead><tr><th style="width:36%">Before you start</th><th>Ask</th></tr></thead>
+        <thead><tr><th scope="col" style="width:36%">Before you start</th><th scope="col">Ask</th></tr></thead>
         <tbody>
           <tr><td><strong>Which entity is it?</strong></td><td>Sole proprietorship, partnership or company. This sets the rate before anything else. Answering an unincorporated question at 8.25% loses the rate marks and every figure after them.</td></tr>
           <tr><td><strong>Is anyone paid who is the owner, or married to one?</strong></td><td>In an unincorporated business both are disallowed under s.17(2). In a company both are deductible if genuine.</td></tr>
@@ -10179,7 +10224,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <a href="#computation-formats">&larr; Computation Formats</a>
       <a href="#personal-assessment">Personal Assessment &rarr;</a>
     </div>
-  </main></div>
+  </div></div>
 </section>
 
 <section class="tab-panel" id="salaries-tax" data-label="Salaries Tax">
@@ -10194,7 +10239,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
     <a href="#salaries-tax__illustrations">Illustrations</a>
     <a href="#salaries-tax__computation">Computation Template</a>
     <a href="#salaries-tax__sources">Source Documents</a>
-  </aside><main class="content">
+  </aside><div class="content">
     <div class="page-title">
       <div>
         <span class="badge badge-individual">Individual — Salaries Tax</span>
@@ -10221,7 +10266,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <h2>2. Rates &amp; Standard Rate Cap <span class="sec-ref">IRO s.13, Schedule 2</span></h2>
       <table>
         <caption>Progressive rates on net chargeable income (2025/26 and continuing into 2026/27 basis) — Schedule 2</caption>
-        <thead><tr><th>Band</th><th class="num">Rate</th></tr></thead>
+        <thead><tr><th scope="col">Band</th><th scope="col" class="num">Rate</th></tr></thead>
         <tbody>
           <tr><td>First HKD 50,000</td><td class="num">2%</td></tr>
           <tr><td>Next HKD 50,000 (50,001–100,000)</td><td class="num">6%</td></tr>
@@ -10240,7 +10285,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
     <section class="block" id="salaries-tax__receipts">
       <h2>3. Taxable / Non-Taxable Income</h2>
       <table>
-        <thead><tr><th style="width:110px">Status</th><th>Item</th><th>Basis</th></tr></thead>
+        <thead><tr><th scope="col" style="width:110px">Status</th><th scope="col">Item</th><th scope="col">Basis</th></tr></thead>
         <tbody>
           <tr><td><span class="tag tag-taxable">Taxable</span></td><td>Salary, wages, bonus, commission, leave pay for services rendered in Hong Kong</td><td>s.8(1)(a), s.8(1A)(a)</td></tr>
           <tr><td><span class="tag tag-taxable">Taxable</span></td><td>Director's fee from a Hong Kong resident company</td><td>s.8(1)(a) — sourced to the company's residence, not where services are performed</td></tr>
@@ -10259,7 +10304,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <h2>4. Deductible / Non-Deductible Items <span class="sec-ref">IRO s.12</span></h2>
       <p>The general test (s.12(1)(a)) is stricter than the profits tax test — expenses must be <strong>"wholly, exclusively and necessarily"</strong> incurred in producing the assessable income (not merely "to the extent"), and domestic/private expenses and capital expenditure are excluded outright. In practice very few ordinary employment expenses pass this test (see DIPN 9).</p>
       <table>
-        <thead><tr><th style="width:130px">Status</th><th>Item</th><th>Basis / cap (2026/27)</th></tr></thead>
+        <thead><tr><th scope="col" style="width:130px">Status</th><th scope="col">Item</th><th scope="col">Basis / cap (2026/27)</th></tr></thead>
         <tbody>
           <tr><td><span class="tag tag-deductible">Deductible</span></td><td>Outgoings/expenses wholly, exclusively and necessarily incurred in producing the income (rare in practice for employees)</td><td>s.12(1)(a)</td></tr>
           <tr><td><span class="tag tag-deductible">Deductible</span></td><td>Self-education expenses</td><td>s.12(1)(e) — capped at HKD 100,000</td></tr>
@@ -10282,7 +10327,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <h2>5. Personal Allowances <span class="sec-ref">IRO Part 5, ss.28–33</span></h2>
       <table>
         <caption>Key allowances (HKD). The second column is the basis examined by ACCA TX-HKG from J25 through <strong>D26</strong> — IRD publishes 2024/25 and 2025/26 as one column, so the figures are identical across both.</caption>
-        <thead><tr><th>Allowance</th><th class="num">YA 2026/27 — current</th><th class="num">YA 2024/25 &amp; 2025/26 — D26 exam</th></tr></thead>
+        <thead><tr><th scope="col">Allowance</th><th scope="col" class="num">YA 2026/27 — current</th><th scope="col" class="num">YA 2024/25 &amp; 2025/26 — D26 exam</th></tr></thead>
         <tbody>
           <tr><td>Basic allowance</td><td class="num">145,000</td><td class="num">132,000</td></tr>
           <tr><td>Married person's allowance</td><td class="num">290,000</td><td class="num">264,000</td></tr>
@@ -10375,7 +10420,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <a href="#property-tax">&larr; Property Tax</a>
       <a href="#stamp-duty">Next: Stamp Duty &rarr;</a>
     </div>
-  </main></div>
+  </div></div>
 </section>
 
 <section class="tab-panel" id="property-tax" data-label="Property Tax">
@@ -10389,7 +10434,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
     <a href="#property-tax__illustrations">Illustrations</a>
     <a href="#property-tax__computation">Computation Template</a>
     <a href="#property-tax__sources">Source Documents</a>
-  </aside><main class="content">
+  </aside><div class="content">
     <div class="page-title">
       <div>
         <span class="badge badge-business">Business — Property Tax</span>
@@ -10449,7 +10494,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
     <section class="block" id="property-tax__receipts">
       <h2>3. Taxable / Non-Taxable Items</h2>
       <table>
-        <thead><tr><th style="width:110px">Status</th><th>Item</th><th>Basis</th></tr></thead>
+        <thead><tr><th scope="col" style="width:110px">Status</th><th scope="col">Item</th><th scope="col">Basis</th></tr></thead>
         <tbody>
           <tr><td><span class="tag tag-taxable">Taxable</span></td><td>Rent receivable for the year (whether or not actually received)</td><td>s.5B(2)</td></tr>
           <tr><td><span class="tag tag-taxable">Taxable</span></td><td>Lease premiums / non-returnable deposits / key money, spread over up to 3 years</td><td>s.5B(3)/(4); DIPN 4, DIPN 14</td></tr>
@@ -10520,7 +10565,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <a href="#profits-tax">&larr; Profits Tax</a>
       <a href="#salaries-tax">Next: Salaries Tax &rarr;</a>
     </div>
-  </main></div>
+  </div></div>
 </section>
 
 <section class="tab-panel" id="personal-assessment" data-label="Personal Assessment">
@@ -10536,7 +10581,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
     <a href="#personal-assessment__illustrations">Worked illustrations</a>
     <a href="#personal-assessment__pitfalls">Common pitfalls</a>
     <a href="#personal-assessment__sources">Source documents</a>
-  </aside><main class="content">
+  </aside><div class="content">
     <div class="page-title">
       <div>
         <span class="badge badge-individual">Individual — Personal Assessment</span>
@@ -10564,7 +10609,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <h2>2. Who may elect <span class="sec-ref">IRO s.41(1), s.41(4)</span></h2>
       <p>The conditions changed from <strong>YA 2018/19</strong>. Both are set out because the older rule still governs any earlier year still under assessment or objection.</p>
       <table>
-        <thead><tr><th style="width:150px">Year of assessment</th><th>Conditions</th></tr></thead>
+        <thead><tr><th scope="col" style="width:150px">Year of assessment</th><th scope="col">Conditions</th></tr></thead>
         <tbody>
           <tr>
             <td><strong>2018/19 onwards</strong><br><span class="tag tag-taxable">current</span></td>
@@ -10578,7 +10623,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       </table>
       <p>The substantive change is that from 2018/19 the elector must qualify on their <strong>own</strong> residence. Piggy-backing on a spouse's residence status no longer works.</p>
       <table>
-        <thead><tr><th style="width:170px">Term</th><th>Meaning</th></tr></thead>
+        <thead><tr><th scope="col" style="width:170px">Term</th><th scope="col">Meaning</th></tr></thead>
         <tbody>
           <tr>
             <td><strong>Ordinarily resident</strong><br><span class="sec-ref">s.41(4)</span></td>
@@ -10604,7 +10649,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
         The <strong>Inland Revenue (Amendment) (No. 9) Ordinance 2018</strong> relaxed what had been a hard joint-election requirement. From <strong>YA 2018/19</strong>, a married person may elect for Personal Assessment <strong>separately from, or jointly with, their spouse</strong>.
       </div>
       <table>
-        <thead><tr><th style="width:150px">Situation</th><th>Who elects</th></tr></thead>
+        <thead><tr><th scope="col" style="width:150px">Situation</th><th scope="col">Who elects</th></tr></thead>
         <tbody>
           <tr><td><strong>2018/19 onwards, general rule</strong></td><td>Either spouse may elect <strong>on their own</strong>. A joint election remains available where either or both are eligible and both have income assessable under the Ordinance.</td></tr>
           <tr><td><strong>Already jointly assessed under Salaries Tax</strong></td><td>The PA election <strong>must be made jointly</strong>. A couple who elected joint assessment under s.10(2) cannot then split for PA.</td></tr>
@@ -10621,7 +10666,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
     <section class="block" id="personal-assessment__timelimit">
       <h2>4. Time limits — election and withdrawal <span class="sec-ref">IRO s.41(2), s.41(3)</span></h2>
       <table>
-        <thead><tr><th style="width:150px">Action</th><th>Deadline</th></tr></thead>
+        <thead><tr><th scope="col" style="width:150px">Action</th><th scope="col">Deadline</th></tr></thead>
         <tbody>
           <tr>
             <td><strong>Election</strong></td>
@@ -10649,7 +10694,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <h2>5. The computation, step by step <span class="sec-ref">IRO s.42, s.42A, s.43</span></h2>
       <p class="lede">Three steps: aggregate, deduct, then compare against the standard rate.</p>
       <table>
-        <thead><tr><th style="width:60px">Step</th><th>What happens</th></tr></thead>
+        <thead><tr><th scope="col" style="width:60px">Step</th><th scope="col">What happens</th></tr></thead>
         <tbody>
           <tr><td><strong>1</strong></td><td><strong>Aggregate</strong> income chargeable to Property Tax, Salaries Tax and Profits Tax into <strong>total income</strong>.</td></tr>
           <tr><td><strong>2</strong></td><td><strong>Deduct</strong>, in order: interest on money borrowed to produce property income → concessionary deductions → business losses of the year → PA losses brought forward. This gives <strong>reduced total income</strong>. Then deduct <strong>personal allowances</strong> to give <strong>net chargeable income</strong>.</td></tr>
@@ -10663,7 +10708,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
 
       <h3>What goes into "total income"</h3>
       <table>
-        <thead><tr><th style="width:190px">Source</th><th>Figure brought in</th></tr></thead>
+        <thead><tr><th scope="col" style="width:190px">Source</th><th scope="col">Figure brought in</th></tr></thead>
         <tbody>
           <tr>
             <td><strong>Property</strong><br><span class="sec-ref">Net assessable value</span></td>
@@ -10688,7 +10733,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
     <section class="block" id="personal-assessment__deductions">
       <h2>6. What is deductible under Personal Assessment</h2>
       <table>
-        <thead><tr><th style="width:110px">Status</th><th>Item</th><th>Basis / cap (2026/27)</th></tr></thead>
+        <thead><tr><th scope="col" style="width:110px">Status</th><th scope="col">Item</th><th scope="col">Basis / cap (2026/27)</th></tr></thead>
         <tbody>
           <tr><td><span class="tag tag-deductible">Deductible</span></td><td><strong>Interest on money borrowed to produce property income</strong> — the deduction PA exists for</td><td>Capped at the <strong>net assessable value of that individual property</strong>; no excess relief and no carry-forward (Board of Review D51/04)</td></tr>
           <tr><td><span class="tag tag-deductible">Deductible</span></td><td>Approved charitable donations</td><td>s.26C — aggregate min. HKD 100, capped at 35% of income after other deductions</td></tr>
@@ -10752,14 +10797,14 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
         <div class="lbl">Illustration 1 — Mortgaged property, no other income <span class="src">IRD pam37e Example 1, recomputed at 2026/27</span></div>
         <p>Miss Chan, single, receives monthly rent of $40,000 from a mortgaged property and paid $42,000 of loan interest during the year.</p>
         <table>
-          <thead><tr><th style="width:62%">Without election — Property Tax</th><th class="num">HKD</th></tr></thead>
+          <thead><tr><th scope="col" style="width:62%">Without election — Property Tax</th><th scope="col" class="num">HKD</th></tr></thead>
           <tbody>
             <tr><td>Net assessable value ($40,000 × 12 × 80%)</td><td class="num">384,000</td></tr>
             <tr><th>Property tax at the standard rate, 15%</th><td class="num"><strong>57,600</strong></td></tr>
           </tbody>
         </table>
         <table>
-          <thead><tr><th style="width:62%">With election — Personal Assessment</th><th class="num">HKD</th></tr></thead>
+          <thead><tr><th scope="col" style="width:62%">With election — Personal Assessment</th><th scope="col" class="num">HKD</th></tr></thead>
           <tbody>
             <tr><td>Net assessable value</td><td class="num">384,000</td></tr>
             <tr><td style="padding-left:24px">Less: mortgage interest (within NAV, so allowed in full)</td><td class="num">(42,000)</td></tr>
@@ -10778,7 +10823,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
         <div class="lbl">Illustration 2 — Business loss set against salary <span class="src">IRD pam37e Example 2, recomputed at 2026/27</span></div>
         <p>Mr Lee has salary income of $400,000 and incurred a business loss of $100,000 in the same year.</p>
         <table>
-          <thead><tr><th style="width:62%">Without election</th><th class="num">HKD</th></tr></thead>
+          <thead><tr><th scope="col" style="width:62%">Without election</th><th scope="col" class="num">HKD</th></tr></thead>
           <tbody>
             <tr><td>Salaries tax: ($400,000 − $145,000) = $255,000 at progressive rates</td><td class="num">25,350</td></tr>
             <tr><td>Profits tax: a loss, so nil — the loss is carried forward, unused this year</td><td class="num">0</td></tr>
@@ -10786,7 +10831,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
           </tbody>
         </table>
         <table>
-          <thead><tr><th style="width:62%">With election — Personal Assessment</th><th class="num">HKD</th></tr></thead>
+          <thead><tr><th scope="col" style="width:62%">With election — Personal Assessment</th><th scope="col" class="num">HKD</th></tr></thead>
           <tbody>
             <tr><td>Salary income</td><td class="num">400,000</td></tr>
             <tr><td style="padding-left:24px">Less: business loss of the year</td><td class="num">(100,000)</td></tr>
@@ -10803,7 +10848,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
         <div class="lbl">Illustration 3 — The same property, but with a good salary: electing now <em>costs</em> money <span class="src">IRD pam37e Example 3, recomputed at 2026/27</span></div>
         <p>As Illustration 1, but Miss Chan also earns $500,000 from employment.</p>
         <table>
-          <thead><tr><th style="width:62%">Without election</th><th class="num">HKD</th></tr></thead>
+          <thead><tr><th scope="col" style="width:62%">Without election</th><th scope="col" class="num">HKD</th></tr></thead>
           <tbody>
             <tr><td>Salaries tax on ($500,000 − $145,000) = $355,000</td><td class="num">42,350</td></tr>
             <tr><td>Property tax (as Illustration 1)</td><td class="num">57,600</td></tr>
@@ -10811,7 +10856,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
           </tbody>
         </table>
         <table>
-          <thead><tr><th style="width:62%">With election — Personal Assessment</th><th class="num">HKD</th></tr></thead>
+          <thead><tr><th scope="col" style="width:62%">With election — Personal Assessment</th><th scope="col" class="num">HKD</th></tr></thead>
           <tbody>
             <tr><td>Salary income</td><td class="num">500,000</td></tr>
             <tr><td>Net assessable value</td><td class="num">384,000</td></tr>
@@ -10857,7 +10902,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
     <section class="block" id="personal-assessment__pitfalls">
       <h2>9. Common pitfalls</h2>
       <table>
-        <thead><tr><th style="width:38%">Trap</th><th>What is actually right</th></tr></thead>
+        <thead><tr><th scope="col" style="width:38%">Trap</th><th scope="col">What is actually right</th></tr></thead>
         <tbody>
           <tr><td>Treating PA as a fourth head of charge</td><td>It is a <strong>relief and an election</strong>. It changes how existing chargeable income is taxed; it never makes non-chargeable income chargeable.</td></tr>
           <tr><td>Assuming PA always saves tax</td><td>Above roughly the point where the 17% marginal rate bites, it costs money — Illustration 3. Always compute both ways.</td></tr>
@@ -10895,7 +10940,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <a href="#salaries-tax">&larr; Salaries Tax</a>
       <a href="#stamp-duty">Next: Stamp Duty &rarr;</a>
     </div>
-  </main></div>
+  </div></div>
 </section>
 
 <section class="tab-panel" id="stamp-duty" data-label="Stamp Duty">
@@ -10911,7 +10956,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
     <a href="#stamp-duty__admission">Partnership Admission</a>
     <a href="#stamp-duty__illustrations">Illustrations</a>
     <a href="#stamp-duty__sources">Source Documents</a>
-  </aside><main class="content">
+  </aside><div class="content">
     <div class="page-title">
       <div>
         <span class="badge badge-business">Business — Stamp Duty</span>
@@ -10964,7 +11009,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       </div>
       <p>AVD has three rate tables, all graduated (not flat), all sharing the same lower bands:</p>
       <table>
-        <thead><tr><th>Scale</th><th>Applies to</th><th class="num">Top rate</th></tr></thead>
+        <thead><tr><th scope="col">Scale</th><th scope="col">Applies to</th><th scope="col" class="num">Top rate</th></tr></thead>
         <tbody>
           <tr><td><strong>Scale 1</strong> (First Schedule Head 1(1)/(1A), default table — s.29AI)</td><td>Residential property, buyer not qualifying for the Scale 2 concession (incl. companies, non-HKPRs)</td><td class="num">4.25% up to $100,000,000; a transitional band charging $4,250,000 + 30% of the excess from $100,000,000–$109,574,470; <strong>6.5% flat</strong> above $109,574,470 (new top bands added by the Stamp Duty (Amendment) Ordinance 2026, s.14)</td></tr>
           <tr><td><strong>Scale 2</strong> (s.29AJ concession)</td><td>Hong Kong Permanent Resident buying their sole residential property, or a qualifying closely-related-person reassignment</td><td class="num">4.25% — unchanged by the 2026 amendment</td></tr>
@@ -10981,7 +11026,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
         There is no "Part IIIAA" or "Part IVA" for BSD/SSD in the current ordinance structure — Part IVA is actually the unrelated Unit Trusts/Open-ended Fund Companies part (ss.37A–41). BSD and SSD are instead defined as separate <strong>Heads of charge</strong> in the First Schedule, cross-referenced from Part IIIA.
       </div>
       <table>
-        <thead><tr><th>Duty</th><th>Applies to</th><th class="num">Rate</th></tr></thead>
+        <thead><tr><th scope="col">Duty</th><th scope="col">Applies to</th><th scope="col" class="num">Rate</th></tr></thead>
         <tbody>
           <tr><td>Buyer's Stamp Duty (BSD) — Head 1(1AAB) conveyance / Head 1(1C) agreement for sale</td><td>Residential property acquired by a non-HKPR (companies are always treated as non-HKPR); subject to ss.29C, 29CB, 29CC</td><td class="num">0% — reduced from 15% in stages (L.N. 148 of 2023; 3 of 2024 s.14; L.N. 26 of 2024; 8 of 2024 s.6)</td></tr>
           <tr><td>Special Stamp Duty (SSD) — Head 1(1AA), Part 4 (property disposed of on/after 28 Feb 2024)</td><td>Residential property resold within the holding-period window; subject to ss.29D, 29DA</td><td class="num">0% — reduced from up to 20% (L.N. 26 of 2024; 8 of 2024 s.6)</td></tr>
@@ -10996,7 +11041,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
     <section class="block" id="stamp-duty__leases">
       <h2>5. Leases <span class="sec-ref">SDO Head 1(2)</span></h2>
       <table>
-        <thead><tr><th>Lease term</th><th class="num">Duty</th></tr></thead>
+        <thead><tr><th scope="col">Lease term</th><th scope="col" class="num">Duty</th></tr></thead>
         <tbody>
           <tr><td>Not defined or uncertain / ≤ 1 year</td><td class="num">0.25% of average annual rent (plus any premium, taxed as a sale)</td></tr>
           <tr><td>Between 1 and 3 years</td><td class="num">0.5% of average annual rent</td></tr>
@@ -11064,7 +11109,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <a href="#salaries-tax">&larr; Salaries Tax</a>
       <a href="#depreciation-allowances">Next: Depreciation &amp; Allowances &rarr;</a>
     </div>
-  </main></div>
+  </div></div>
 </section>
 
 <section class="tab-panel" id="depreciation-allowances" data-label="Depreciation & Allowances">
@@ -11078,7 +11123,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
     <a href="#depreciation-allowances__illustrations">Illustrations</a>
     <a href="#depreciation-allowances__computation">Computation Template</a>
     <a href="#depreciation-allowances__sources">Source Documents</a>
-  </aside><main class="content">
+  </aside><div class="content">
     <div class="page-title">
       <div>
         <span class="badge badge-common">Common — Depreciation &amp; Allowances</span>
@@ -11103,7 +11148,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
     <section class="block" id="depreciation-allowances__buildings">
       <h2>2. Industrial &amp; Commercial Buildings <span class="sec-ref">IRO ss.33A, 34, 36, 37</span></h2>
       <table>
-        <thead><tr><th>Building type</th><th class="num">Initial allowance</th><th class="num">Annual allowance</th><th>Balancing allowance/charge</th></tr></thead>
+        <thead><tr><th scope="col">Building type</th><th scope="col" class="num">Initial allowance</th><th scope="col" class="num">Annual allowance</th><th scope="col">Balancing allowance/charge</th></tr></thead>
         <tbody>
           <tr><td>Industrial building or structure (mills, factories, docks, utility undertakings, qualifying storage/farming/R&amp;D buildings)</td><td class="num">20% (1/5) of cost, year of first use</td><td class="num">4% (1/25) straight-line on cost</td><td>On sale/lease termination/demolition — balancing charge capped at total allowances previously granted</td></tr>
           <tr><td>Commercial building or structure (all other non-excluded buildings)</td><td class="num">None</td><td class="num">4% (1/25) straight-line on cost, from 1998/99</td><td>Same balancing mechanism as industrial buildings, from 1998/99</td></tr>
@@ -11127,7 +11172,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       </table>
       <table>
         <caption>Common annual allowance rate classes (Appendix A(i), DIPN 7)</caption>
-        <thead><tr><th class="num">Rate</th><th>Asset examples</th></tr></thead>
+        <thead><tr><th scope="col" class="num">Rate</th><th scope="col">Asset examples</th></tr></thead>
         <tbody>
           <tr><td class="num">10%</td><td>Air-conditioning plant, lifts, cables, ships</td></tr>
           <tr><td class="num">20%</td><td>Furniture, fixtures, domestic/room air-conditioners — the general residual rate for unlisted items</td></tr>
@@ -11140,7 +11185,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
     <section class="block" id="depreciation-allowances__writeoffs">
       <h2>4. 100% / 5-Year Write-Off Regimes <span class="sec-ref">IRO ss.16C, 16F, 16G, 16H–16L</span></h2>
       <table>
-        <thead><tr><th>Regime</th><th>Basis</th><th class="num">Treatment</th></tr></thead>
+        <thead><tr><th scope="col">Regime</th><th scope="col">Basis</th><th scope="col" class="num">Treatment</th></tr></thead>
         <tbody>
           <tr><td>Technical education payments to approved institutions</td><td>s.16C</td><td class="num">Deductible when paid</td></tr>
           <tr><td>Refurbishment/renovation of non-domestic buildings</td><td>s.16F</td><td class="num">5 equal annual instalments (20%/year)</td></tr>
@@ -11155,7 +11200,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
     <section class="block" id="depreciation-allowances__ip">
       <h2>5. Patents, Know-How &amp; Specified IP Rights <span class="sec-ref">IRO ss.16E, 16EA–16EC</span></h2>
       <table>
-        <thead><tr><th>Asset</th><th>Basis</th><th class="num">Treatment</th></tr></thead>
+        <thead><tr><th scope="col">Asset</th><th scope="col">Basis</th><th scope="col" class="num">Treatment</th></tr></thead>
         <tbody>
           <tr><td>Patent rights / know-how</td><td>s.16E</td><td class="num">100% one-off, year of purchase — no spreading</td></tr>
           <tr><td>Specified IP Rights (copyright, registered trade marks/designs, plant variety rights, layout-design/topography rights, performer's economic rights)</td><td>ss.16EA–16EC</td><td class="num">5 equal annual instalments (or shorter, to match remaining legal protection period)</td></tr>
@@ -11210,7 +11255,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <a href="#stamp-duty">&larr; Stamp Duty</a>
       <a href="#ird-administration">Next: IRD Administration &rarr;</a>
     </div>
-  </main></div>
+  </div></div>
 </section>
 
 <section class="tab-panel" id="ird-administration" data-label="IRD Administration">
@@ -11226,7 +11271,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
     <a href="#ird-administration__relief">Double Taxation Relief &amp; Tax Clearance</a>
     <a href="#ird-administration__exchange">AEOI &amp; Crypto-Asset Reporting</a>
     <a href="#ird-administration__sources">Source Documents</a>
-  </aside><main class="content">
+  </aside><div class="content">
     <div class="page-title">
       <div>
         <span class="badge badge-common">Common — IRD Administration</span>
@@ -11280,7 +11325,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
     <section class="block" id="ird-administration__objections">
       <h2>4. Objections &amp; Appeals <span class="sec-ref">IRO s.64 (objections), s.66 (Board of Review), s.69 (case stated)</span></h2>
       <table>
-        <thead><tr><th>Stage</th><th>Time limit</th><th>Forum</th></tr></thead>
+        <thead><tr><th scope="col">Stage</th><th scope="col">Time limit</th><th scope="col">Forum</th></tr></thead>
         <tbody>
           <tr><td>Notice of objection</td><td>1 month from the date of the assessment</td><td>Commissioner of Inland Revenue</td></tr>
           <tr><td>Appeal against the Commissioner's determination</td><td>1 month from the determination</td><td>Board of Review</td></tr>
@@ -11304,7 +11349,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <p class="lede">The consequence almost every taxpayer actually meets, and the one most often confused with the penalties in §7. A surcharge under s.71 is <strong>not</strong> a penalty for an offence — it is automatic, needs no intent, no reasonable-excuse enquiry and no hearing. Miss the date and it is imposed.</p>
 
       <table>
-        <thead><tr><th style="width:150px">When</th><th>What happens</th><th style="width:130px">Provision</th></tr></thead>
+        <thead><tr><th scope="col" style="width:150px">When</th><th scope="col">What happens</th><th scope="col" style="width:130px">Provision</th></tr></thead>
         <tbody>
           <tr>
             <td><strong>The due date passes</strong></td>
@@ -11351,7 +11396,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <h3>Recovery of tax in default <span class="sec-ref">IRO Part 12</span></h3>
       <p>IRD does not wait for the six-month mark before acting. Its own notice states that other than imposing the 5% surcharge it "will also immediately commence other recovery actions <strong>without prior notice</strong>":</p>
       <table>
-        <thead><tr><th style="width:30%">Action</th><th>What it means in practice</th></tr></thead>
+        <thead><tr><th scope="col" style="width:30%">Action</th><th scope="col">What it means in practice</th></tr></thead>
         <tbody>
           <tr>
             <td><strong>Recovery notice to a third party</strong><br><span class="sec-ref">s.76</span></td>
@@ -11380,7 +11425,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <div class="callout law">
         <span class="lbl">Keep the two regimes apart — this is the distinction to have straight</span>
         <table style="margin-top:8px;box-shadow:none">
-          <thead><tr><th style="width:26%"></th><th>Surcharge, s.71</th><th>Penalty, ss.80 / 82A / 82</th></tr></thead>
+          <thead><tr><th scope="col" style="width:26%"></th><th scope="col">Surcharge, s.71</th><th scope="col">Penalty, ss.80 / 82A / 82</th></tr></thead>
           <tbody>
             <tr><td><strong>Triggered by</strong></td><td>Paying <strong>late</strong></td><td>Failing to <strong>file</strong> or notify, filing an <strong>incorrect</strong> return, or <strong>evading</strong> tax</td></tr>
             <tr><td><strong>Fault required</strong></td><td>None — automatic on the date</td><td>Absence of reasonable excuse; for s.82, wilful intent</td></tr>
@@ -11396,7 +11441,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
     <section class="block" id="ird-administration__penalties">
       <h2>7. Penalties <span class="sec-ref">IRO ss.80, 82, 82A</span></h2>
       <table>
-        <thead><tr><th>Contravention</th><th>Consequence</th></tr></thead>
+        <thead><tr><th scope="col">Contravention</th><th scope="col">Consequence</th></tr></thead>
         <tbody>
           <tr><td>Failure to file a return, or filing late, without reasonable excuse</td><td>Summary conviction fine and/or additional tax (s.80)</td></tr>
           <tr><td>Making an incorrect return, or omitting income, without reasonable excuse</td><td>Additional tax up to treble the tax undercharged (s.82A) — an administrative penalty assessed by the Commissioner, distinct from criminal prosecution</td></tr>
@@ -11439,7 +11484,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <a href="#depreciation-allowances">&larr; Depreciation &amp; Allowances</a>
       <a href="#MAIN">Back to Hub &rarr;</a>
     </div>
-  </main></div>
+  </div></div>
 </section>
 
 <section class="tab-panel" id="profits-tax-return-guide" data-label="Profits Tax Return Guide">
@@ -11456,7 +11501,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
     <a href="#profits-tax-return-guide__bir52">BIR52 — How It Differs</a>
     <a href="#profits-tax-return-guide__bir54">BIR54 — What It Actually Is</a>
     <a href="#profits-tax-return-guide__sources">Source Documents</a>
-  </aside><main class="content">
+  </aside><div class="content">
     <div class="page-title">
       <div>
         <span class="badge badge-business">Business — Profits Tax</span>
@@ -11474,7 +11519,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
     <section class="block" id="profits-tax-return-guide__which-form">
       <h2>1. Which Form Applies</h2>
       <table>
-        <thead><tr><th>Form</th><th>Who files it</th></tr></thead>
+        <thead><tr><th scope="col">Form</th><th scope="col">Who files it</th></tr></thead>
         <tbody>
           <tr><td><strong>BIR51</strong></td><td>Corporations — the primary form for HK incorporated companies, and the focus of this guide.</td></tr>
           <tr><td><strong>BIR52</strong></td><td>Persons other than corporations — sole proprietorships, partnerships, limited partnership funds, bodies of persons. See §9 below for how it differs from BIR51.</td></tr>
@@ -11487,7 +11532,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
     <section class="block" id="profits-tax-return-guide__part1">
       <h2>2. Part 1 — Statement of Assessable Profits or Adjusted Loss</h2>
       <table>
-        <thead><tr><th style="width:70px">Box</th><th>Label</th><th>Maps to</th></tr></thead>
+        <thead><tr><th scope="col" style="width:70px">Box</th><th scope="col">Label</th><th scope="col">Maps to</th></tr></thead>
         <tbody>
           <tr><td>1</td><td>Assessable Profits (before loss brought forward)</td><td>The bottom line of your computation — see the <a href="#profits-tax__computation">Computation Template</a>.</td></tr>
           <tr><td>2</td><td>Adjusted Loss (before loss brought forward)</td><td>Fill instead of box 1 if the year produced a loss.</td></tr>
@@ -11512,7 +11557,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <p>Parts 4–6 are administrative: principal business activity + HSIC code (box 16), return-language preference, and an optional authorized representative section.</p>
       <p><strong>Part 7 (General Matters, boxes 17–36)</strong> is the section most likely to interact with your tax computation:</p>
       <table>
-        <thead><tr><th style="width:70px">Box</th><th>What it asks</th></tr></thead>
+        <thead><tr><th scope="col" style="width:70px">Box</th><th scope="col">What it asks</th></tr></thead>
         <tbody>
           <tr><td>17–19</td><td>Whether accounts are audited by law, by a HK practice unit, and the signing CPA's practising certificate number.</td></tr>
           <tr><td>20</td><td>Basis period From/To — feeds the <a href="#profits-tax__basis-losses">basis-period rules</a> (s.18/18C).</td></tr>
@@ -11532,7 +11577,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <h2>5. Part 9 — Supplementary Forms Uploaded (S1–S22)</h2>
       <p>A checkbox per supplementary form, boxes 42–63 (BIR51). Every S-form must be e-filed via <code>www.ird.gov.hk/e_pfr</code>, signed, and submitted with a Control List.</p>
       <table>
-        <thead><tr><th>Form</th><th>Covers</th></tr></thead>
+        <thead><tr><th scope="col">Form</th><th scope="col">Covers</th></tr></thead>
         <tbody>
           <tr><td>S1</td><td>Two-tiered profits tax rates election</td></tr>
           <tr><td>S2</td><td>Transfer pricing and international tax obligations</td></tr>
@@ -11565,7 +11610,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <h2>6. Part 10 — Tax Data (boxes 64–93)</h2>
       <p>HK$ amount fields (enter "0" if nil) for offshore profits excluded from Part 1, capital-asset sale profits, exempt interest/securities income, and — most relevant to a typical computation — the deduction items that mirror the Depreciation &amp; Allowances page's write-off regimes:</p>
       <table>
-        <thead><tr><th style="width:70px">Box</th><th>Deduction</th></tr></thead>
+        <thead><tr><th scope="col" style="width:70px">Box</th><th scope="col">Deduction</th></tr></thead>
         <tbody>
           <tr><td>74</td><td>Approved charitable donations</td></tr>
           <tr><td>75</td><td>Building refurbishment expenditure (s.16F)</td></tr>
@@ -11585,7 +11630,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
     <section class="block" id="profits-tax-return-guide__part11">
       <h2>7. Part 11 — Depreciation Allowances Claimed (boxes 94–104)</h2>
       <table>
-        <thead><tr><th>Category</th><th class="num">Initial</th><th class="num">Annual</th><th class="num">Balancing Allowance</th><th class="num">Balancing Charge</th></tr></thead>
+        <thead><tr><th scope="col">Category</th><th scope="col" class="num">Initial</th><th scope="col" class="num">Annual</th><th scope="col" class="num">Balancing Allowance</th><th scope="col" class="num">Balancing Charge</th></tr></thead>
         <tbody>
           <tr><td>Industrial Building</td><td class="num">94</td><td class="num">95</td><td class="num">96</td><td class="num">97</td></tr>
           <tr><td>Commercial Building</td><td class="num">—</td><td class="num">98</td><td class="num">99</td><td class="num">100</td></tr>
@@ -11643,11 +11688,11 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <a href="#profits-tax">&larr; Profits Tax rules</a>
       <a href="#profits-tax-return-finder">Box Finder tool &rarr;</a>
     </div>
-  </main></div>
+  </div></div>
 </section>
 
 <section class="tab-panel" id="profits-tax-return-finder" data-label="Profits Tax Return Box Finder">
-  <div class="shell" style="grid-template-columns:1fr"><main class="content">
+  <div class="shell" style="grid-template-columns:1fr"><div class="content">
     <p><a href="#profits-tax-return-guide">&larr; Back to the Profits Tax Return Guide</a></p>
     <div class="page-title">
       <div>
@@ -11676,7 +11721,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
 
     <div class="checker-results">
       <table>
-        <thead><tr><th style="width:70px">Form</th><th style="width:70px">Box</th><th style="width:220px">Part</th><th>Label</th><th>Note</th><th style="width:90px"></th></tr></thead>
+        <thead><tr><th scope="col" style="width:70px">Form</th><th scope="col" style="width:70px">Box</th><th scope="col" style="width:220px">Part</th><th scope="col">Label</th><th scope="col">Note</th><th scope="col" style="width:90px"></th></tr></thead>
         <tbody id="profits-tax-return-finder__results-body"></tbody>
       </table>
       <div class="checker-empty" id="profits-tax-return-finder__checker-empty" style="display:none">No matching box found. Try a different keyword, or check the full Guide page directly.</div>
@@ -11691,7 +11736,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <a href="#profits-tax-return-guide">&larr; Back to the Guide</a>
       <a href="#profits-tax">Profits Tax rules &rarr;</a>
     </div>
-  </main></div>
+  </div></div>
 </section>
 
 <section class="tab-panel" id="profits-tax-illustrations" data-label="Profits Tax — Illustrations">
@@ -11699,7 +11744,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
     <h4>On this page</h4>
     <a href="#profits-tax-illustrations__dipn">A. From IRD DIPNs</a>
     <a href="#profits-tax-illustrations__textbook">B. From Module 9 (Textbook)</a>
-  </aside><main class="content">
+  </aside><div class="content">
     <p><a href="#profits-tax">&larr; Back to Profits Tax rules</a></p>
     <div class="page-title">
       <div>
@@ -11721,7 +11766,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
         <div class="lbl">Illustration — Lease premium: Profits Tax vs Property Tax interaction <span class="src">DIPN 4</span></div>
         <p>Company H grants a 6-year lease of its property for a premium of $1,200,000, paid up front. As a person carrying on a property-dealing/letting business, the premium is a <strong>revenue</strong> receipt taxable under Profits Tax — s.15C spreads it evenly over the lease term, so 1/6 = $200,000 is assessed each year for 6 years. Separately, s.5B(4) deems the premium payable in equal monthly instalments for <strong>Property Tax</strong> purposes but capped at 3 years, so 1/3 = $400,000 is assessed for Property Tax in each of Years 1–3 only.</p>
         <table>
-          <thead><tr><th>Year</th><th class="num">Property Tax paid<br>($400,000 × 80% × 16%)</th><th class="num">Profits Tax<br>($200,000 × 17.5%)</th><th class="num">Net position</th></tr></thead>
+          <thead><tr><th scope="col">Year</th><th scope="col" class="num">Property Tax paid<br>($400,000 × 80% × 16%)</th><th scope="col" class="num">Profits Tax<br>($200,000 × 17.5%)</th><th scope="col" class="num">Net position</th></tr></thead>
           <tbody>
             <tr><td>1–3 (each)</td><td class="num">$51,200</td><td class="num">$35,000</td><td class="num">Refund of $16,200 (Property Tax set off against Profits Tax under s.25)</td></tr>
             <tr><td>4–6 (each)</td><td class="num">—</td><td class="num">$35,000</td><td class="num">$35,000 payable</td></tr>
@@ -11765,7 +11810,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
         <p>A company commences business on 1 July 2018 and adopts a 31 December accounting date, but its first set of accounts is not closed until 31 December 2019 — an 18-month period. Adjusted profits: $90,000 for the 18 months to 31 Dec 2019, then $68,000 for the 12 months to 31 Dec 2020.</p>
         <p>Where the first accounting period exceeds 12 months, s.18C(1)(b) gives the Commissioner discretion to take the second year of assessment as the 12 months counted back from the end of the first accounting period, with the commencement year taking the remaining stub — both by time-apportioning the 18-month profit.</p>
         <table>
-          <thead><tr><th>Year of assessment</th><th>Basis period</th><th class="num">Assessable profits</th><th>Basis</th></tr></thead>
+          <thead><tr><th scope="col">Year of assessment</th><th scope="col">Basis period</th><th scope="col" class="num">Assessable profits</th><th scope="col">Basis</th></tr></thead>
           <tbody>
             <tr><td>Commencement year</td><td>1/7/2018 – 31/12/2018 (6 mo.)</td><td class="num">$30,000 (= $90,000 × 6/18)</td><td>s.18C(1)(b)</td></tr>
             <tr><td>Following year</td><td>1/1/2019 – 31/12/2019 (12 mo.)</td><td class="num">$60,000 (= $90,000 × 12/18)</td><td>s.18B(2)</td></tr>
@@ -11795,7 +11840,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
         </table>
         <p><strong>Part B — sole proprietor, same trade vs. changed trade:</strong> a sole proprietor has an unrelieved loss of $1,000,000 brought forward from a wine-distribution trade.</p>
         <table>
-          <thead><tr><th>Scenario</th><th class="num">Result</th></tr></thead>
+          <thead><tr><th scope="col">Scenario</th><th scope="col" class="num">Result</th></tr></thead>
           <tbody>
             <tr><td>Continues the <strong>same</strong> wine trade, earning $1,200,000 in the current year</td><td class="num">$1,200,000 − $1,000,000 loss b/f = <strong>$200,000 taxable</strong></td></tr>
             <tr><td><strong>Ceases</strong> the wine trade and starts an unrelated fruit-trading business, earning $500,000</td><td class="num">Loss is tied to the ceased trade and is <strong>surrendered</strong> — full <strong>$500,000 taxable</strong>, no relief</td></tr>
@@ -11808,7 +11853,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
         <div class="lbl">Illustration — Secured loan test: interest deduction restricted by a tax-free deposit <span class="src">Module 9, Ch.3 §3.5.3.8 — s.16(2A), adapted from DIPN 13A</span></div>
         <p>A taxpayer borrows $1,000,000 from a bank at 5% p.a. ($50,000 interest) for general business use, secured by an overseas deposit earning tax-free interest. The allowable deduction depends on how the security is structured:</p>
         <table>
-          <thead><tr><th>Case</th><th>Security</th><th class="num">Tax-free interest earned</th><th class="num">Deduction reduced by</th><th class="num">Interest allowed</th></tr></thead>
+          <thead><tr><th scope="col">Case</th><th scope="col">Security</th><th scope="col" class="num">Tax-free interest earned</th><th scope="col" class="num">Deduction reduced by</th><th scope="col" class="num">Interest allowed</th></tr></thead>
           <tbody>
             <tr><td>1</td><td>Deposit $1,000,000 only</td><td class="num">$40,000</td><td class="num">$40,000 (full match)</td><td class="num"><strong>$10,000</strong></td></tr>
             <tr><td>2</td><td>Deposit $500,000 + shares $500,000</td><td class="num">$20,000 (deposit only)</td><td class="num">$20,000 (shares ignored — not a deposit)</td><td class="num"><strong>$30,000</strong></td></tr>
@@ -11843,7 +11888,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <a href="#profits-tax">&larr; Back to Profits Tax rules</a>
       <a href="#property-tax">Property Tax &rarr;</a>
     </div>
-  </main></div>
+  </div></div>
 </section>
 
 <section class="tab-panel" id="salaries-tax-illustrations" data-label="Salaries Tax — Illustrations">
@@ -11852,7 +11897,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
     <a href="#salaries-tax-illustrations__dipn">A. From IRD DIPNs</a>
     <a href="#salaries-tax-illustrations__textbook">B. From Module 9 (Textbook)</a>
     <a href="#salaries-tax-illustrations__pa">C. Personal Assessment (Module 9)</a>
-  </aside><main class="content">
+  </aside><div class="content">
     <p><a href="#salaries-tax">&larr; Back to Salaries Tax rules</a></p>
     <div class="page-title">
       <div>
@@ -11925,7 +11970,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
         </table>
         <p>Contrast — two staff <em>sharing one room</em> in a company flat (boarding-house-type arrangement, not a self-contained flat) use the lower 4% rate instead of 10%:</p>
         <table>
-          <thead><tr><th>Employee</th><th class="num">Income</th><th class="num">Rental value (4%)</th></tr></thead>
+          <thead><tr><th scope="col">Employee</th><th scope="col" class="num">Income</th><th scope="col" class="num">Rental value (4%)</th></tr></thead>
           <tbody>
             <tr><td>Staff A</td><td class="num">$150,000</td><td class="num">$6,000</td></tr>
             <tr><td>Staff B</td><td class="num">$120,000</td><td class="num">$4,800</td></tr>
@@ -11952,7 +11997,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
         <div class="lbl">Illustration — Termination gratuity "related back" over a 36-month window <span class="src">Module 9, Ch.4 §4.6 — s.11D(b)(i)</span></div>
         <p>An employee made redundant after 7 years 11 months of service receives a $140,400 contract-end gratuity and elects to have it "related back" under s.11D(b)(i). Because total service exceeded 3 years, the law spreads the gratuity evenly over the <strong>36 months</strong> ending on the earlier of the payment date or last day of employment — not over the full 7-year service period.</p>
         <table>
-          <thead><tr><th>Year of assessment</th><th>Months in the 36-month window</th><th class="num">Gratuity allocated</th></tr></thead>
+          <thead><tr><th scope="col">Year of assessment</th><th scope="col">Months in the 36-month window</th><th scope="col" class="num">Gratuity allocated</th></tr></thead>
           <tbody>
             <tr><td>Year 1 (partial)</td><td>8</td><td class="num">$31,200</td></tr>
             <tr><td>Year 2</td><td>12</td><td class="num">$46,800</td></tr>
@@ -11968,7 +12013,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
         <div class="lbl">Illustration — Child allowance depends on "full-time education," not just age <span class="src">Module 9, Ch.4 §4.9 — s.31</span></div>
         <p>Twins both turn 19 partway through a year and finish secondary school that same year — the allowance still applies for that year since both were in full-time education for part of it (age &gt;18 doesn't disqualify a student). The following year, one twin enrols in a full-time vocational diploma (still qualifies); the other instead starts a technician <strong>apprenticeship structured as an employment contract</strong> — drawing a wage as an employee rather than being a student — which fails the "full-time education" condition.</p>
         <table>
-          <thead><tr><th>Year</th><th>Children qualifying</th><th class="num">Child allowance claimable (YA 2026/27: $140,000/child; <strong>D26 exam basis YA 2025/26: $130,000</strong>)</th></tr></thead>
+          <thead><tr><th scope="col">Year</th><th scope="col">Children qualifying</th><th scope="col" class="num">Child allowance claimable (YA 2026/27: $140,000/child; <strong>D26 exam basis YA 2025/26: $130,000</strong>)</th></tr></thead>
           <tbody>
             <tr><td>Year twins turn 19</td><td>Both twins</td><td class="num">2 × $140,000 = <strong>$280,000</strong></td></tr>
             <tr><td>Following year</td><td>Diploma student only</td><td class="num">1 × $140,000 = <strong>$140,000</strong></td></tr>
@@ -12017,7 +12062,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
         <div class="lbl">Illustration — Should a sole proprietor with rental property elect Personal Assessment? <span class="src">Module 9, Ch.6 §6.3 — s.41</span></div>
         <p>A taxpayer runs a sole-proprietorship business (profit $800,000, of which he donates $400,000 to charity) and separately owns a rental property (rental income $400,000), while paying $400,000 mortgage interest on his own home. Without election, profits tax and property tax are assessed separately with no relief for the home loan interest at all, and the charitable donation is capped at 35% of the business profit alone.</p>
         <table>
-          <thead><tr><th>Item</th><th class="num">Without election</th><th class="num">With Personal Assessment</th></tr></thead>
+          <thead><tr><th scope="col">Item</th><th scope="col" class="num">Without election</th><th scope="col" class="num">With Personal Assessment</th></tr></thead>
           <tbody>
             <tr><td>Business profit, after donation capped at 35% of $800,000 ($280,000 used, $120,000 of the $400,000 paid gets no relief)</td><td class="num">Profits tax @15% on $520,000 = $78,000</td><td class="num" rowspan="4">Combined income $840,000, less a recomputed donation ceiling (35% of grossed-up income — $112,000 more becomes usable), less home loan interest (capped at $100,000/yr), less married allowance ($290,000) → net chargeable income $338,000 → tax at progressive rates = <strong>$39,460</strong></td></tr>
             <tr><td>Rental property, NAV after 20% allowance</td><td class="num">Property tax @15% on $320,000 = $48,000</td></tr>
@@ -12076,7 +12121,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <a href="#salaries-tax">&larr; Back to Salaries Tax rules</a>
       <a href="#stamp-duty">Stamp Duty &rarr;</a>
     </div>
-  </main></div>
+  </div></div>
 </section>
 
 <section class="tab-panel" id="property-tax-illustrations" data-label="Property Tax — Illustrations">
@@ -12084,7 +12129,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
     <h4>On this page</h4>
     <a href="#property-tax-illustrations__dipn">A. From IRD DIPNs</a>
     <a href="#property-tax-illustrations__textbook">B. From Module 9 (Textbook)</a>
-  </aside><main class="content">
+  </aside><div class="content">
     <p><a href="#property-tax">&larr; Back to Property Tax rules</a></p>
     <div class="page-title">
       <div>
@@ -12106,7 +12151,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
         <div class="lbl">Illustration — Premium spread over the statutory 3-year cap <span class="src">DIPN 14</span></div>
         <p>A $60,000 premium is paid for a 5-year lease running from 1 June 2006 to 31 May 2011 (60 months). Because s.5B(4) caps the spreading period at 3 years (36 months) even though the lease itself runs 5 years, the premium is spread over 36 months only:</p>
         <table>
-          <thead><tr><th>Year of assessment</th><th>Months falling in year</th><th class="num">Assessable value included</th></tr></thead>
+          <thead><tr><th scope="col">Year of assessment</th><th scope="col">Months falling in year</th><th scope="col" class="num">Assessable value included</th></tr></thead>
           <tbody>
             <tr><td>2006/07</td><td>10 of 36</td><td class="num">$16,667</td></tr>
             <tr><td>2007/08</td><td>12 of 36</td><td class="num">$20,000</td></tr>
@@ -12136,7 +12181,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
         <div class="lbl">Illustration — Premium spreading: lease term shorter than, equal to, and longer than the 3-year cap <span class="src">Module 9, Ch.5 §5.2 — s.5B(3)/(4)</span></div>
         <p>Three properties are let on different lease terms, each with a lump-sum premium spread evenly over the lease period <em>or 3 years, whichever is shorter</em>:</p>
         <table>
-          <thead><tr><th>Property</th><th>Lease term</th><th class="num">Premium</th><th>Spreading</th></tr></thead>
+          <thead><tr><th scope="col">Property</th><th scope="col">Lease term</th><th scope="col" class="num">Premium</th><th scope="col">Spreading</th></tr></thead>
           <tbody>
             <tr><td>A</td><td>5 years (60 months)</td><td class="num">$360,000</td><td>Capped at 36 months → $10,000/month for 3 years, then <strong>nil</strong> for the remaining 2 years</td></tr>
             <tr><td>B</td><td>3 years (36 months, exactly)</td><td class="num">$240,000</td><td>Full term used (36 = cap) → $6,667/month throughout</td></tr>
@@ -12150,7 +12195,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
         <div class="lbl">Illustration — Full net assessable value computation, three properties <span class="src">Module 9, Ch.5 §5.3 — DIPN 14 template</span></div>
         <p>Three commonly-tested variations on the NAV computation chain (all at the current 15%/20% rates):</p>
         <table>
-          <thead><tr><th></th><th class="num">Property A (jointly owned)</th><th class="num">Property B</th><th class="num">Property C</th></tr></thead>
+          <thead><tr><th scope="col"></th><th scope="col" class="num">Property A (jointly owned)</th><th scope="col" class="num">Property B</th><th scope="col" class="num">Property C</th></tr></thead>
           <tbody>
             <tr><td>Rent for the year</td><td class="num">$600,000</td><td class="num">$240,000</td><td class="num">$120,000</td></tr>
             <tr><td>Add: premium instalment</td><td class="num">$80,000</td><td class="num">$80,000</td><td class="num">$60,000</td></tr>
@@ -12169,7 +12214,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
         <div class="lbl">Illustration — Irrecoverable rent exceeding the year's own rent, carried back <span class="src">Module 9, Ch.5 §5.4 — s.7C</span></div>
         <p>A 2-year tenancy at $10,000/month runs from 1 July 2016; the tenant stops paying from 1 January 2017 and disappears on 1 May 2017, with the assessor accepting the outstanding rent as bad.</p>
         <table>
-          <thead><tr><th></th><th class="num">Original YA1 (filed before default known, 9 months' rent)</th><th class="num">YA2 (year debt confirmed bad)</th></tr></thead>
+          <thead><tr><th scope="col"></th><th scope="col" class="num">Original YA1 (filed before default known, 9 months' rent)</th><th scope="col" class="num">YA2 (year debt confirmed bad)</th></tr></thead>
           <tbody>
             <tr><td>Rent / assessable value</td><td class="num">$90,000</td><td class="num">$10,000</td></tr>
             <tr><td>Less: bad debt confirmed irrecoverable (4 months, Jan–Apr)</td><td class="num">—</td><td class="num">($40,000)</td></tr>
@@ -12206,7 +12251,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <a href="#property-tax">&larr; Back to Property Tax rules</a>
       <a href="#salaries-tax">Salaries Tax &rarr;</a>
     </div>
-  </main></div>
+  </div></div>
 </section>
 
 <section class="tab-panel" id="stamp-duty-illustrations" data-label="Stamp Duty — Illustrations">
@@ -12214,7 +12259,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
     <h4>On this page</h4>
     <a href="#stamp-duty-illustrations__soipn">A. From SOIPNs</a>
     <a href="#stamp-duty-illustrations__textbook">B. From Module 9 (Textbook)</a>
-  </aside><main class="content">
+  </aside><div class="content">
     <p><a href="#stamp-duty">&larr; Back to Stamp Duty rules</a></p>
     <div class="page-title">
       <div>
@@ -12266,7 +12311,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
         <div class="lbl">Illustration B1 — AVD on residential + non-residential property in one purchase <span class="src">Module 9, Ch.7 §7.4</span></div>
         <p>A Hong Kong company (never a HKPR) buys two properties on the same day: a commercial warehouse for $25,000,000, and a residential flat for $20,000,000 (consideration assumed to equal market value in both cases).</p>
         <table>
-          <thead><tr><th>Property</th><th>Scale</th><th class="num">Book figure (flat 15% on residential)</th><th class="num">Current law (graduated)</th></tr></thead>
+          <thead><tr><th scope="col">Property</th><th scope="col">Scale</th><th scope="col" class="num">Book figure (flat 15% on residential)</th><th scope="col" class="num">Current law (graduated)</th></tr></thead>
           <tbody>
             <tr><td>Warehouse (non-residential)</td><td>Scale 3, 4.25% band</td><td class="num">$1,062,500</td><td class="num">$1,062,500 (unchanged)</td></tr>
             <tr><td>Residential flat</td><td>Scale 1, "$6.72M–$20M" band, 3.75%</td><td class="num">$3,000,000 (flat 15%)</td><td class="num"><strong>$750,000</strong></td></tr>
@@ -12279,7 +12324,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
         <div class="lbl">Illustration B2 — Full AVD + SSD + BSD stack on a quick resale to a non-HKPR buyer <span class="src">Module 9, Ch.7 §7.6 — ss.24, 27</span></div>
         <p>A residential flat is bought on 1 March 2018 and sold on 1 March 2019 (12 months + 1 day later) to a Mainland Chinese buyer who resides in HK ~183 days/year but holds no HK permanent ID — so he is <em>not</em> a HKPR for stamp duty purposes despite the residence. The stated price is $2,000,000 "subject to" an existing $5,000,000 mortgage, but market value at the (earlier, binding) contract date was $8,000,000. Because the transfer is at an undervalue and the debt is assumed, s.24 and s.27 deem the <strong>full $8,000,000 market value</strong> as the stampable amount for all three duties — that valuation mechanic is unaffected by any rate change.</p>
         <table>
-          <thead><tr><th>Duty</th><th>Book figure</th><th class="num">Current law (2026)</th><th>Why</th></tr></thead>
+          <thead><tr><th scope="col">Duty</th><th scope="col">Book figure</th><th scope="col" class="num">Current law (2026)</th><th scope="col">Why</th></tr></thead>
           <tbody>
             <tr><td>AVD</td><td class="num">$1,200,000 (flat 15%)</td><td class="num"><strong>$300,000</strong> (3.75% graduated)</td><td>Flat-15% Scale 1 superseded 2023</td></tr>
             <tr><td>SSD (holding &gt;12mo, ≤36mo tier)</td><td class="num">$800,000 (10% tier)</td><td class="num"><strong>$0</strong></td><td>SSD rate cut to 0% from 28 Feb 2024 (tier logic itself unchanged)</td></tr>
@@ -12338,7 +12383,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <a href="#stamp-duty">&larr; Back to Stamp Duty rules</a>
       <a href="#depreciation-allowances">Depreciation &amp; Allowances &rarr;</a>
     </div>
-  </main></div>
+  </div></div>
 </section>
 
 <section class="tab-panel" id="depreciation-allowances-illustrations" data-label="Depreciation & Allowances — Illustrations">
@@ -12346,7 +12391,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
     <h4>On this page</h4>
     <a href="#depreciation-allowances-illustrations__dipn">A. From IRD DIPNs</a>
     <a href="#depreciation-allowances-illustrations__textbook">B. From Module 9 (Textbook)</a>
-  </aside><main class="content">
+  </aside><div class="content">
     <p><a href="#depreciation-allowances">&larr; Back to Depreciation &amp; Allowances rules</a></p>
     <div class="page-title">
       <div>
@@ -12399,7 +12444,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
         <p>A business starts trading on 2 February 2018. In its first year it buys a car ($150,000) and 3 electric cookers ($50,000) — both 30% pool — plus office furniture ($20,000) and 2 air-conditioning units ($28,000) — both 20% pool.</p>
         <table>
           <caption>Year 1 (YA 2018/19)</caption>
-          <thead><tr><th></th><th class="num">30% pool</th><th class="num">20% pool</th></tr></thead>
+          <thead><tr><th scope="col"></th><th scope="col" class="num">30% pool</th><th scope="col" class="num">20% pool</th></tr></thead>
           <tbody>
             <tr><td>Cost</td><td class="num">$200,000</td><td class="num">$48,000</td></tr>
             <tr><td>Less: initial allowance (60%)</td><td class="num">($120,000)</td><td class="num">($28,800)</td></tr>
@@ -12411,7 +12456,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
         <p>In Year 2: the car is written off in an accident (insurance + scrap recovery $31,000); a new van is bought for $180,000; a cooker is sold for $3,000 (total 30%-pool disposal proceeds $34,000); an air-conditioning unit is sold for $2,000 and replaced with a new one for $8,000.</p>
         <table>
           <caption>Year 2 (YA 2019/20)</caption>
-          <thead><tr><th></th><th class="num">30% pool</th><th class="num">20% pool</th></tr></thead>
+          <thead><tr><th scope="col"></th><th scope="col" class="num">30% pool</th><th scope="col" class="num">20% pool</th></tr></thead>
           <tbody>
             <tr><td>Reducing value brought forward</td><td class="num">$56,000</td><td class="num">$15,360</td></tr>
             <tr><td>Add: new assets</td><td class="num">$180,000</td><td class="num">$8,000</td></tr>
@@ -12429,11 +12474,11 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
       <a href="#depreciation-allowances">&larr; Back to Depreciation &amp; Allowances rules</a>
       <a href="#ird-administration">IRD Administration &rarr;</a>
     </div>
-  </main></div>
+  </div></div>
 </section>
 
 <section class="tab-panel" id="module9-extra-practice" data-label="Module 9 Extra Practice Q&A">
-  <div class="shell" style="grid-template-columns:1fr"><main class="content">
+  <div class="shell" style="grid-template-columns:1fr"><div class="content">
       <div class="page-title">
         <div>
           <span class="badge badge-common">Extra practice</span>
@@ -12631,11 +12676,12 @@ Net assessable value: 278,400</code></pre>
 <p class="zh-translation"><strong>中文答案：</strong>第一，確定受視作規則涵蓋的總付款；第二，套用法定視作利潤比例及適用稅率。如改用實際利潤方法，只應扣除與香港演出適當相關的可扣稅開支。</p>
         </div>
       </section>
-    </main></div>
+    </div></div>
 </section>
 
+</main>
 
-<footer class="appfoot">HK Tax Study Hub — combined single-file snapshot, built 6 October 2026. Internal working document: verify against the Inland Revenue Ordinance (Cap. 112) and current IRD guidance before relying on any figure for a filing position. · 內部工作文件，引用前請核對《稅務條例》及稅務局現行指引。</footer>
+<footer class="appfoot">HK Tax Study Hub — single-file edition, built 6 October 2026. Internal working document: verify against the Inland Revenue Ordinance (Cap. 112) and current IRD guidance before relying on any figure for a filing position. · 內部工作文件，引用前請核對《稅務條例》及稅務局現行指引。</footer>
 
 <script>
 /* Consolidated transaction → tax treatment dataset for the Transaction Checker.
@@ -13012,14 +13058,29 @@ window.BIR_BOXES = [
   }
 
   /* ---------- tabs ---------- */
-  function activate(id){
-    if(!document.getElementById(id)) id = 'MAIN';
+  var BASE_TITLE = document.title;
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function activate(id, mode){
+    if(!document.getElementById(id) || !document.getElementById(id).classList.contains('tab-panel')){
+      var hit = document.getElementById(id);
+      var owner = hit && hit.closest('.tab-panel');
+      id = owner ? owner.id : 'MAIN';
+    }
     document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.toggle('active', p.id === id); });
-    document.querySelectorAll('.navlink').forEach(function(b){ b.classList.toggle('active', b.dataset.target === id); });
-    try{ history.replaceState(null, '', '#' + id); }catch(e){}
+    document.querySelectorAll('.navlink').forEach(function(b){
+      var on = b.dataset.target === id;
+      b.classList.toggle('active', on);
+      if(on) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current');
+    });
+    var panel = document.getElementById(id);
+    document.title = id === 'MAIN' ? BASE_TITLE : (panel.dataset.label || id) + ' \u00b7 ' + BASE_TITLE;
+    if(mode !== 'none' && location.hash !== '#' + id){
+      try{ history[mode === 'replace' ? 'replaceState' : 'pushState'](null, '', '#' + id); }catch(e){}
+    }
     window.scrollTo(0, 0);
   }
-  window.hubActivate = activate;
+  window.hubActivate = function(id){ activate(id); };
+  window.addEventListener('hashchange', function(){ activate((location.hash || '#MAIN').slice(1), 'none'); });
 
   document.addEventListener('click', function(ev){
     var tabBtn = ev.target.closest('[data-target]');
@@ -13036,7 +13097,7 @@ window.BIR_BOXES = [
     var owner = el.closest('.tab-panel');
     ev.preventDefault();
     if(owner && !owner.classList.contains('active')) activate(owner.id);
-    el.scrollIntoView({behavior:'smooth', block:'start'});
+    el.scrollIntoView({behavior: reduceMotion ? 'auto' : 'smooth', block:'start'});
   });
 
   /* ---------- MAIN card search ---------- */
@@ -13204,8 +13265,25 @@ window.BIR_BOXES = [
     }
   });
 
+  /* ---------- "report an error" link on every question ---------- */
+  document.querySelectorAll('.tab-panel').forEach(function(panel){
+    panel.querySelectorAll('.qbank-item').forEach(function(item, i){
+      var topicEl = item.querySelector('.qbank-topic');
+      var qText = (item.querySelector('.qbank-q, .qbank-stem, p') || item).textContent.trim().replace(/\s+/g, ' ').slice(0, 140);
+      var title = 'Question error: ' + (panel.dataset.label || panel.id) + ' #' + (i + 1) + (topicEl ? ' (' + topicEl.textContent.trim() + ')' : '');
+      var body = 'Page: ' + (panel.dataset.label || panel.id) + '\nQuestion #' + (i + 1) + '\nStarts: ' + qText + '\n\nWhat looks wrong (with the IRO/SDO section or IRD source):\n';
+      var a = document.createElement('a');
+      a.className = 'qbank-report';
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.href = 'https://github.com/anthonymankaho/hktax-studyhub/issues/new?title=' + encodeURIComponent(title) + '&body=' + encodeURIComponent(body);
+      a.textContent = 'Report an error \u00b7 \u56de\u5831\u932f\u8aa4';
+      item.appendChild(a);
+    });
+  });
+
   /* ---------- open the requested tab ---------- */
-  activate((location.hash || '#MAIN').slice(1));
+  activate((location.hash || '#MAIN').slice(1), 'replace');
 })();
 
 </script>

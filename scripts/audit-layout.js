@@ -10,7 +10,7 @@
 // error, so it can gate a release. Playwright is NOT a project dependency -
 // install it where you run this.
 const { chromium } = require('playwright');
-const F = 'file:///C:/Users/User/Desktop/HKTAX STUDYHUB - CLAUDE/combined.html';
+const F = 'file:///C:/Users/User/Desktop/HKTAX STUDYHUB - CLAUDE/index.html';
 (async () => {
   const b = await chromium.launch();
   const p = await b.newPage({ viewport: { width: 1400, height: 900 } });

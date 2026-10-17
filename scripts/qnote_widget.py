@@ -20,13 +20,13 @@ CSS = r'''
   .qnote-head{display:flex;align-items:center;gap:8px;padding:6px 10px;cursor:move;background:var(--surface-alt);border-radius:7px 7px 0 0;user-select:none;touch-action:none}
   .qnote-head strong{flex:1;font-size:13px}
   .qnote-head button{cursor:pointer;font:inherit;font-size:12px;padding:2px 9px;border-radius:5px;border:1px solid var(--border);background:var(--surface);color:var(--brand)}
-  .qnote-hint{margin:0;padding:4px 10px;font-size:11.5px;color:var(--text-muted)}
+  .qnote-hint{margin:0;padding:4px 10px;font-size:12px;color:var(--text-muted)}
   .qnote-scroll{height:250px;overflow:auto;border-top:1px solid var(--border);background:var(--surface)}
   .qnote-panel.min .qnote-scroll,.qnote-panel.min .qnote-hint{display:none}
   .qnote-panel table{border-collapse:separate;border-spacing:0;table-layout:fixed;width:max-content}
-  .qnote-panel th{position:sticky;top:0;z-index:2;background:var(--surface-alt);color:var(--text-muted);font-size:11px;font-weight:600;height:24px;width:90px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);padding:0}
+  .qnote-panel th{position:sticky;top:0;z-index:2;background:var(--surface-alt);color:var(--text-muted);font-size:12px;font-weight:600;height:24px;width:90px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);padding:0}
   .qnote-panel th.qnote-rn{left:0;z-index:3;width:36px}
-  .qnote-panel td.qnote-rn{position:sticky;left:0;z-index:1;width:36px;background:var(--surface-alt);color:var(--text-muted);font-size:11px;text-align:center;border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .qnote-panel td.qnote-rn{position:sticky;left:0;z-index:1;width:36px;background:var(--surface-alt);color:var(--text-muted);font-size:12px;text-align:center;border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
   .qnote-panel td{padding:0;height:25px;border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
   .qnote-panel td input{display:block;box-sizing:border-box;width:90px;height:24px;border:0;background:transparent;color:var(--text);font:inherit;padding:0 5px;margin:0;outline:none}
   .qnote-panel td input.qnote-num{text-align:right}
