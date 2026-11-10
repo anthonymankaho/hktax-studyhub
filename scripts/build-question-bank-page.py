@@ -420,6 +420,7 @@ def main():
 <footer class="site-footer">HK Tax Study Hub — study aid, not professional advice. Not affiliated with or endorsed by ACCA. Verify against the Inland Revenue Ordinance (Cap. 112) and current IRD guidance before relying on any figure.</footer>
 
 <script src="../assets/js/theme.js"></script>
+<script src="../assets/js/qwen-assistant.js"></script>
 </body>
 </html>
 """ % (NAV, total, coverage_rows, total, n_topics, n_computational, total,

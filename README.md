@@ -188,6 +188,8 @@ assets/
   qbank.json                     GENERATED — the 282-question Section A bank, source for question-bank.html
   qbank-b.json                   GENERATED — Section B's 3 cases / 15 questions, source for question-bank-b.html
   revision.json                  What's changed in the Hub, rendered into the landing-page notice
+worker/                          Cloudflare Worker: GitHub sign-in + Qwen proxy (key stays in a Worker secret)
+oauth.html                       GitHub OAuth popup callback for Ask Qwen
 scripts/
   build-combined.py              Rebuilds the single-file edition from pages/ + assets/
   qbank_tax.py                   HK tax computation module backing every computational MCQ
@@ -368,6 +370,24 @@ B's own **Reset** button was first built with `id="qbank-reset"` and
 silently did nothing once combined — exactly the failure this rule exists to
 prevent, caught by testing the combined build specifically rather than only
 the standalone page. Fixed by switching to `class="qbank-reset-btn"`.
+
+## Ask Qwen
+
+The combined Hub (and each standalone page) has an **Ask Qwen** button. After
+GitHub sign-in it sends a **trimmed excerpt of the current page** plus the
+question to a Cloudflare Worker, which calls Qwen (`qwen3.8-flash` on the
+Token Plan endpoint). The provider key never ships in the HTML.
+
+- Only the GitHub account in `QWEN_ALLOWED_GITHUB_USER` can spend quota.
+- Monthly budget: **20,000,000 tokens** (prompt + completion), counted per
+  account per UTC calendar month when the `QWEN_USAGE` KV namespace is bound.
+- Replies are study help. The Hub does not check section or DIPN citations,
+  and the assistant cannot edit pages. Conversation is in-memory only.
+- Setup and deploy steps live in [`worker/README.md`](worker/README.md). Do
+  not commit secrets.
+
+**AI Prompts** remains as a copy-to-clipboard fallback for anyone who is not
+signed in, or when the Worker is not configured.
 
 ## The "AI Prompts" button
 

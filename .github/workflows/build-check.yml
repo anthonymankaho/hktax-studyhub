@@ -14,3 +14,13 @@ jobs:
         run: python scripts/build-combined.py
       - name: Fail if the committed index.html is stale
         run: git diff --exit-code -- index.html
+
+  qwen-worker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Qwen Worker tests
+        run: node --test worker/test/qwen.test.js

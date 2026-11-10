@@ -292,6 +292,7 @@ def main():
 
 <script src="../assets/js/theme.js"></script>
 <script src="../assets/js/ai-prompt.js"></script>
+<script src="../assets/js/qwen-assistant.js"></script>
 </body>
 </html>
 """ % (NAV, total, len(cases), sittings, SECTION_SWITCH, total, cases_html)

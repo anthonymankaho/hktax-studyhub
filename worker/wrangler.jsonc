@@ -1,0 +1,20 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "hktax-studyhub-api",
+  "main": "src/index.js",
+  "compatibility_date": "2026-10-19",
+  "observability": {
+    "enabled": true
+  },
+  "upload_source_maps": false,
+  "vars": {
+    "QWEN_BASE_URL": "https://token-plan.maas.qwencloudapi.com/compatible-mode/v1",
+    "QWEN_MODEL": "qwen3.8-flash",
+    "QWEN_ALLOWED_GITHUB_USER": "anthonymankaho",
+    "QWEN_MONTHLY_TOKEN_QUOTA": "20000000",
+    "GITHUB_CLIENT_ID": "REPLACE_ME"
+  },
+  "kv_namespaces": [
+    { "binding": "QWEN_USAGE", "id": "e2e5930dec5d44a4b581e68ea398d12d" }
+  ]
+}

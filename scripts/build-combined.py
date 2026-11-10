@@ -664,7 +664,7 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
   *,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}
 }
 @media print{
-  .topbar,.skip-link,.toc,footer.appfoot,.hero-actions,.quick-actions,.crumb{display:none!important}
+  .topbar,.skip-link,.toc,footer.appfoot,.hero-actions,.quick-actions,.crumb,.qwen-panel{display:none!important}
   body{background:#fff;color:#000;font-size:12pt}
   .tab-panel .shell{display:block;padding:0}
   table,pre,.illustration,.callout{break-inside:avoid;box-shadow:none}
@@ -937,7 +937,11 @@ FRAME_JS = r"""
 
 
 def main():
-    base_css = read(os.path.join(ROOT, "assets", "css", "main.css")) + FRAME_CSS
+    base_css = (
+        read(os.path.join(ROOT, "assets", "css", "main.css"))
+        + FRAME_CSS
+        + read(os.path.join(ROOT, "assets", "css", "qwen-assistant.css"))
+    )
 
     data_js = "\n".join(
         read(os.path.join(ROOT, "assets", "js", f))
@@ -985,6 +989,7 @@ def main():
   <div class="searchwrap">
     <input type="search" id="jumpSearch" aria-label="Jump to a page" placeholder="Jump to a page... 跳至頁面" />
   </div>
+  <button class="toolbtn" id="ask-qwen" title="Ask Qwen about Hong Kong tax (GitHub sign-in required)">Ask Qwen</button>
   <button class="toolbtn ai-prompt-btn" title="Copy a hardened HK-tax prompt to paste into your browser AI">AI Prompts</button>
   <button class="toolbtn" id="themeBtn">&#9789; Dark Mode</button>
 </header>
@@ -999,7 +1004,7 @@ def main():
       <li><strong>Learn a tax topic · 學習稅務主題</strong> — Start with a tax page for the rules, rates and computation format; use its links to open worked illustrations, return guidance, or related topics.<span class="intro-zh">先閱讀各稅項頁面的規則、稅率及計算格式，再透過頁面連結查看例題、報稅表指引或相關主題。</span></li>
       <li><strong>Practise ACCA TX-HKG · 練習 ACCA TX-HKG</strong> — Section A offers searchable/filterable MCQs and Random 15; Section B gives linked case questions; Section C has constructed-response questions and model answers. Select an answer and choose “Show answer” to check it and update your score where scoring is provided.<span class="intro-zh">A 部分提供可搜尋／篩選的選擇題及隨機 15 題；B 部分是相連個案題；C 部分提供長題目及模範答案。選擇答案後按「Show answer」核對；設有計分的部分會同步更新分數。</span></li>
       <li><strong>Check updates and sources · 查閱更新及資料來源</strong> — IRD What’s New records announced changes and whether they are enacted, bills or proposals. The DIPN Index searches practice notes. Use the cited ordinance and current IRD guidance to verify a point.<span class="intro-zh">「稅務局最新消息」記錄政策變動及其已生效、草案或建議狀態；DIPN 索引可搜尋實務指引。重要事項請核對所引法例及稅務局最新指引。</span></li>
-      <li><strong>Personalise your view · 自訂閱讀方式</strong> — Use “Dark Mode” to switch themes. “AI Prompts” copies a cautious Hong Kong tax prompt for you to paste into an AI chat; it does not connect to or verify an AI’s answer.<span class="intro-zh">使用「Dark Mode」切換顯示主題。「AI Prompts」只會複製審慎的香港稅務提示詞，供你貼到 AI 對話中；平台不會連接 AI 或核實其答案。</span></li>
+      <li><strong>Personalise your view · 自訂閱讀方式</strong> — Use “Dark Mode” to switch themes. “Ask Qwen” (after GitHub sign-in) answers from a trimmed copy of the page you are on; “AI Prompts” copies a cautious Hong Kong tax prompt to paste into any other AI. Neither is checked by this Hub.<span class="intro-zh">使用「Dark Mode」切換顯示主題。「Ask Qwen」（GitHub 登入後）會根據你正在閱讀的頁面摘要作答；「AI Prompts」則複製審慎的香港稅務提示詞，供貼到其他 AI。兩者均未經本平台核實。</span></li>
     </ul>
     <p class="intro-note"><strong>Study material only · 僅供學習參考。</strong> This Hub is not professional tax advice. Check the current law and IRD guidance before relying on a figure or section reference. · 本平台並非專業稅務意見；依賴任何數字或條文前，請核對現行法例及稅務局指引。</p>
     <div class="intro-footer">
@@ -1057,6 +1062,9 @@ def main():
 <script>
 %(ai_prompt)s
 </script>
+<script>
+%(qwen)s
+</script>
 </body>
 </html>
 """ % {
@@ -1067,6 +1075,7 @@ def main():
         "data": data_js,
         "frame": FRAME_JS,
         "ai_prompt": read(os.path.join(ROOT, "assets", "js", "ai-prompt.js")),
+        "qwen": read(os.path.join(ROOT, "assets", "js", "qwen-assistant.js")),
         "revision_notice": build_revision_notice(),
         "build_date": BUILD_DATE,
         "ird_date": IRD_READ_DATE,
