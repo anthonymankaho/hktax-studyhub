@@ -14,9 +14,14 @@ export const LIMITS = Object.freeze({
   MAX_TOKENS: 4096,
   INPUT_TOKEN_LIMIT: 16000,
   DEFAULT_MONTHLY_TOKEN_QUOTA: 20_000_000,
+  DEFAULT_TEMP_MONTHLY_TOKEN_QUOTA: 2_000_000,
 });
 
 export const YEAR_BASES = Object.freeze(["2026/27", "2025/26"]);
+
+// "main" is the primary Token Plan key; "temp" is the small-quota spare key.
+// The browser picks one; the Worker resolves endpoint, model and secret.
+export const API_IDS = Object.freeze(["main", "temp"]);
 
 export const HUB_INDEX = Object.freeze([
   { id: "MAIN", title: "Home", titleZh: "主頁" },
@@ -81,7 +86,7 @@ export function compactHub(hub) {
 }
 
 export function validateRequest(payload) {
-  exactKeys(payload, ["message", "history", "hub"], "Request");
+  exactKeys(payload, ["message", "history", "hub", "api"], "Request");
   if (new TextEncoder().encode(JSON.stringify(payload)).byteLength > LIMITS.MAX_REQUEST_BYTES)
     fail("AI request is too large.");
   if (
@@ -90,6 +95,8 @@ export function validateRequest(payload) {
     payload.message.length > LIMITS.MAX_MESSAGE_CHARS
   )
     fail("Message must contain 1–4000 characters.");
+  const api = payload.api ?? "main";
+  if (!API_IDS.includes(api)) fail("Unknown API selection.");
   const history = payload.history ?? [];
   if (!Array.isArray(history) || history.length > LIMITS.MAX_HISTORY_TURNS)
     fail("Conversation history is too long.");
@@ -109,6 +116,7 @@ export function validateRequest(payload) {
     message: payload.message.trim(),
     history,
     hub: compactHub(payload.hub),
+    api,
   };
 }
 

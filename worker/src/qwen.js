@@ -76,14 +76,39 @@ Rules:
 
 const isObject = (value) => value !== null && typeof value === "object" && !Array.isArray(value);
 
-export const monthlyQuota = (env) => {
-  const parsed = Number(env.QWEN_MONTHLY_TOKEN_QUOTA ?? LIMITS.DEFAULT_MONTHLY_TOKEN_QUOTA);
-  if (!Number.isInteger(parsed) || parsed < 1 || parsed > 1_000_000_000) return LIMITS.DEFAULT_MONTHLY_TOKEN_QUOTA;
+const parsedQuota = (raw, fallback) => {
+  const parsed = Number(raw ?? fallback);
+  if (!Number.isInteger(parsed) || parsed < 1 || parsed > 1_000_000_000) return fallback;
   return parsed;
 };
 
-export const usageKey = (login, now = new Date()) =>
-  `qwen-usage:${login.toLowerCase()}:${now.toISOString().slice(0, 7)}`;
+export const monthlyQuota = (env) => parsedQuota(env.QWEN_MONTHLY_TOKEN_QUOTA, LIMITS.DEFAULT_MONTHLY_TOKEN_QUOTA);
+
+export const tempMonthlyQuota = (env) =>
+  parsedQuota(env.QWEN_MONTHLY_TOKEN_QUOTA_TEMP, LIMITS.DEFAULT_TEMP_MONTHLY_TOKEN_QUOTA);
+
+export const usageKey = (login, now = new Date(), api = "main") =>
+  `qwen-usage:${login.toLowerCase()}:${now.toISOString().slice(0, 7)}${api === "temp" ? ":temp" : ""}`;
+
+// The spare ("temp") API inherits the main endpoint and model unless overridden,
+// so adding it only requires the DASHSCOPE_API_KEY_TEMP secret.
+export function resolveApiConfig(api, env) {
+  const temp = api === "temp";
+  return {
+    id: api,
+    baseUrl: temp ? env.QWEN_BASE_URL_TEMP || env.QWEN_BASE_URL : env.QWEN_BASE_URL,
+    model: temp ? env.QWEN_MODEL_TEMP || env.QWEN_MODEL || "qwen-plus" : env.QWEN_MODEL || "qwen-plus",
+    key: temp ? env.DASHSCOPE_API_KEY_TEMP : env.DASHSCOPE_API_KEY,
+    quotaLimit: temp ? tempMonthlyQuota(env) : monthlyQuota(env),
+  };
+}
+
+export function listApis(env) {
+  return ["main", "temp"].map((id) => {
+    const config = resolveApiConfig(id, env);
+    return { id, available: Boolean(config.key), quotaLimit: config.quotaLimit };
+  });
+}
 
 export async function handleQwen(payload, authorization, env) {
   if (typeof authorization !== "string" || !/^Bearer [^\s]{10,512}$/.test(authorization))
@@ -118,14 +143,26 @@ export async function handleQwen(payload, authorization, env) {
   if (login.toLowerCase() !== String(env.QWEN_ALLOWED_GITHUB_USER || "anthonymankaho").toLowerCase())
     throw new AIError("This GitHub account cannot use this assistant.", 403, "AI_FORBIDDEN");
 
+  const apiConfig = resolveApiConfig(input.api, env);
+  if (!apiConfig.key)
+    throw new AIError(
+      input.api === "temp"
+        ? "The temporary Qwen API is not configured yet. Switch back to the main API in the selector."
+        : "Qwen is unavailable. Configure the Worker endpoint and secret.",
+      503,
+      "AI_UNAVAILABLE",
+    );
+
   const kv = env.QWEN_USAGE;
-  const quotaLimit = monthlyQuota(env);
+  const quotaLimit = apiConfig.quotaLimit;
+  const otherKeyConfigured = Boolean(input.api === "temp" ? env.DASHSCOPE_API_KEY : env.DASHSCOPE_API_KEY_TEMP);
   let used = 0;
   if (kv) {
-    used = Math.max(0, Number(await kv.get(usageKey(login))) || 0);
+    used = Math.max(0, Number(await kv.get(usageKey(login, new Date(), input.api))) || 0);
     if (used >= quotaLimit)
       throw new AIError(
-        "The monthly Qwen token quota is spent. It resets on the first day of next month.",
+        "The monthly Qwen token quota is spent. It resets on the first day of next month." +
+          (otherKeyConfigured ? " Switch to the other API in the selector and retry." : ""),
         429,
         "AI_QUOTA",
         3600,
@@ -134,7 +171,7 @@ export async function handleQwen(payload, authorization, env) {
 
   let base;
   try {
-    base = new URL(env.QWEN_BASE_URL);
+    base = new URL(apiConfig.baseUrl);
   } catch {
     throw new AIError("Qwen is unavailable. Configure the Worker endpoint and secret.", 503, "AI_UNAVAILABLE");
   }
@@ -150,10 +187,10 @@ export async function handleQwen(payload, authorization, env) {
     base.username ||
     base.password ||
     base.port ||
-    !env.DASHSCOPE_API_KEY
+    !apiConfig.key
   )
     throw new AIError("Qwen is unavailable. Configure the approved endpoint and Worker secret.", 503, "AI_UNAVAILABLE");
-  const model = env.QWEN_MODEL || "qwen-plus";
+  const model = apiConfig.model;
   if (!/^[a-z0-9][a-z0-9._:-]{0,127}$/i.test(model))
     throw new AIError("The Qwen model configuration is invalid.", 503, "AI_UNAVAILABLE");
 
@@ -180,7 +217,7 @@ export async function handleQwen(payload, authorization, env) {
       base.href.replace(/\/$/, "") + "/chat/completions",
       {
         method: "POST",
-        headers: { "Content-Type": "application/json", Authorization: `Bearer ${env.DASHSCOPE_API_KEY}` },
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${apiConfig.key}` },
         body: JSON.stringify({
           model,
           response_format: { type: "json_object" },
@@ -209,7 +246,7 @@ export async function handleQwen(payload, authorization, env) {
     const usage = result.data?.usage;
     if (kv && isObject(usage) && Number.isInteger(usage.prompt_tokens) && Number.isInteger(usage.completion_tokens)) {
       used += usage.prompt_tokens + usage.completion_tokens;
-      await kv.put(usageKey(login), String(used));
+      await kv.put(usageKey(login, new Date(), input.api), String(used));
     }
     const choice = result.data?.choices?.[0];
     if (choice?.finish_reason === "length" || typeof choice?.message?.content !== "string")
@@ -222,9 +259,13 @@ export async function handleQwen(payload, authorization, env) {
     }
     const reply = validateReply(parsed);
     const serialized = JSON.stringify(reply);
-    if ([env.DASHSCOPE_API_KEY, authorization, authorization.slice(7)].some((secret) => secret && serialized.includes(secret)))
+    if (
+      [env.DASHSCOPE_API_KEY, env.DASHSCOPE_API_KEY_TEMP, authorization, authorization.slice(7)].some(
+        (secret) => secret && serialized.includes(secret),
+      )
+    )
       throw new Error("Credential echo rejected.");
-    return { ...reply, ...(kv ? { quota: { used, limit: quotaLimit } } : {}) };
+    return { ...reply, ...(kv ? { quota: { used, limit: quotaLimit, api: input.api } } : {}) };
   } catch (error) {
     if (error instanceof AIError) throw error;
     throw new AIError("Qwen returned an invalid response. Please retry.", 502, "AI_INVALID_RESPONSE");

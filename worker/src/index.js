@@ -1,4 +1,4 @@
-import { handleQwen, AIError, readBoundedJSON } from "./qwen.js";
+import { handleQwen, AIError, readBoundedJSON, listApis } from "./qwen.js";
 
 const GITHUB_OAUTH_URL = "https://github.com/login/oauth/access_token";
 const DEFAULT_ORIGIN = "https://anthonymanhk.github.io";
@@ -24,6 +24,9 @@ function corsHeaders(origin) {
     "Access-Control-Allow-Origin": allowedOrigin,
     "Access-Control-Allow-Methods": "POST, OPTIONS",
     "Access-Control-Allow-Headers": "Content-Type, Authorization",
+    // Without this the browser cannot read Retry-After on 429s and the
+    // panel's retry cooldown silently never applies.
+    "Access-Control-Expose-Headers": "Retry-After",
   };
 }
 
@@ -63,6 +66,7 @@ async function handleConfig(env, origin) {
     {
       githubClientId: ready ? clientId : "",
       oauthReady: ready,
+      apis: listApis(env),
     },
     200,
     origin,

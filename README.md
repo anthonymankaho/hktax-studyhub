@@ -381,6 +381,12 @@ Token Plan endpoint). The provider key never ships in the HTML.
 - Only the GitHub account in `QWEN_ALLOWED_GITHUB_USER` can spend quota.
 - Monthly budget: **20,000,000 tokens** (prompt + completion), counted per
   account per UTC calendar month when the `QWEN_USAGE` KV namespace is bound.
+- **Two APIs:** the composer's API selector offers **Main · 主線** and, once
+  the `DASHSCOPE_API_KEY_TEMP` Worker secret exists, **Temp · 臨時小配額** —
+  a spare small-quota Token Plan key with its own **2,000,000 token** monthly
+  counter. The choice persists per browser; on a quota error the panel offers
+  a one-click switch & retry. The Worker resolves keys server-side; the
+  browser only sends `api: "main" | "temp"`.
 - Replies are study help. The Hub does not check section or DIPN citations,
   and the assistant cannot edit pages. Conversation is in-memory only.
 - Setup and deploy steps live in [`worker/README.md`](worker/README.md). Do

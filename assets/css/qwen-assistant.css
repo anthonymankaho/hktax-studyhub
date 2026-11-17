@@ -1,5 +1,9 @@
 /* Ask Qwen panel — matches Hub tokens; injected on standalone pages, inlined in combined. */
 
+/* The composer's label display rule outranks the UA [hidden] style; keep hidden wins. */
+.qwen-panel [hidden] {
+  display: none;
+}
 body:has(.qwen-panel[open]) {
   overflow: hidden;
 }
@@ -110,6 +114,9 @@ body:has(.qwen-panel[open]) {
 }
 #qwen-feedback[data-kind="error"] {
   color: var(--bad-text);
+}
+#qwen-feedback .qwen-btn {
+  margin: 6px 8px 0 0;
 }
 #qwen-quota {
   font-size: 11px;

@@ -491,6 +491,10 @@ footer.appfoot{text-align:center;color:var(--text-muted);font-size:12.5px;paddin
 }
 /* Ask Qwen panel — matches Hub tokens; injected on standalone pages, inlined in combined. */
 
+/* The composer's label display rule outranks the UA [hidden] style; keep hidden wins. */
+.qwen-panel [hidden] {
+  display: none;
+}
 body:has(.qwen-panel[open]) {
   overflow: hidden;
 }
@@ -601,6 +605,9 @@ body:has(.qwen-panel[open]) {
 }
 #qwen-feedback[data-kind="error"] {
   color: var(--bad-text);
+}
+#qwen-feedback .qwen-btn {
+  margin: 6px 8px 0 0;
 }
 #qwen-quota {
   font-size: 11px;
@@ -13658,6 +13665,8 @@ window.BIR_BOXES = [
   var API = "https://hktax-studyhub-api.anthonym-354.workers.dev";
   var TOKEN_KEY = "hktax_qwen_token";
   var STATE_KEY = "hktax_qwen_oauth_state";
+  var API_SEL_KEY = "hktax_qwen_api";
+  var API_LABELS = { main: "Main · 主線", temp: "Temp · 臨時小配額" };
   var OAUTH_MSG = "hktax-qwen-oauth";
   var PAGE_IDS = {
     MAIN: 1,
@@ -13719,6 +13728,20 @@ window.BIR_BOXES = [
     try {
       if (token) sessionStorage.setItem(TOKEN_KEY, token);
       else sessionStorage.removeItem(TOKEN_KEY);
+    } catch (e) {}
+  }
+
+  function getApiChoice() {
+    try {
+      return localStorage.getItem(API_SEL_KEY) === "temp" ? "temp" : "main";
+    } catch (e) {
+      return "main";
+    }
+  }
+
+  function setApiChoice(api) {
+    try {
+      localStorage.setItem(API_SEL_KEY, api);
     } catch (e) {}
   }
 
@@ -13895,6 +13918,7 @@ window.BIR_BOXES = [
       '<label for="qwen-message">Message Qwen · 訊息</label>' +
       '<textarea id="qwen-message" rows="3" maxlength="4000" required placeholder="Ask about a Hong Kong tax rule, computation, or this page… / 詢問香港稅務規則、計算或本頁內容…"></textarea>' +
       '<div class="qwen-composer-row">' +
+      '<label class="qwen-basis" id="qwen-api-wrap" hidden>API <select id="qwen-api" aria-label="Qwen API selection"></select></label>' +
       '<label class="qwen-basis">Year · 課稅年度 <select id="qwen-year"><option value="2026/27" selected>2026/27 current law</option><option value="2025/26">2025/26 ACCA TX-HKG</option></select></label>' +
       "<span>In-memory only · 不儲存對話</span>" +
       "</div>" +
@@ -13923,6 +13947,8 @@ window.BIR_BOXES = [
     var form = document.getElementById("qwen-form");
     var signin = document.getElementById("qwen-signin");
     var signout = document.getElementById("qwen-signout");
+    var apiWrap = document.getElementById("qwen-api-wrap");
+    var apiSelect = document.getElementById("qwen-api");
     var memory = {
       history: [],
       busy: false,
@@ -13930,6 +13956,7 @@ window.BIR_BOXES = [
       lastPrompt: "",
       quota: null,
       config: null,
+      api: getApiChoice(),
     };
     var retryReadyAt = 0;
     var retryTimer;
@@ -13938,7 +13965,40 @@ window.BIR_BOXES = [
       return signedIn() && memory.config && memory.config.oauthReady;
     }
 
+    function availableApis() {
+      var list = memory.config && Array.isArray(memory.config.apis) ? memory.config.apis : null;
+      var ready = list
+        ? list.filter(function (a) {
+            return a && a.available && API_LABELS[a.id];
+          })
+        : [];
+      return ready.length ? ready : [{ id: "main", available: true }];
+    }
+
+    function syncApiSelect() {
+      var apis = availableApis();
+      var ids = apis.map(function (a) {
+        return a.id;
+      });
+      // Before config arrives the fallback list is main-only; correcting the
+      // persisted choice now would silently drop a saved "temp" selection.
+      if (memory.config && ids.indexOf(memory.api) === -1) {
+        memory.api = ids[0];
+        setApiChoice(memory.api);
+      }
+      var options = apis
+        .map(function (a) {
+          return '<option value="' + a.id + '">' + escapeHtml(API_LABELS[a.id]) + "</option>";
+        })
+        .join("");
+      if (apiSelect.innerHTML !== options) apiSelect.innerHTML = options;
+      apiSelect.value = memory.api;
+      apiWrap.hidden = apis.length < 2;
+      apiSelect.disabled = memory.busy;
+    }
+
     function render() {
+      syncApiSelect();
       var turns = memory.history.length
         ? memory.history
             .map(function (turn) {
@@ -13956,10 +14016,13 @@ window.BIR_BOXES = [
         : '<div class="qwen-empty"><strong>A second pair of eyes for this page · 本頁的學習助手</strong><p>Ask a Hong Kong tax question. Qwen sees a trimmed excerpt of the current page, not the whole Hub, and cannot change these notes.</p></div>';
       historyEl.innerHTML = turns;
       historyEl.setAttribute("aria-busy", String(memory.busy));
+      var quotaApi = (memory.quota && memory.quota.api) || memory.api;
       quota.innerHTML = memory.quota
         ? "<p" +
           (memory.quota.used >= memory.quota.limit * 0.8 ? ' data-warn="true"' : "") +
-          ">Tokens this month · 本月用量: " +
+          ">Tokens this month · 本月用量（" +
+          escapeHtml(API_LABELS[quotaApi] || quotaApi) +
+          "）: " +
           Number(memory.quota.used).toLocaleString() +
           " / " +
           Number(memory.quota.limit).toLocaleString() +
@@ -13979,6 +14042,13 @@ window.BIR_BOXES = [
           : "<p>Qwen is not available on this copy yet. Open the published site after the Worker is configured, or use AI Prompts to copy a template. · 此副本尚未接上 Qwen。請在 Worker 設定後使用已發布網站，或改用 AI Prompts 複製提示詞。</p>";
       feedback.dataset.kind = memory.error ? "error" : "";
       var unavailable = memory.error && ["AI_UNAVAILABLE", "AI_FORBIDDEN", "AI_AUTH_REQUIRED"].indexOf(memory.error.code) !== -1;
+      var switchTarget = "";
+      if (memory.error && memory.error.code === "AI_QUOTA") {
+        var others = availableApis().filter(function (a) {
+          return a.id !== memory.api;
+        });
+        if (others.length) switchTarget = others[0].id;
+      }
       if (memory.busy) feedback.innerHTML = "<p>Qwen is thinking. The Hub is unchanged. · Qwen 思考中，本平台內容未改動。</p>";
       else if (memory.error)
         feedback.innerHTML =
@@ -13987,11 +14057,31 @@ window.BIR_BOXES = [
           escapeHtml(memory.error.message) +
           '</p><button class="qwen-btn secondary" id="qwen-retry" type="button"' +
           (Date.now() < retryReadyAt ? " disabled" : "") +
-          ">Retry · 重試</button>";
+          ">Retry · 重試</button>" +
+          (switchTarget
+            ? '<button class="qwen-btn secondary" id="qwen-switch-api" type="button">Switch to ' +
+              escapeHtml(API_LABELS[switchTarget]) +
+              " & retry · 切換並重試</button>"
+            : "");
       else feedback.innerHTML = "";
       var retryBtn = document.getElementById("qwen-retry");
       if (retryBtn)
         retryBtn.addEventListener("click", function () {
+          submit(memory.lastPrompt, true);
+        });
+      var switchBtn = document.getElementById("qwen-switch-api");
+      if (switchBtn)
+        switchBtn.addEventListener("click", function () {
+          var others = availableApis().filter(function (a) {
+            return a.id !== memory.api;
+          });
+          if (!others.length || !memory.lastPrompt) return;
+          memory.api = others[0].id;
+          setApiChoice(memory.api);
+          // The cooldown belongs to the API that failed; the spare is fresh.
+          retryReadyAt = 0;
+          clearTimeout(retryTimer);
+          memory.error = null;
           submit(memory.lastPrompt, true);
         });
     }
@@ -14033,7 +14123,7 @@ window.BIR_BOXES = [
         controller.abort();
       }, 35000);
       try {
-        var result = await call("qwen", { message: text, history: prior, hub: currentHub() }, controller.signal);
+        var result = await call("qwen", { message: text, history: prior, hub: currentHub(), api: memory.api }, controller.signal);
         if (!result || typeof result.message !== "string") throw new Error("Qwen returned an invalid response. Please retry.");
         memory.history.push({ role: "assistant", content: result.message });
         memory.quota = result.quota || null;
@@ -14060,6 +14150,11 @@ window.BIR_BOXES = [
     form.addEventListener("submit", function (event) {
       event.preventDefault();
       submit(input.value.trim());
+    });
+    apiSelect.addEventListener("change", function () {
+      memory.api = apiSelect.value === "temp" ? "temp" : "main";
+      setApiChoice(memory.api);
+      render();
     });
     signin.addEventListener("click", function () {
       if (!memory.config || !memory.config.oauthReady) return;

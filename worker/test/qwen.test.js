@@ -187,7 +187,7 @@ describe("Qwen API", () => {
     globalThis.fetch = mockUpstream(reply(), 200, { prompt_tokens: 100, completion_tokens: 50 });
     const response = await worker.fetch(request(), { ...ENV, QWEN_USAGE: kv });
     assert.equal(response.status, 200);
-    assert.deepEqual(await response.json(), { ...reply(), quota: { used: 150, limit: 20_000_000 } });
+    assert.deepEqual(await response.json(), { ...reply(), quota: { used: 150, limit: 20_000_000, api: "main" } });
     assert.equal(kv.store.get(monthKey()), "150");
   });
 
@@ -394,7 +394,14 @@ describe("Qwen API", () => {
     const response = await worker.fetch(request({}, null, ORIGIN, "config"), env);
     assert.equal(response.status, 200);
     const body = await response.json();
-    assert.deepEqual(body, { githubClientId: "Ov23liTestClientId", oauthReady: true });
+    assert.deepEqual(body, {
+      githubClientId: "Ov23liTestClientId",
+      oauthReady: true,
+      apis: [
+        { id: "main", available: true, quotaLimit: 20_000_000 },
+        { id: "temp", available: false, quotaLimit: 2_000_000 },
+      ],
+    });
     assert.equal(JSON.stringify(body).includes("super-secret"), false);
     assert.equal(JSON.stringify(body).includes(KEY), false);
   });
@@ -416,5 +423,145 @@ describe("Qwen API", () => {
       env,
     );
     assert.equal(response.status, 400);
+  });
+});
+
+describe("API selection (main / temp)", () => {
+  const TEMP_KEY = "server-temp-secret-test-only";
+  const BOTH = { ...ENV, DASHSCOPE_API_KEY_TEMP: TEMP_KEY };
+  const tempPayload = () => ({ ...payload(), api: "temp" });
+  const tempMonthKey = () => `${monthKey()}:temp`;
+
+  it("defaults to main and rejects unknown api values without calling Qwen", async () => {
+    let called = 0;
+    globalThis.fetch = async () => {
+      called += 1;
+      return Response.json({ login: "anthonymankaho" });
+    };
+    assert.equal(validateRequest(payload()).api, "main");
+    assert.equal(validateRequest(tempPayload()).api, "temp");
+    assert.throws(() => validateRequest({ ...payload(), api: "evil" }), /unknown api selection/i);
+    const res = await worker.fetch(request({ ...payload(), api: "evil" }), BOTH);
+    assert.equal(res.status, 400);
+    assert.equal(called, 0);
+  });
+
+  it("uses the temp key with the inherited endpoint and model, on its own counter", async () => {
+    const kv = memoryKV();
+    const fetchMock = mockUpstream(reply(), 200, { prompt_tokens: 40, completion_tokens: 10 });
+    globalThis.fetch = fetchMock;
+    const env = { ...BOTH, QWEN_USAGE: kv, QWEN_MODEL: "qwen3.8-flash" };
+    const response = await worker.fetch(request(tempPayload()), env);
+    assert.equal(response.status, 200);
+    assert.deepEqual(await response.json(), { ...reply(), quota: { used: 50, limit: 2_000_000, api: "temp" } });
+    const [url, options] = fetchMock.calls[1];
+    assert.equal(url, BASE + "/chat/completions");
+    assert.equal(options.headers.Authorization, `Bearer ${TEMP_KEY}`);
+    assert.equal(JSON.parse(options.body).model, "qwen3.8-flash");
+    assert.equal(kv.store.get(tempMonthKey()), "50");
+    assert.equal(kv.store.get(monthKey()), undefined);
+  });
+
+  it("honors temp endpoint, model and quota overrides", async () => {
+    const kv = memoryKV();
+    const fetchMock = mockUpstream(reply(), 200, { prompt_tokens: 10, completion_tokens: 5 });
+    globalThis.fetch = fetchMock;
+    const tempBase = "https://token-plan.maas.qwencloudapi.com/compatible-mode/v1";
+    const env = {
+      ...BOTH,
+      QWEN_USAGE: kv,
+      QWEN_BASE_URL_TEMP: tempBase,
+      QWEN_MODEL_TEMP: "qwen3.8-max",
+      QWEN_MONTHLY_TOKEN_QUOTA_TEMP: "500",
+    };
+    const response = await worker.fetch(request(tempPayload()), env);
+    assert.equal(response.status, 200);
+    assert.deepEqual(await response.json(), { ...reply(), quota: { used: 15, limit: 500, api: "temp" } });
+    assert.equal(fetchMock.calls[1][0], tempBase + "/chat/completions");
+    assert.equal(JSON.parse(fetchMock.calls[1][1].body).model, "qwen3.8-max");
+  });
+
+  it("fails closed when temp is selected but its secret is missing", async () => {
+    const fetchMock = async (url, options) => {
+      fetchMock.calls.push([url, options]);
+      return Response.json({ login: "anthonymankaho" });
+    };
+    fetchMock.calls = [];
+    globalThis.fetch = fetchMock;
+    const response = await worker.fetch(request(tempPayload()), ENV);
+    assert.equal(response.status, 503);
+    const body = await response.json();
+    assert.equal(body.code, "AI_UNAVAILABLE");
+    assert.match(body.error, /temporary Qwen API is not configured/i);
+    assert.equal(fetchMock.calls.length, 1);
+  });
+
+  it("keeps the quotas independent: a spent main quota does not block temp", async () => {
+    const kv = memoryKV({ [monthKey()]: "20000000" });
+    const fetchMock = async (url, options) => {
+      fetchMock.calls.push([url, options]);
+      if (String(url).includes("api.github.com")) return Response.json({ login: "anthonymankaho" });
+      return Response.json({
+        choices: [{ finish_reason: "stop", message: { content: JSON.stringify(reply()) } }],
+        usage: { prompt_tokens: 10, completion_tokens: 5 },
+      });
+    };
+    fetchMock.calls = [];
+    globalThis.fetch = fetchMock;
+    const env = { ...BOTH, QWEN_USAGE: kv };
+    assert.equal((await worker.fetch(request(), env)).status, 429);
+    const tempRes = await worker.fetch(request(tempPayload()), env);
+    assert.equal(tempRes.status, 200);
+    assert.equal(kv.store.get(tempMonthKey()), "15");
+    assert.equal(kv.store.get(monthKey()), "20000000");
+  });
+
+  it("points at the other API when one quota is spent", async () => {
+    const kv = memoryKV({ [tempMonthKey()]: "2000000" });
+    const fetchMock = async (url, options) => {
+      fetchMock.calls.push([url, options]);
+      return Response.json({ login: "anthonymankaho" });
+    };
+    fetchMock.calls = [];
+    globalThis.fetch = fetchMock;
+    const response = await worker.fetch(request(tempPayload()), { ...BOTH, QWEN_USAGE: kv });
+    assert.equal(response.status, 429);
+    const body = await response.json();
+    assert.equal(body.code, "AI_QUOTA");
+    assert.match(body.error, /switch to the other API/i);
+    assert.equal(fetchMock.calls.length, 1);
+  });
+
+  it("does not offer temp in config until its secret exists, and never leaks keys", async () => {
+    const withTemp = await worker.fetch(request({}, null, ORIGIN, "config"), BOTH);
+    const body = await withTemp.json();
+    assert.deepEqual(body.apis, [
+      { id: "main", available: true, quotaLimit: 20_000_000 },
+      { id: "temp", available: true, quotaLimit: 2_000_000 },
+    ]);
+    assert.equal(JSON.stringify(body).includes(TEMP_KEY), false);
+    assert.equal(JSON.stringify(body).includes(KEY), false);
+  });
+
+  it("rejects a temp-key credential echo", async () => {
+    globalThis.fetch = mockUpstream({ message: TEMP_KEY });
+    const res = await worker.fetch(request(tempPayload()), BOTH);
+    assert.equal(res.status, 502);
+    assert.equal((await res.text()).includes(TEMP_KEY), false);
+  });
+
+  it("does not send the temp key to an arbitrary configured URL", async () => {
+    let qwenCalls = 0;
+    globalThis.fetch = async (url) => {
+      if (String(url).includes("github.com")) return Response.json({ login: "anthonymankaho" });
+      qwenCalls += 1;
+      return Response.json({ choices: [{ finish_reason: "stop", message: { content: JSON.stringify(reply()) } }] });
+    };
+    const res = await worker.fetch(request(tempPayload()), {
+      ...BOTH,
+      QWEN_BASE_URL_TEMP: "https://evil.example/compatible-mode/v1",
+    });
+    assert.equal(res.status, 503);
+    assert.equal(qwenCalls, 0);
   });
 });
