@@ -17,6 +17,8 @@ Data/
 # Playwright (scripts/audit-layout.js) is installed on demand, not vendored
 node_modules/
 package-lock.json
+# The MCP worker commits its lockfile so CI installs the same Agents SDK.
+!mcp/package-lock.json
 
 # Python build artifacts
 __pycache__/

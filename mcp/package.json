@@ -1,0 +1,21 @@
+{
+  "name": "hktax-studyhub-mcp",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-catalog.mjs",
+    "test": "node --test test/*.test.js",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "dry-run": "wrangler deploy --dry-run --outdir /tmp/hktax-mcp-dry-run"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "2.3.1",
+    "agents": "0.29.0",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "wrangler": "4.152.0"
+  }
+}

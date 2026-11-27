@@ -68,3 +68,9 @@ then set `vars.GITHUB_CLIENT_ID` and `npx wrangler secret put GITHUB_CLIENT_SECR
 cd worker
 node --test test/qwen.test.js
 ```
+
+## MCP is a different Worker
+
+Hub search for agents lives in [`mcp/`](../mcp/README.md), deployed as
+`hktax-studyhub-mcp`. It has no DashScope key and no GitHub client secret.
+Do not add those secrets to it, and do not hang MCP routes on this Worker.
