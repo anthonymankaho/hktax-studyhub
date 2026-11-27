@@ -189,6 +189,7 @@ assets/
   qbank-b.json                   GENERATED — Section B's 3 cases / 15 questions, source for question-bank-b.html
   revision.json                  What's changed in the Hub, rendered into the landing-page notice
 worker/                          Cloudflare Worker: GitHub sign-in + Qwen proxy (key stays in a Worker secret)
+mcp/                             Cloudflare Worker: public streamable-HTTP MCP over the Hub (no secrets)
 oauth.html                       GitHub OAuth popup callback for Ask Qwen
 scripts/
   build-combined.py              Rebuilds the single-file edition from pages/ + assets/
@@ -394,6 +395,18 @@ Token Plan endpoint). The provider key never ships in the HTML.
 
 **AI Prompts** remains as a copy-to-clipboard fallback for anyone who is not
 signed in, or when the Worker is not configured.
+
+## MCP server
+
+Agents can query the Hub over MCP (streamable HTTP) instead of scraping the
+pages. It is a **separate** Cloudflare Worker from Ask Qwen, with no API keys
+on it. Auth is not required.
+
+- Endpoint (after deploy): `https://hktax-studyhub-mcp.anthonym-354.workers.dev/mcp`
+- Tools, connect config, and deploy steps: [`mcp/README.md`](mcp/README.md)
+
+The same disclaimer applies: study material, not professional advice. Proposed
+and bill items are not law.
 
 ## The "AI Prompts" button
 

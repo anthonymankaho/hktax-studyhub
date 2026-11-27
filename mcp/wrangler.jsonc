@@ -1,0 +1,15 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // Separate from hktax-studyhub-api on purpose. That Worker holds the
+  // DashScope keys and the GitHub OAuth client secret. This one serves
+  // public study notes and has no secrets and no KV.
+  "name": "hktax-studyhub-mcp",
+  "main": "src/index.js",
+  "compatibility_date": "2026-11-27",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": {
+    "enabled": true,
+    "logs": { "enabled": true, "head_sampling_rate": 1 },
+    "traces": { "enabled": true, "head_sampling_rate": 1 }
+  }
+}
